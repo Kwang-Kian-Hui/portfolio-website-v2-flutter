@@ -29,8 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_riverpod: ^1.0.4 # provider package, MIT license
+  flutter_riverpod: ^1.0.4 # provider package, MIT License
   responsive_framework: ^0.2.0 # app responsive, BSD Zero Clause License
+  scrollable_positioned_list: ^0.3.4 # list to allow scroll to specific item in list, BSD-3-Clause License
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -40,10 +41,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  freezed: ^2.1.1 # code generator for data classes, MIT license
+  freezed: ^2.1.1 # code generator for data classes, MIT License
   freezed_annotation: ^2.0.3 # required annotations for freezed package ->
-                            # tells flutter what to do when they see those annotations, MIT license
-  build_runner: ^2.1.11 # generate files based on the code generators for freezed and json_serializable, BSD-3-Clause license
+                            # tells flutter what to do when they see those annotations, MIT License
+  build_runner: ^2.1.11 # generate files based on the code generators for freezed and json_serializable, BSD-3-Clause License
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -64,8 +65,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/my_photo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

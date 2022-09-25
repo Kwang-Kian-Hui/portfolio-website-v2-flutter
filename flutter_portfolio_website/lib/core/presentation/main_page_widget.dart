@@ -1,19 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_portfolio_website/core/presentation/app_bar_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/about_me_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/experiences_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/init_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/projects_widget.dart';
+import 'package:flutter_portfolio_website/core/shared/providers.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class MainPageWidget extends StatefulWidget {
+class MainPageWidget extends ConsumerStatefulWidget {
   const MainPageWidget({Key? key}) : super(key: key);
 
   @override
-  State<MainPageWidget> createState() => _MainPageWidgetState();
+  MainPageWidgetState createState() => MainPageWidgetState();
 }
 
-class _MainPageWidgetState extends State<MainPageWidget> {
+class MainPageWidgetState extends ConsumerState<MainPageWidget> {
+  List<Widget> sectionsList = const [
+    InitWidget(),
+    AboutMeWidget(),
+    ExperiencesWidget(),
+    ProjectsWidget(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const AppBarWidget(),
-        backgroundColor: Color(0xff222222),
-      );
+      appBar: const AppBarWidget(),
+      backgroundColor: const Color(0xff222222),
+      body: Container(
+        height: MediaQuery.of(context).size.height * 3,
+        child: ScrollablePositionedList.builder(
+          itemScrollController: ref.watch(scrollControllerProvider),
+          itemCount: sectionsList.length,
+          itemBuilder: (context, index) => sectionsList[index],
+        ),
+      ),
+    );
   }
 }
