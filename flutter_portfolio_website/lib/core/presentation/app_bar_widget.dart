@@ -15,6 +15,11 @@ class AppBarWidget extends ConsumerStatefulWidget with PreferredSizeWidget {
 }
 
 class AppBarWidgetState extends ConsumerState<AppBarWidget> {
+  bool hoverOnIcon = false;
+  bool hoverOnAbout = false;
+  bool hoverOnExp = false;
+  bool hoverOnProj = false;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -26,6 +31,16 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: MouseRegion(
+                onEnter: (pointerEvent){
+                  setState(() {
+                    hoverOnIcon = true;
+                  });
+                },
+                onExit: (pointerEvent){
+                  setState((){
+                    hoverOnIcon = false;
+                  });
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: (){
@@ -36,14 +51,14 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                     width: 40,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Colors.white,
+                        color: hoverOnIcon ? const Color(0xffF58C82) : Colors.white,
                       ),
                       shape: BoxShape.circle,
                     ),
                     child: Center(
                       child: Text(
                         "KH",
-                        style: Theme.of(context).textTheme.headline6,
+                        style: hoverOnIcon ? AppStyles.courgette20Colored : AppStyles.courgette20,
                       ),
                     ),
                   ),
@@ -52,6 +67,16 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
             ),
             const Spacer(),
             MouseRegion(
+              onEnter: (pointerEvent){
+                  setState(() {
+                    hoverOnAbout = true;
+                  });
+                },
+                onExit: (pointerEvent){
+                  setState((){
+                    hoverOnAbout = false;
+                  });
+                },
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: (){
@@ -66,12 +91,22 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                   alignment: Alignment.center,
                   child: Text(
                     "About Me",
-                    style: Theme.of(context).textTheme.headline6,
+                    style: hoverOnAbout ? AppStyles.roboto20Colored : AppStyles.roboto20,
                   ),
                 ),
               ),
             ),
             MouseRegion(
+              onEnter: (pointerEvent){
+                  setState(() {
+                    hoverOnExp = true;
+                  });
+                },
+                onExit: (pointerEvent){
+                  setState((){
+                    hoverOnExp = false;
+                  });
+                },
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: (){
@@ -86,12 +121,22 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                   alignment: Alignment.center,
                   child: Text(
                     "Experiences",
-                    style: Theme.of(context).textTheme.headline6,
+                    style: hoverOnExp ? AppStyles.roboto20Colored : AppStyles.roboto20,
                   ),
                 ),
               ),
             ),
             MouseRegion(
+              onEnter: (pointerEvent){
+                  setState(() {
+                    hoverOnProj = true;
+                  });
+                },
+                onExit: (pointerEvent){
+                  setState((){
+                    hoverOnProj = false;
+                  });
+                },
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: (){
@@ -106,7 +151,7 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                   alignment: Alignment.center,
                   child: Text(
                     "Projects",
-                    style: Theme.of(context).textTheme.headline6,
+                    style: hoverOnProj ? AppStyles.roboto20Colored : AppStyles.roboto20,
                   ),
                 ),
               ),

@@ -32,6 +32,7 @@ dependencies:
   flutter_riverpod: ^1.0.4 # provider package, MIT License
   responsive_framework: ^0.2.0 # app responsive, BSD Zero Clause License
   scrollable_positioned_list: ^0.3.4 # list to allow scroll to specific item in list, BSD-3-Clause License
+  dotted_border: ^2.0.0+2 # easily add dotted borders around widgets, MIT License
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -66,7 +67,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/my_photo.png
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
