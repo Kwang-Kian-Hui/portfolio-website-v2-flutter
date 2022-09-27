@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/sub_components/experiences_widgets.dart';
+import 'package:flutter_portfolio_website/core/application/education_class.dart';
+import 'package:flutter_portfolio_website/core/application/experience_class.dart';
+import 'package:flutter_portfolio_website/core/infrastructure/edu_and_exp_data.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/sub_components/draggable_logo_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/sub_components/empty_selection_exp.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/sub_components/experience_detail_widget.dart';
+import 'package:flutter_portfolio_website/core/shared/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
@@ -12,6 +18,18 @@ class ExperiencesWidget extends ConsumerStatefulWidget {
 }
 
 class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
+  List<Widget> expWidgetsList = [
+    const EmptySelectionExp(),
+    ExperienceDetailWidget(currentSelection: expClassList[0]),
+    ExperienceDetailWidget(currentSelection: expClassList[1]),
+  ];
+
+  List<Widget> eduWidgetsList = [
+    // const EmptySelectionExp(),
+    // ExperienceDetailWidget(currentSelection: expClassList[0]),
+    // ExperienceDetailWidget(currentSelection: expClassList[1]),
+  ];
+
   double getWidgetHeight() {
     if (ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")) {
       return 700;
@@ -123,54 +141,32 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   Positioned(
                     top: 180,
                     left: 47.5,
-                    child: Card(
-                      elevation: 15,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Container(
-                        height: 50,
-                        width: 50,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: CircleAvatar(
-                          backgroundColor: const Color(0xff292929),
-                          radius: 16,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50.0),
-                            child: Image.asset(
-                                'assets/images/synpulse8_logo.png',
-                                fit: BoxFit.fill),
-                          ),
-                        ),
+                    child: Draggable<ExperienceClass>(
+                      data: expClassList[0],
+                      feedback: const LogoWidget(
+                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          hasBackground: false),
+                      childWhenDragging: const SizedBox(),
+                      child: const LogoWidget(
+                        logoImagePath: 'assets/images/synpulse8_logo.png',
+                        hasBackground: false,
                       ),
                     ),
                   ),
                   Positioned(
                     top: 250,
                     left: 47.5,
-                    child: Card(
-                      elevation: 15,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Container(
-                        height: 50,
-                        width: 50,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 16,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50.0),
-                            child: Image.asset(
-                                'assets/images/abundant_accounting_logo.png',
-                                fit: BoxFit.fill),
-                          ),
-                        ),
+                    child: Draggable<ExperienceClass>(
+                      data: expClassList[1],
+                      feedback: const LogoWidget(
+                          logoImagePath:
+                              'assets/images/abundant_accounting_logo.png',
+                          hasBackground: true),
+                      childWhenDragging: const SizedBox(),
+                      child: const LogoWidget(
+                        logoImagePath:
+                            'assets/images/abundant_accounting_logo.png',
+                        hasBackground: true,
                       ),
                     ),
                   ),
@@ -192,7 +188,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 30, horizontal: 30),
                         alignment: Alignment.topCenter,
-                        child: const EmptySelectionExp(),
+                        child: expWidgetsList[ref.watch(selectedExperienceIndexProvider)],
                       ),
                     ),
                   ),
@@ -287,56 +283,30 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       ),
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 180,
                     right: 47.5,
-                    child: Card(
-                      elevation: 15,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Container(
-                        height: 50,
-                        width: 50,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 16,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50.0),
-                            child: Image.asset('assets/images/sim_logo.png',
-                                fit: BoxFit.fill),
-                          ),
-                        ),
-                      ),
+                    child: Draggable(
+                      feedback: LogoWidget(
+                          logoImagePath: 'assets/images/sim_logo.png',
+                          hasBackground: true),
+                      childWhenDragging: SizedBox(),
+                      child: LogoWidget(
+                          logoImagePath: 'assets/images/sim_logo.png',
+                          hasBackground: true),
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     top: 250,
                     right: 47.5,
-                    child: Card(
-                      elevation: 15,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Container(
-                        height: 50,
-                        width: 50,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 16,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(50.0),
-                            child: Image.asset('assets/images/np_logo.png',
-                                fit: BoxFit.fill),
-                          ),
-                        ),
-                      ),
+                    child: Draggable(
+                      feedback: LogoWidget(
+                          logoImagePath: 'assets/images/np_logo.png',
+                          hasBackground: true),
+                      childWhenDragging: SizedBox(),
+                      child: LogoWidget(
+                          logoImagePath: 'assets/images/np_logo.png',
+                          hasBackground: true),
                     ),
                   ),
                   Positioned(
