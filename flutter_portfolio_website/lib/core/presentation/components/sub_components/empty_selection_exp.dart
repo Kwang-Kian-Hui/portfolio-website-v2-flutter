@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/core/application/experience_class.dart';
+import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:flutter_portfolio_website/core/shared/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class EmptySelectionExp extends ConsumerStatefulWidget {
   const EmptySelectionExp({Key? key}) : super(key: key);
@@ -15,6 +17,7 @@ class EmptySelectionExpState extends ConsumerState<EmptySelectionExp> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         DragTarget<ExperienceClass>(
           onAccept: (droppedIndex) {
@@ -39,7 +42,22 @@ class EmptySelectionExpState extends ConsumerState<EmptySelectionExp> {
             ),
           ),
         ),
-        const Spacer(),
+        Expanded(
+          child: Container(
+            height: 50,
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.symmetric(horizontal: 
+            ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
+                            ResponsiveWrapper.of(context)
+                                .isSmallerThan(DESKTOP)
+                        ? 8
+                        : ResponsiveWrapper.of(context)
+                                .isSmallerThan("BP-FOR-MOBILE")
+                            ? 8
+                            : 16,),
+            child: const Text("Click or drag and drop to view", maxLines: 3, style: AppStyles.roboto14),
+          ),
+        ),
       ],
     );
   }

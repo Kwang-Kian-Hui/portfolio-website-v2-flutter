@@ -147,9 +147,14 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                           logoImagePath: 'assets/images/synpulse8_logo.png',
                           hasBackground: false),
                       childWhenDragging: const SizedBox(),
-                      child: const LogoWidget(
-                        logoImagePath: 'assets/images/synpulse8_logo.png',
-                        hasBackground: false,
+                      child: GestureDetector(
+                        onTap: () => ref
+                            .read(selectedExperienceIndexProvider.notifier)
+                            .change(1),
+                        child: const LogoWidget(
+                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          hasBackground: false,
+                        ),
                       ),
                     ),
                   ),
@@ -163,10 +168,15 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                               'assets/images/abundant_accounting_logo.png',
                           hasBackground: true),
                       childWhenDragging: const SizedBox(),
-                      child: const LogoWidget(
-                        logoImagePath:
-                            'assets/images/abundant_accounting_logo.png',
-                        hasBackground: true,
+                      child: GestureDetector(
+                        onTap: () => ref
+                            .read(selectedExperienceIndexProvider.notifier)
+                            .change(2),
+                        child: const LogoWidget(
+                          logoImagePath:
+                              'assets/images/abundant_accounting_logo.png',
+                          hasBackground: true,
+                        ),
                       ),
                     ),
                   ),
@@ -188,7 +198,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 30, horizontal: 30),
                         alignment: Alignment.topCenter,
-                        child: expWidgetsList[ref.watch(selectedExperienceIndexProvider)],
+                        child: expWidgetsList[
+                            ref.watch(selectedExperienceIndexProvider)],
                       ),
                     ),
                   ),
