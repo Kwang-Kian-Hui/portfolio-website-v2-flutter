@@ -3,6 +3,8 @@ import 'package:flutter_portfolio_website/core/application/education_class.dart'
 import 'package:flutter_portfolio_website/core/application/experience_class.dart';
 import 'package:flutter_portfolio_website/core/infrastructure/edu_and_exp_data.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/draggable_logo_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/sub_components/education_detail_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/sub_components/empty_selection_edu.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/empty_selection_exp.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/experience_detail_widget.dart';
 import 'package:flutter_portfolio_website/core/shared/providers.dart';
@@ -22,17 +24,18 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
     const EmptySelectionExp(),
     ExperienceDetailWidget(currentSelection: expClassList[0]),
     ExperienceDetailWidget(currentSelection: expClassList[1]),
+    ExperienceDetailWidget(currentSelection: expClassList[2]),
   ];
 
   List<Widget> eduWidgetsList = [
-    // const EmptySelectionExp(),
-    // ExperienceDetailWidget(currentSelection: expClassList[0]),
-    // ExperienceDetailWidget(currentSelection: expClassList[1]),
+    const EmptySelectionEdu(),
+    EducationDetailWidget(currentSelection: eduClassList[0]),
+    EducationDetailWidget(currentSelection: eduClassList[1]),
   ];
 
   double getWidgetHeight() {
     if (ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")) {
-      return 700;
+      return 550;
     }
     if (ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP") &&
         ResponsiveWrapper.of(context).isLargerThan(MOBILE)) {
@@ -164,6 +167,26 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     child: Draggable<ExperienceClass>(
                       data: expClassList[1],
                       feedback: const LogoWidget(
+                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          hasBackground: false),
+                      childWhenDragging: const SizedBox(),
+                      child: GestureDetector(
+                        onTap: () => ref
+                            .read(selectedExperienceIndexProvider.notifier)
+                            .change(2),
+                        child: const LogoWidget(
+                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          hasBackground: false,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 320,
+                    left: 47.5,
+                    child: Draggable<ExperienceClass>(
+                      data: expClassList[2],
+                      feedback: const LogoWidget(
                           logoImagePath:
                               'assets/images/abundant_accounting_logo.png',
                           hasBackground: true),
@@ -171,7 +194,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       child: GestureDetector(
                         onTap: () => ref
                             .read(selectedExperienceIndexProvider.notifier)
-                            .change(2),
+                            .change(3),
                         child: const LogoWidget(
                           logoImagePath:
                               'assets/images/abundant_accounting_logo.png',
@@ -294,30 +317,42 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       ),
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     top: 180,
                     right: 47.5,
-                    child: Draggable(
-                      feedback: LogoWidget(
+                    child: Draggable<EducationClass>(
+                      data: eduClassList[0],
+                      feedback: const LogoWidget(
                           logoImagePath: 'assets/images/sim_logo.png',
                           hasBackground: true),
-                      childWhenDragging: SizedBox(),
-                      child: LogoWidget(
-                          logoImagePath: 'assets/images/sim_logo.png',
-                          hasBackground: true),
+                      childWhenDragging: const SizedBox(),
+                      child: GestureDetector(
+                        onTap: () => ref
+                            .read(selectedEducationIndexProvider.notifier)
+                            .change(1),
+                        child: const LogoWidget(
+                            logoImagePath: 'assets/images/sim_logo.png',
+                            hasBackground: true),
+                      ),
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     top: 250,
                     right: 47.5,
-                    child: Draggable(
-                      feedback: LogoWidget(
+                    child: Draggable<EducationClass>(
+                      data: eduClassList[1],
+                      feedback: const LogoWidget(
                           logoImagePath: 'assets/images/np_logo.png',
                           hasBackground: true),
-                      childWhenDragging: SizedBox(),
-                      child: LogoWidget(
-                          logoImagePath: 'assets/images/np_logo.png',
-                          hasBackground: true),
+                      childWhenDragging: const SizedBox(),
+                      child: GestureDetector(
+                        onTap: () => ref
+                            .read(selectedEducationIndexProvider.notifier)
+                            .change(2),
+                        child: const LogoWidget(
+                            logoImagePath: 'assets/images/np_logo.png',
+                            hasBackground: true),
+                      ),
                     ),
                   ),
                   Positioned(
@@ -335,6 +370,11 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         height: getWidgetHeight(),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 30, horizontal: 30),
+                        alignment: Alignment.topCenter,
+                        child: eduWidgetsList[
+                            ref.watch(selectedEducationIndexProvider)],
                       ),
                     ),
                   ),

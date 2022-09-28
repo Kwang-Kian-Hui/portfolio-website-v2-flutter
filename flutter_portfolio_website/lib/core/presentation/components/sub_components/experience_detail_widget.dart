@@ -52,11 +52,11 @@ class ExperienceDetailWidgetState
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context)
                               .isSmallerThan(DESKTOP)
-                      ? AppStyles.roboto14Bold
+                      ? AppStyles.roboto14ColoredBold
                       : ResponsiveWrapper.of(context)
                               .isSmallerThan("BP-FOR-MOBILE")
-                          ? AppStyles.roboto14Bold
-                          : AppStyles.roboto20Bold,
+                          ? AppStyles.roboto14ColoredBold
+                          : AppStyles.roboto20ColoredBold,
                 ),
               ),
             ),
@@ -84,7 +84,7 @@ class ExperienceDetailWidgetState
                 alignment: Alignment.centerLeft,
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}", maxLines: 3,
+                  "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}", maxLines: 3,
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context)
                               .isSmallerThan(DESKTOP)
@@ -98,21 +98,27 @@ class ExperienceDetailWidgetState
             ),
             Expanded(
               flex: 6,
-              child: Container(
-                alignment: Alignment.topLeft,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  widget.currentSelection.description,
-                  maxLines: 20,
-                  textAlign: TextAlign.start,
-                  style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
-                          ResponsiveWrapper.of(context)
-                              .isSmallerThan(DESKTOP)
-                      ? AppStyles.roboto10
-                      : ResponsiveWrapper.of(context)
-                              .isSmallerThan("BP-FOR-MOBILE")
+              child: Scrollbar(
+                thumbVisibility: true,
+                thickness: 5,
+                child: SingleChildScrollView(
+                  child: Container(
+                    alignment: Alignment.topLeft,
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      widget.currentSelection.description,
+                      maxLines: 100,
+                      textAlign: TextAlign.start,
+                      style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
+                              ResponsiveWrapper.of(context)
+                                  .isSmallerThan(DESKTOP)
                           ? AppStyles.roboto10
-                          : AppStyles.roboto14,
+                          : ResponsiveWrapper.of(context)
+                                  .isSmallerThan("BP-FOR-MOBILE")
+                              ? AppStyles.roboto10
+                              : AppStyles.roboto14,
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -9,11 +9,14 @@ class AppStyles {
   static const roboto20 = TextStyle(fontSize: 20.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto20Bold = TextStyle(fontSize: 20.0, fontFamily: "Roboto", fontWeight: FontWeight.w700,  color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto20Colored = TextStyle(fontSize: 20.0, fontFamily: "Roboto", color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
+  static const roboto20ColoredBold = TextStyle(fontSize: 20.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto18 = TextStyle(fontSize: 18.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto18Bold = TextStyle(fontSize: 18.0, fontFamily: "Roboto", fontWeight: FontWeight.w700,  color: Colors.white, overflow: TextOverflow.ellipsis);
+  static const roboto18ColoredBold = TextStyle(fontSize: 18.0, fontFamily: "Roboto", fontWeight: FontWeight.w700,  color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto14 = TextStyle(fontSize: 14.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto14Colored = TextStyle(fontSize: 14.0, fontFamily: "Roboto", color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto14Bold = TextStyle(fontSize: 14.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
+  static const roboto14ColoredBold = TextStyle(fontSize: 14.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto10 = TextStyle(fontSize: 10.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto10Bold = TextStyle(fontSize: 10.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
 
