@@ -23,6 +23,7 @@ class _MainAppWidgetState extends State<MainAppWidget> {
         minWidth: 480,
         defaultScale: true,
         breakpoints: [
+          const ResponsiveBreakpoint.resize(480, name: "BP-FOR-SMALL-MOBILE"),
           const ResponsiveBreakpoint.resize(500, name: MOBILE),
           const ResponsiveBreakpoint.resize(550, name: "BP-FOR-MOBILE"),
           const ResponsiveBreakpoint.autoScale(800, name: TABLET),

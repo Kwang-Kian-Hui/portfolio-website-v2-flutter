@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/core/application/experience_class.dart';
+import 'package:flutter_portfolio_website/core/application/education_class.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:flutter_portfolio_website/core/shared/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -35,9 +35,9 @@ class EmptySelectionEduState extends ConsumerState<EmptySelectionEdu> {
             child: const Text("Click or drag and drop to view", maxLines: 3, style: AppStyles.roboto14),
           ),
         ),
-        DragTarget<ExperienceClass>(
+        DragTarget<EducationClass>(
           onAccept: (droppedIndex) {
-            ref.read(selectedExperienceIndexProvider.notifier).change(droppedIndex.index);
+            ref.read(selectedEducationIndexProvider.notifier).change(droppedIndex.index);
           },
           onWillAccept: (droppedData) {
             if(droppedData != null){

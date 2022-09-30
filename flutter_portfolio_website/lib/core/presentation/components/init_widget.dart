@@ -62,12 +62,10 @@ class _InitWidgetState extends State<InitWidget>
             cursor: SystemMouseCursors.click,
             onEnter: (pointerEvent) {
               particleTypeIndex = 1;
-              print("1");
               setState(() {});
             },
             onExit: (pointerEvent) {
               particleTypeIndex = 0;
-              print("0");
               setState(() {});
             },
             child: ResponsiveRowColumn(

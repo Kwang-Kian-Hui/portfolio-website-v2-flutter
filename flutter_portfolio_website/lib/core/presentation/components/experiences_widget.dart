@@ -63,8 +63,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                 children: [
                   Positioned(
                     top: 90,
-                    left: 100,
-                    right: 100,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
                     child: SizedBox(
                       height: 10.0,
                       child: Center(
@@ -79,8 +79,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 100,
-                    left: 100,
-                    right: 100,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
                     child: SizedBox(
                       height: 10.0,
                       child: Center(
@@ -95,7 +95,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    left: 70,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 50 : 70,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -111,7 +111,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    left: 80,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 80,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -143,7 +143,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 180,
-                    left: 47.5,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
                     child: Draggable<ExperienceClass>(
                       data: expClassList[0],
                       feedback: const LogoWidget(
@@ -163,7 +163,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 250,
-                    left: 47.5,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
                     child: Draggable<ExperienceClass>(
                       data: expClassList[1],
                       feedback: const LogoWidget(
@@ -183,7 +183,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 320,
-                    left: 47.5,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
                     child: Draggable<ExperienceClass>(
                       data: expClassList[2],
                       feedback: const LogoWidget(
@@ -204,9 +204,9 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     ),
                   ),
                   Positioned(
-                    left: 130,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 100 : 130,
                     top: 150,
-                    right: 100,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 100,
                     child: Card(
                       elevation: 5,
                       shape: RoundedRectangleBorder(

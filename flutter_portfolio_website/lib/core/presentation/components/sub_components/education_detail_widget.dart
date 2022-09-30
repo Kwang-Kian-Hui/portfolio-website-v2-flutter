@@ -24,23 +24,6 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
       children: [
         Row(
           children: [
-            DragTarget<EducationClass>(
-              onAccept: (droppedIndex) {
-                ref
-                    .read(selectedExperienceIndexProvider.notifier)
-                    .change(droppedIndex.index);
-              },
-              onWillAccept: (droppedData) {
-                if (droppedData != null) {
-                  return true;
-                }
-                return false;
-              },
-              builder: (context, candidateData, rejectedData) => LogoWidget(
-                logoImagePath: widget.currentSelection.imagePath,
-                hasBackground: widget.currentSelection.hasBackground,
-              ),
-            ),
             Expanded(
               child: Container(
                 height: 54,
@@ -57,6 +40,23 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
                           ? AppStyles.roboto14ColoredBold
                           : AppStyles.roboto20ColoredBold,
                 ),
+              ),
+            ),
+            DragTarget<EducationClass>(
+              onAccept: (droppedIndex) {
+                ref
+                    .read(selectedEducationIndexProvider.notifier)
+                    .change(droppedIndex.index);
+              },
+              onWillAccept: (droppedData) {
+                if (droppedData != null) {
+                  return true;
+                }
+                return false;
+              },
+              builder: (context, candidateData, rejectedData) => LogoWidget(
+                logoImagePath: widget.currentSelection.imagePath,
+                hasBackground: widget.currentSelection.hasBackground,
               ),
             ),
           ],

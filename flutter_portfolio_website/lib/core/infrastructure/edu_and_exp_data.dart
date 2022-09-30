@@ -5,7 +5,7 @@ List<ExperienceClass> expClassList = [
   ExperienceClass(
       1,
       "Synpulse8",
-      "Data Engineer",
+      "Software Engineer, Analyst",
       'assets/images/synpulse8_logo.png',
       DateTime(2022, 10, 1),
       DateTime(0, 0, 0),
@@ -21,7 +21,7 @@ List<ExperienceClass> expClassList = [
       false,
       "Officially Data Intern"
           "\n\nInvolved in part of the life cycle through concept to the development of web-based dashboard Flutter application (Still in development). "
-          "\n\nGuide a small development team of junior/intern developers in developing application using MVVM architecture."
+          "\n\nGuide a small development team of fellow junior/intern developers in developing application using MVVM architecture."
           "\n\nIncorporate Figma designs into responsive functional application and provided documentation through development."
           "\n\nWork closely with backend team to establish various API endpoints to improve app performance when dealing with large volume data requests"),
   ExperienceClass(
