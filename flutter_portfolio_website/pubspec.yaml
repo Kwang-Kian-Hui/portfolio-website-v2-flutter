@@ -34,6 +34,7 @@ dependencies:
   scrollable_positioned_list: ^0.3.4 # list to allow scroll to specific item in list, BSD-3-Clause License
   dotted_border: ^2.0.0+2 # easily add dotted borders around widgets, MIT License
   intl: ^0.17.0 # date format etc, BSD-3-Clause
+  animated_background: ^2.0.0 # background animations, MIT License
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

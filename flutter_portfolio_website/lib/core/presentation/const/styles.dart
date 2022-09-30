@@ -4,6 +4,8 @@ class AppStyles {
   static const webBorderPadding = 60.0;
   static const mobileBorderPadding = 20.0;
 
+  static const roboto30ColoredBold = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
+  static const roboto30Bold = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto25ColoredBold = TextStyle(fontSize: 25.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto25Bold = TextStyle(fontSize: 25.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto20 = TextStyle(fontSize: 20.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);
@@ -22,5 +24,10 @@ class AppStyles {
 
   static const courgette20 = TextStyle(fontSize: 20.0, fontFamily: "Courgette", color: Colors.white, overflow: TextOverflow.ellipsis);
   static const courgette20Colored = TextStyle(fontSize: 20.0, fontFamily: "Courgette", color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
+
+  static const courgette30 = TextStyle(fontSize: 30.0, fontFamily: "Courgette", color: Colors.white, overflow: TextOverflow.ellipsis);
+  static const courgette30Colored = TextStyle(fontSize: 30.0, fontFamily: "Courgette", color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
+  static const courgette30Bold = TextStyle(fontSize: 30.0, fontFamily: "Courgette", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
+  static const courgette30ColoredBold = TextStyle(fontSize: 30.0, fontFamily: "Courgette", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   // static const courgette20 = TextStyle(fontSize: 20.0, fontFamily: "Courgette", color: Colors.white,);
 }
