@@ -270,7 +270,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    right: 70,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 50 : 70,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -286,7 +286,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    right: 80,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 80,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -319,7 +319,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 180,
-                    right: 47.5,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
                     child: Draggable<EducationClass>(
                       data: eduClassList[0],
                       feedback: const LogoWidget(
@@ -338,7 +338,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 250,
-                    right: 47.5,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
                     child: Draggable<EducationClass>(
                       data: eduClassList[1],
                       feedback: const LogoWidget(
@@ -356,9 +356,9 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     ),
                   ),
                   Positioned(
-                    left: 100,
+                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 100,
                     top: 150,
-                    right: 130,
+                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 100 : 130,
                     child: Card(
                       elevation: 5,
                       shape: RoundedRectangleBorder(

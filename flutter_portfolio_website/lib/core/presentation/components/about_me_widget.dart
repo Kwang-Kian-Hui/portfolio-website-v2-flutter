@@ -134,11 +134,11 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                     ),
                     Positioned(
                       left: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
-                          ? 50
+                          ? 30
                           : 130,
                       top: 150,
                       right: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
-                          ? 50
+                          ? 30
                           : 100,
                       child: Card(
                         elevation: 5,
@@ -175,7 +175,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                                 SizedBox(
                                   width: double.infinity,
                                   child: Text(
-                                    "Things I do to relieve stress: gaming, running, hiking, gardening(just 3 indoor plants)",
+                                    "Things I do to relieve stress: gaming, running/hiking/cycling and gardening(just me and my 3 indoor plants)",
                                     maxLines: 35,
                                     style: AppStyles.roboto14,
                                   ),

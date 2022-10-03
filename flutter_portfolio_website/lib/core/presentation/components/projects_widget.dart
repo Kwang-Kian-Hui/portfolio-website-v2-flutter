@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/sub_components/project_selector_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class ProjectsWidget extends StatefulWidget {
   const ProjectsWidget({Key? key}) : super(key: key);
@@ -11,7 +14,92 @@ class _ProjectsWidgetState extends State<ProjectsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height,
-        child: const Center(child: Text("Projects", style: TextStyle(fontSize: 72, color: Colors.white))));
+      height: ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
+          ? MediaQuery.of(context).size.height * 2
+          : MediaQuery.of(context).size.height,
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 30),
+            height: 100,
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text("What I've", style: AppStyles.roboto25Bold),
+                Text(" Done", style: AppStyles.roboto25ColoredBold),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ResponsiveRowColumn(
+              layout:
+                  ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
+                      ? ResponsiveRowColumnType.COLUMN
+                      : ResponsiveRowColumnType.ROW,
+              rowMainAxisAlignment: MainAxisAlignment.spaceAround,
+              columnMainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ResponsiveRowColumnItem(
+                  child: Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: ResponsiveWrapper.of(context)
+                                .isSmallerThan("MINI-DESKTOP")
+                            ? 30
+                            : 15,
+                        left: 30,
+                        bottom: ResponsiveWrapper.of(context)
+                                .isSmallerThan("MINI-DESKTOP") ? 30 : 100,
+                      ),
+                      child: Card(
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: const Color(0xff292929),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const ProjectSelectorWidget(),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                ResponsiveRowColumnItem(
+                  child: Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: ResponsiveWrapper.of(context)
+                                .isSmallerThan("MINI-DESKTOP")
+                            ? 30
+                            : 15,
+                        right: 30,
+                        bottom: 100,
+                      ),
+                      child: Card(
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: const Color(0xff292929),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

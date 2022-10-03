@@ -32,10 +32,10 @@ class _InitWidgetState extends State<InitWidget>
   static ParticleOptions hoverParticles = const ParticleOptions(
     baseColor: Color(0xffF58C82),
     spawnOpacity: 0.0,
-    opacityChangeRate: 1,
+    opacityChangeRate: 0.25,
     minOpacity: 0.5,
     maxOpacity: 0.7,
-    particleCount: 30,
+    particleCount: 50,
     spawnMaxRadius: 30.0,
     spawnMinRadius: 14.0,
     spawnMaxSpeed: 10.0,
