@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/core/infrastructure/projects_data.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:flutter_portfolio_website/core/shared/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,12 +12,14 @@ class ProjectSelectorWidget extends ConsumerStatefulWidget {
 }
 
 class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
+  ScrollController projectSelectorScrollController = ScrollController();
+
   List<Widget> emptyList = [
     Container(
       height: 40,
       width: 250,
       alignment: Alignment.center,
-      child: const Text("Select a category to view projects",
+      child: const Text("Select a category to filter projects",
           style: AppStyles.roboto14),
     ),
   ];
@@ -440,151 +443,198 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
       ),
     ];
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Container(
-          height: 50,
-          alignment: Alignment.center,
-          child: const Text("Categories", style: AppStyles.roboto18Bold),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: Wrap(
-            alignment: WrapAlignment.spaceAround,
-            children: [
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                    if (ref.read(selectedProjectIndexProvider) == 0) {
-                      ref.read(selectedProjectIndexProvider.notifier).change(3);
-                    } else {
-                      ref.read(selectedProjectIndexProvider.notifier).change(0);
-                    }
-                  },
-                  child: Card(
-                    elevation: 5,
-                    color: const Color(0xff222222),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    shadowColor: ref.watch(selectedProjectIndexProvider) == 0
-                        ? const Color(0xffF58C82)
-                        : null,
-                    child: Container(
-                      height: 50,
-                      width: 100,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.transparent,
-                        ),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Text(
-                        "Tech Stacks",
-                        style: ref.watch(selectedProjectIndexProvider) == 0
-                            ? AppStyles.roboto14ColoredBold
-                            : AppStyles.roboto14,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                    if (ref.read(selectedProjectIndexProvider) == 1) {
-                      ref.read(selectedProjectIndexProvider.notifier).change(3);
-                    } else {
-                      ref.read(selectedProjectIndexProvider.notifier).change(1);
-                    }
-                  },
-                  child: Card(
-                    elevation: 5,
-                    color: const Color(0xff222222),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    shadowColor: ref.watch(selectedProjectIndexProvider) == 1
-                        ? const Color(0xffF58C82)
-                        : null,
-                    child: Container(
-                      height: 50,
-                      width: 100,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.transparent,
-                        ),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Text(
-                        "Languages",
-                        style: ref.watch(selectedProjectIndexProvider) == 1
-                            ? AppStyles.roboto14ColoredBold
-                            : AppStyles.roboto14,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                    if (ref.read(selectedProjectIndexProvider) == 2) {
-                      ref.read(selectedProjectIndexProvider.notifier).change(3);
-                    } else {
-                      ref.read(selectedProjectIndexProvider.notifier).change(2);
-                    }
-                  },
-                  child: Card(
-                    elevation: 5,
-                    color: const Color(0xff222222),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    shadowColor: ref.watch(selectedProjectIndexProvider) == 2
-                        ? const Color(0xffF58C82)
-                        : null,
-                    child: Container(
-                      height: 50,
-                      width: 100,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.transparent,
-                        ),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Text(
-                        "Project Types",
-                        style: ref.watch(selectedProjectIndexProvider) == 2
-                            ? AppStyles.roboto14ColoredBold
-                            : AppStyles.roboto14,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+    return SingleChildScrollView(
+      controller: projectSelectorScrollController,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            height: 50,
+            alignment: Alignment.center,
+            child: const Text("Categories", style: AppStyles.roboto18Bold),
           ),
-        ),
-        const SizedBox(height: 10),
-        Wrap(
-          alignment: WrapAlignment.spaceAround,
-          children: ref.watch(selectedProjectIndexProvider) == 0
-              ? techStackList
-              : ref.watch(selectedProjectIndexProvider) == 1
-                  ? languagesList
-                  : ref.watch(selectedProjectIndexProvider) == 2
-                      ? projectTypeList
-                      : emptyList,
-        ),
-      ],
+          Container(
+            alignment: Alignment.center,
+            child: Wrap(
+              alignment: WrapAlignment.spaceAround,
+              children: [
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      if (ref.read(selectedProjectIndexProvider) == 0) {
+                        ref.read(selectedProjectIndexProvider.notifier).change(3);
+                      } else {
+                        ref.read(selectedProjectIndexProvider.notifier).change(0);
+                      }
+                    },
+                    child: Card(
+                      elevation: 5,
+                      color: const Color(0xff222222),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadowColor: ref.watch(selectedProjectIndexProvider) == 0
+                          ? const Color(0xffF58C82)
+                          : null,
+                      child: Container(
+                        height: 50,
+                        width: 100,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.transparent,
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Text(
+                          "Tech Stacks",
+                          style: ref.watch(selectedProjectIndexProvider) == 0
+                              ? AppStyles.roboto14ColoredBold
+                              : AppStyles.roboto14,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      if (ref.read(selectedProjectIndexProvider) == 1) {
+                        ref.read(selectedProjectIndexProvider.notifier).change(3);
+                      } else {
+                        ref.read(selectedProjectIndexProvider.notifier).change(1);
+                      }
+                    },
+                    child: Card(
+                      elevation: 5,
+                      color: const Color(0xff222222),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadowColor: ref.watch(selectedProjectIndexProvider) == 1
+                          ? const Color(0xffF58C82)
+                          : null,
+                      child: Container(
+                        height: 50,
+                        width: 100,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.transparent,
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Text(
+                          "Languages",
+                          style: ref.watch(selectedProjectIndexProvider) == 1
+                              ? AppStyles.roboto14ColoredBold
+                              : AppStyles.roboto14,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      if (ref.read(selectedProjectIndexProvider) == 2) {
+                        ref.read(selectedProjectIndexProvider.notifier).change(3);
+                      } else {
+                        ref.read(selectedProjectIndexProvider.notifier).change(2);
+                      }
+                    },
+                    child: Card(
+                      elevation: 5,
+                      color: const Color(0xff222222),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadowColor: ref.watch(selectedProjectIndexProvider) == 2
+                          ? const Color(0xffF58C82)
+                          : null,
+                      child: Container(
+                        height: 50,
+                        width: 100,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.transparent,
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Text(
+                          "Project Types",
+                          style: ref.watch(selectedProjectIndexProvider) == 2
+                              ? AppStyles.roboto14ColoredBold
+                              : AppStyles.roboto14,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Wrap(
+            alignment: WrapAlignment.spaceAround,
+            children: ref.watch(selectedProjectIndexProvider) == 0
+                ? techStackList
+                : ref.watch(selectedProjectIndexProvider) == 1
+                    ? languagesList
+                    : ref.watch(selectedProjectIndexProvider) == 2
+                        ? projectTypeList
+                        : emptyList,
+          ),
+          Container(
+            height: 50,
+            alignment: Alignment.center,
+            child: const Text("Projects", style: AppStyles.roboto18Bold),
+          ),
+          Wrap(
+              alignment: WrapAlignment.spaceAround,
+              children: List.generate(
+                projectList.length,
+                (index) => MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if(ref.read(selectedProjectDetailIndexProvider) - 1 == index){
+                        ref.read(selectedProjectDetailIndexProvider.notifier).change(0);
+                      } else {
+                        ref.read(selectedProjectDetailIndexProvider.notifier).change(index + 1);
+                      }
+                      });
+                    },
+                    child: Card(
+                      elevation: 5,
+                      color: const Color(0xff222222),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadowColor: ref.watch(selectedProjectDetailIndexProvider) - 1 == index
+                          ? const Color(0xffF58C82)
+                          : null,
+                      child: Container(
+                        height: 40,
+                        width: 200,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(projectList[index].shortTitle),
+                      ),
+                    ),
+                  ),
+                ),
+              ),),
+              const SizedBox(height: 30),
+        ],
+      ),
     );
   }
 }

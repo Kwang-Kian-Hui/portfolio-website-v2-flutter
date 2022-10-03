@@ -33,7 +33,7 @@ List<ExperienceClass> expClassList = [
       DateTime(2017, 3, 30),
       true,
       "Develop excel spreadsheets with macros to improve efficiency in generating and editing AGM and other forms,"
-          "reducing time required from half a day to 1 hour per form."
+          " reducing time required from half a day to 1 hour per form."
           "\n\nMeeting and presenting company's services to prospective clients."
           "\n\nConduct training on using macros of various spreadsheets for colleagues."),
 ];
@@ -47,7 +47,7 @@ List<EducationClass> eduClassList = [
       DateTime(2022, 9, 30),
       "Pending results (On track for First Class Honours)",
       "Module projects: Traffic Monitoring with OpenCV; Speech Recognition with p5.js (Meyda) and Mozilla DeepSpeech; Web and Mobile Application; and more."
-      "\n\nFinal Year Project: Auto Time Scheduling Mobile App."
+      "\n\nFinal Year Project: Automatic Time Scheduler (Mobile App)."
       "\n\nRead more about my projects in the projects section.",
       'assets/images/sim_logo.png',
       true),

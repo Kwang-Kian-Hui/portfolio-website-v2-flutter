@@ -11,6 +11,8 @@ final selectedTechStackIndexProvider = StateNotifierProvider<IntegerProvider, in
 final selectedLanguagesIndexProvider = StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(5));
 final selectedProjectTypeIndexProvider = StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(4));
 
+final selectedProjectDetailIndexProvider = StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(0));
+
 class ScrollControllerProvider extends StateNotifier<ItemScrollController> {
   ScrollControllerProvider() : super(ItemScrollController());
   void scrollToIndex(int index) => state.scrollTo(index: index, duration: const Duration(milliseconds: 800), curve: Curves.decelerate);
