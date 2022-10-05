@@ -4,9 +4,7 @@ List<Project> projectList = [
   Project(
     "Traffic Monitoring System (OpenCV)",
     "Traffic Monitoring",
-    ["Others"],
-    ["Python"],
-    ["Others"],
+    ["Python, Others"],
     "Project Requirements:"
         "\n\nThe application must run on a Jupyter notebook written in Python and use the OpenCV library. Technically, the algorithm of the "
         "application must be based on the frame differencing and background subtraction techniques."
@@ -41,9 +39,7 @@ List<Project> projectList = [
   Project(
     "Social Networking Web Application (Django)",
     "SocialNetApp",
-    ["Frontend", "Backend", "Data"],
-    ["Python", "HTML/CSS", "JavaScript"],
-    ["Web/Mobile"],
+    ["Frontend", "Backend", "Data", "Python", "HTML/CSS", "JavaScript", "Web/Mobile"],
     "Project Description:"
         "\n\nImplement your own social network web application."
         "\n\nRequirements:"
@@ -87,9 +83,7 @@ List<Project> projectList = [
   Project(
     "Portfolio Website 1 (HTML/CSS/JS)",
     "Portfolio Website 1",
-    ["Frontend"],
-    ["HTML/CSS", "JavaScript"],
-    ["Web/Mobile"],
+    ["Frontend", "HTML/CSS", "JavaScript", "Web/Mobile"],
     "Project Description:"
         "\n\nA personal portfolio website completed with the help of some online tutorial guides. Includes SVG + CSS animation. Javascript for state management and navigation.",
     "",
@@ -105,9 +99,7 @@ List<Project> projectList = [
   Project(
     "Portfolio Website 2 (Flutter)",
     "Portfolio Website 2",
-    ["Frontend"],
-    ["Dart"],
-    ["Web/Mobile"],
+    ["Frontend", "Dart", "Web/Mobile"],
     "Project Description:"
         "\n\nA different portfolio website done using Flutter. Design inspiration acquired from various sources."
         "\nDid a different portfolio website as the previous portfolio website is done with the help of an online guide, it did not felt like it was a true 'personal' portfolio website",
@@ -129,9 +121,7 @@ List<Project> projectList = [
   Project(
     "Speech Recognition System (Mozilla DeepSpeech)",
     "Speech Recognition System",
-    ["Others"],
-    ["Python"],
-    ["Web/Mobile"],
+    ["Others", "Python", "Web/Mobile"],
     "Project Description:"
         "\n\nA software development company has contacted you to create a speech recognition system to integrate in a Python project they are developing. In particular, the project consists of an airport virtual assistant."
         "\n\nRequirements:"
@@ -160,9 +150,7 @@ List<Project> projectList = [
   Project(
     "Audio Visualization with MeydaAnalyzer and Speech Recognition (p5.js)",
     "Meyda Speech Command",
-    ["Others"],
-    ["JavaScript"],
-    ["Others"],
+    ["Others", "JavaScript"],
     "Project Description:"
         "\n\nDevelop an interactive web-based application for audio visualization. The application must be based on p5.js, p5.speech and the JavaScript audio feature extraction library Meyda."
         "\n\nRequirements:"
@@ -187,9 +175,7 @@ List<Project> projectList = [
   Project(
     "Video Format Converter with ffmpeg",
     "Video Format Converter",
-    ["Others"],
-    ["Python"],
-    ["Others"],
+    ["Others", "Python"],
     "Project Description:"
         "\n\nThe Narbonne Online Film Festival receives every year more than one hundred films in digital format. The problem is that some of these films are not submitted in the format specified by the festival organisation, and they must be converted. The organisation wants to automate this process by developing an application (exercise 3) for examining the format of the films and, if necessary, convert them."
         "\n\nRequirements:"
@@ -213,9 +199,7 @@ List<Project> projectList = [
   Project(
     "Location Alarm (Android, Flutter)",
     "Location Alarm (Flutter)",
-    ["Frontend", "Data"],
-    ["Dart"],
-    ["Web/Mobile"],
+    ["Frontend", "Data", "Dart", "Web/Mobile"],
     "Project Description:"
         "\n\nLocation Alarm is an app that allow users to create an alarm with a set destination and radius, and when their devices are within the radius of their destination, the alarm will ring. This app uses the Map and Places API of Google Cloud Platform for the map features and address suggestions when users are searching for their destination. Some android devices are unable to receive background location updates due to the device's battery saving processes."
         "\n\nKey Takeaways:"
@@ -245,9 +229,7 @@ List<Project> projectList = [
   Project(
     "DEALL (Android, Flutter)",
     "DEALL (Flutter)",
-    ["Frontend", "Data"],
-    ["Dart"],
-    ["Web/Mobile"],
+    ["Frontend", "Data", "Dart", "Web/Mobile"],
     "Project Description:"
         "\n\nDEALL is a mobile platform that allow food retailers to list their surplus food on discount, while consumers can view them, with the goal of reducing food waste in the process."
         "\n\nWork done by me in this group assignment:"
@@ -272,9 +254,7 @@ List<Project> projectList = [
   Project(
     "p5.js Projects",
     "p5.js Projects",
-    ["Frontend"],
-    ["JavaScript"],
-    ["Web/Mobile", "Others"],
+    ["Frontend", "JavaScript", "Web/Mobile", "Others"],
     "Project Description:"
         "\n\nA series of assignments using p5.js to create games, animations or graphical effects."
         "\n\nProjects:"
@@ -307,9 +287,7 @@ List<Project> projectList = [
   Project(
     "MerkelRexBot(C++) - Crypto Trading Bot",
     "Crypto Trading Bot",
-    ["Others"],
-    ["C++"],
-    ["Predictive Analytics"],
+    ["Others", "C++", "Predictive Analytics"],
     "Project Description:"
         "\n\nMerkelRexBot is a command-line UI exchange simulation which allows a human to carry out market analysis and trading activities such as bidding for and offering trades. However, it also has the capability to make trades in the place of human users. Linear regression was performed on a group of sample data to generate the prediction model. Trades will then be made based on the predictions.",
     "",
@@ -330,9 +308,7 @@ List<Project> projectList = [
   Project(
     "Otodecks(C++) - Music Library Mixer",
     "Crypto Trading Bot",
-    ["Others"],
-    ["C++"],
-    ["Others"],
+    ["Others", "C++"],
     "Project Description:"
         "\n\nA Music Library Mixer with custom GUI. Mp3 files may be loaded onto the track and we can search for tracks using the search bar. Allows 2 audio files to be played at the same time with controls such as play, stop, fast forward, back track, volume, speed, audio position, replay and looping.",
     "",
@@ -349,9 +325,7 @@ List<Project> projectList = [
   Project(
     "Data Programming Research",
     "Data Analytics",
-    ["Others"],
-    ["Python"],
-    ["Data Analytics"],
+    ["Others", "Python", "Data Analytics"],
     "Project Description:"
         "\n\nThe project's research is on \"Correlation between key variables of the countries' happiness index and COVID-19 vaccinations\". 2 relevant csv data files were downloaded, and web scraping was performed with BeautifulSoup to extract key data. The dataframes were merged along with the web scraped data to form a single large dataframe. Data cleaning and transformation was then performed before analysis takes place. Bar chart, Sunburst chart and Heatmap charts were produced and analysed to construct my final findings.",
     "",
@@ -370,9 +344,7 @@ List<Project> projectList = [
   Project(
     "Multiclass Classification with KNN Cross Validation",
     "KNN Cross Validation",
-    ["Others"],
-    ["Python"],
-    ["Data Analytics, Predictive Analytics"],
+    ["Others", "Python", "Data Analytics, Predictive Analytics"],
     "Project Description:"
         "\n\nIn this coursework, the Wine dataset (178 sample dataset that categorises 3 different types of Italian wine using 13 different features) is used."
         "We will need to present our own code that performs nested cross-validation and the k-nearest neighbour algorithm, build confusion matrices, and estimate distances between data samples."
@@ -406,9 +378,7 @@ List<Project> projectList = [
   Project(
     "Multiclass Classification (Sign Language MNIST)",
     "Classification with ML Models",
-    ["Others"],
-    ["Python"],
-    ["Data Analytics"],
+    ["Others", "Python", "Data Analytics"],
     "Project Description:"
         "\n\nIn this coursework, the Sign Language MNIST dataset (27455 training, 7172 testing dataset, 28x28 pixel image, 24 labels representing each alphabet where J and Z is not included as it requires motion (unable to represent in 1 image)) is used."
         "\n\n1) Data Preparation - Converting data into tensors:"
@@ -440,9 +410,7 @@ List<Project> projectList = [
   Project(
     "Automatic Time Scheduler - Mobile App (Flutter)",
     "Automatic Time Scheduler",
-    ["Frontend", "Data"],
-    ["Python"],
-    ["Data Analytics"],
+    ["Frontend", "Data", "Dart", "Data Analytics"],
     "Project Description:"
         "\n\nThis app helps to schedule tasks for users based on deadline priorities. Users are able to set several personalization settings such as working hours, break hours, and days that they are working on."
         "Tasks will not be scheduled on non working hours including breaks."

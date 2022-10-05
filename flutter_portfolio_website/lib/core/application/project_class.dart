@@ -1,9 +1,7 @@
 class Project {
   final String title;
   final String shortTitle;
-  final List<String> techStackCategories;
-  final List<String> languageCategories;
-  final List<String> projectTypeCategories;
+  final List<String> categories;
   final String description;
   final String? additionalInfo;
   final DateTime date;
@@ -13,5 +11,5 @@ class Project {
   final String? futureWork;
   final List<String> listOfImagePaths;
 
-  Project(this.title, this.shortTitle, this.techStackCategories, this.languageCategories, this.projectTypeCategories, this.description, this.additionalInfo, this.date, this.githubLink, this.prototypeLink1, this.prototypeLink2, this.futureWork, this.listOfImagePaths);
+  Project(this.title, this.shortTitle, this.categories, this.description, this.additionalInfo, this.date, this.githubLink, this.prototypeLink1, this.prototypeLink2, this.futureWork, this.listOfImagePaths);
 }
