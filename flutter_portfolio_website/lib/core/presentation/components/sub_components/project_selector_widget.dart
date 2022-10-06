@@ -25,12 +25,12 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
     ),
   ];
 
-  bool containsCategory(Project currentProject, List<String> categoryList){
-    if(categoryList.isEmpty){
+  bool containsCategory(Project currentProject, List<String> categoryList) {
+    if (categoryList.isEmpty) {
       return true;
     }
     for (var element in currentProject.categories) {
-      if(categoryList.contains(element)){
+      if (categoryList.contains(element)) {
         return true;
       }
     }
@@ -46,34 +46,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedTechStackIndexProvider) == 0) {
               ref.read(selectedTechStackIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Frontend");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Frontend");
             } else {
               ref.read(selectedTechStackIndexProvider.notifier).change(0);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Frontend");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Frontend");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedTechStackIndexProvider) == 0
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Frontend",
-                style: ref.watch(selectedTechStackIndexProvider) == 0
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedTechStackIndexProvider) == 0
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Frontend",
+                  style: ref.watch(selectedTechStackIndexProvider) == 0
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -85,34 +92,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedTechStackIndexProvider) == 1) {
               ref.read(selectedTechStackIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Backend");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Backend");
             } else {
               ref.read(selectedTechStackIndexProvider.notifier).change(1);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Backend");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Backend");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedTechStackIndexProvider) == 1
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Backend",
-                style: ref.watch(selectedTechStackIndexProvider) == 1
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedTechStackIndexProvider) == 1
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Backend",
+                  style: ref.watch(selectedTechStackIndexProvider) == 1
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -124,34 +138,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedTechStackIndexProvider) == 2) {
               ref.read(selectedTechStackIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Data");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Data");
             } else {
               ref.read(selectedTechStackIndexProvider.notifier).change(2);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Data");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Data");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedTechStackIndexProvider) == 2
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Data",
-                style: ref.watch(selectedTechStackIndexProvider) == 2
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedTechStackIndexProvider) == 2
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Data",
+                  style: ref.watch(selectedTechStackIndexProvider) == 2
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -163,34 +184,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedTechStackIndexProvider) == 3) {
               ref.read(selectedTechStackIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Others");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Others");
             } else {
               ref.read(selectedTechStackIndexProvider.notifier).change(3);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Others");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Others");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedTechStackIndexProvider) == 3
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Others",
-                style: ref.watch(selectedTechStackIndexProvider) == 3
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedTechStackIndexProvider) == 3
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Others",
+                  style: ref.watch(selectedTechStackIndexProvider) == 3
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -205,34 +233,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedLanguagesIndexProvider) == 0) {
               ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Dart");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Dart");
             } else {
               ref.read(selectedLanguagesIndexProvider.notifier).change(0);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Dart");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Dart");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedLanguagesIndexProvider) == 0
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Dart",
-                style: ref.watch(selectedLanguagesIndexProvider) == 0
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedLanguagesIndexProvider) == 0
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Dart",
+                  style: ref.watch(selectedLanguagesIndexProvider) == 0
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -244,34 +279,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedLanguagesIndexProvider) == 1) {
               ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Python");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Python");
             } else {
               ref.read(selectedLanguagesIndexProvider.notifier).change(1);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Python");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Python");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedLanguagesIndexProvider) == 1
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Python",
-                style: ref.watch(selectedLanguagesIndexProvider) == 1
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedLanguagesIndexProvider) == 1
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Python",
+                  style: ref.watch(selectedLanguagesIndexProvider) == 1
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -283,34 +325,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedLanguagesIndexProvider) == 2) {
               ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("JavaScript");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("JavaScript");
             } else {
               ref.read(selectedLanguagesIndexProvider.notifier).change(2);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("JavaScript");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("JavaScript");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedLanguagesIndexProvider) == 2
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "JavaScript",
-                style: ref.watch(selectedLanguagesIndexProvider) == 2
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedLanguagesIndexProvider) == 2
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "JavaScript",
+                  style: ref.watch(selectedLanguagesIndexProvider) == 2
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -322,34 +371,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedLanguagesIndexProvider) == 3) {
               ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("HTML/CSS");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("HTML/CSS");
             } else {
               ref.read(selectedLanguagesIndexProvider.notifier).change(3);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("HTML/CSS");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("HTML/CSS");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedLanguagesIndexProvider) == 3
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "HTML/CSS",
-                style: ref.watch(selectedLanguagesIndexProvider) == 3
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedLanguagesIndexProvider) == 3
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "HTML/CSS",
+                  style: ref.watch(selectedLanguagesIndexProvider) == 3
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -361,34 +417,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedLanguagesIndexProvider) == 4) {
               ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("C++");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("C++");
             } else {
               ref.read(selectedLanguagesIndexProvider.notifier).change(4);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("C++");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("C++");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedLanguagesIndexProvider) == 4
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "C++",
-                style: ref.watch(selectedLanguagesIndexProvider) == 4
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedLanguagesIndexProvider) == 4
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "C++",
+                  style: ref.watch(selectedLanguagesIndexProvider) == 4
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -403,34 +466,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedProjectTypeIndexProvider) == 0) {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Web/Mobile");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Web/Mobile");
             } else {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(0);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Web/Mobile");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Web/Mobile");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 0
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Web/Mobile",
-                style: ref.watch(selectedProjectTypeIndexProvider) == 0
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 0
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Web/Mobile",
+                  style: ref.watch(selectedProjectTypeIndexProvider) == 0
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -442,36 +512,43 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedProjectTypeIndexProvider) == 1) {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Data Analytics");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Data Analytics");
             } else {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(1);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Data Analytics");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Data Analytics");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 1
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Data Analytics",
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: ref.watch(selectedProjectTypeIndexProvider) == 1
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 1
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Data Analytics",
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: ref.watch(selectedProjectTypeIndexProvider) == 1
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -483,36 +560,43 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedProjectTypeIndexProvider) == 2) {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Predictive Analytics");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Predictive Analytics");
             } else {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(2);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Predictive Analytics");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Predictive Analytics");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 2
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Predictive Analytics",
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: ref.watch(selectedProjectTypeIndexProvider) == 2
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 2
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Predictive Analytics",
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: ref.watch(selectedProjectTypeIndexProvider) == 2
+                      ? AppStyles.roboto14ColoredBold
+                      : AppStyles.roboto14,
+                ),
               ),
             ),
           ),
@@ -524,34 +608,41 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           onTap: () {
             if (ref.read(selectedProjectTypeIndexProvider) == 3) {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(4);
-              ref.read(selectedProjectFiltersProvider.notifier).removeElement("Others");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .removeElement("Others");
             } else {
               ref.read(selectedProjectTypeIndexProvider.notifier).change(3);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
-              ref.read(selectedProjectFiltersProvider.notifier).addElement("Others");
+              ref
+                  .read(selectedProjectFiltersProvider.notifier)
+                  .addElement("Others");
             }
           },
-          child: Card(
-            elevation: 5,
-            color: const Color(0xff222222),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 3
-                ? const Color(0xffF58C82)
-                : null,
-            child: Container(
-              height: 40,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 4),
+            child: Card(
+              elevation: 5,
+              color: const Color(0xff222222),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              alignment: Alignment.center,
-              child: Text(
-                "Others",
-                style: ref.watch(selectedProjectTypeIndexProvider) == 3
-                    ? AppStyles.roboto14ColoredBold
-                    : AppStyles.roboto14,
+              shadowColor: ref.watch(selectedProjectTypeIndexProvider) == 3
+                  ? const Color(0xffF58C82)
+                  : null,
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Others",
+                  style: ref.watch(selectedProjectTypeIndexProvider) == 3
+                      ? AppStyles.roboto12ColoredBold
+                      : AppStyles.roboto12,
+                ),
               ),
             ),
           ),
@@ -587,9 +678,18 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
                             .read(selectedProjectIndexProvider.notifier)
                             .change(0);
                       }
-                      ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-                      ref.read(selectedProjectTypeIndexProvider.notifier).change(4);
-                      ref.read(selectedProjectFiltersProvider.notifier).resetList();
+                      ref
+                          .read(selectedTechStackIndexProvider.notifier)
+                          .change(4);
+                      ref
+                          .read(selectedLanguagesIndexProvider.notifier)
+                          .change(5);
+                      ref
+                          .read(selectedProjectTypeIndexProvider.notifier)
+                          .change(4);
+                      ref
+                          .read(selectedProjectFiltersProvider.notifier)
+                          .resetList();
                     },
                     child: Card(
                       elevation: 5,
@@ -602,7 +702,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
                           : null,
                       child: Container(
                         height: 50,
-                        width: 100,
+                        width: 125,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -633,9 +733,18 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
                             .read(selectedProjectIndexProvider.notifier)
                             .change(1);
                       }
-                      ref.read(selectedTechStackIndexProvider.notifier).change(4);
-                      ref.read(selectedProjectTypeIndexProvider.notifier).change(4);
-                      ref.read(selectedProjectFiltersProvider.notifier).resetList();
+                      ref
+                          .read(selectedTechStackIndexProvider.notifier)
+                          .change(4);
+                      ref
+                          .read(selectedLanguagesIndexProvider.notifier)
+                          .change(5);
+                      ref
+                          .read(selectedProjectTypeIndexProvider.notifier)
+                          .change(4);
+                      ref
+                          .read(selectedProjectFiltersProvider.notifier)
+                          .resetList();
                     },
                     child: Card(
                       elevation: 5,
@@ -648,7 +757,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
                           : null,
                       child: Container(
                         height: 50,
-                        width: 100,
+                        width: 125,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -679,9 +788,18 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
                             .read(selectedProjectIndexProvider.notifier)
                             .change(2);
                       }
-                      ref.read(selectedTechStackIndexProvider.notifier).change(4);
-                      ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-                      ref.read(selectedProjectFiltersProvider.notifier).resetList();
+                      ref
+                          .read(selectedTechStackIndexProvider.notifier)
+                          .change(4);
+                      ref
+                          .read(selectedLanguagesIndexProvider.notifier)
+                          .change(5);
+                      ref
+                          .read(selectedProjectTypeIndexProvider.notifier)
+                          .change(4);
+                      ref
+                          .read(selectedProjectFiltersProvider.notifier)
+                          .resetList();
                     },
                     child: Card(
                       elevation: 5,
@@ -694,7 +812,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
                           : null,
                       child: Container(
                         height: 50,
-                        width: 100,
+                        width: 125,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -735,48 +853,65 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
             alignment: WrapAlignment.spaceBetween,
             children: List.generate(
               projectList.length,
-              (index) => containsCategory(projectList[index], ref.watch(selectedProjectFiltersProvider)) ? MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (ref.read(selectedProjectDetailIndexProvider) - 1 ==
-                          index) {
-                        ref
-                            .read(selectedProjectDetailIndexProvider.notifier)
-                            .change(0);
-                      } else {
-                        ref
-                            .read(selectedProjectDetailIndexProvider.notifier)
-                            .change(index + 1);
-                      }
-                    });
-                  },
-                  child: Card(
-                    elevation: 5,
-                    color: const Color(0xff222222),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    shadowColor:
-                        ref.watch(selectedProjectDetailIndexProvider) - 1 ==
-                                index
-                            ? const Color(0xffF58C82)
-                            : null,
-                    child: Container(
-                      height: 40,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+              (index) => containsCategory(projectList[index],
+                      ref.watch(selectedProjectFiltersProvider))
+                  ? MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            if (ref.read(selectedProjectDetailIndexProvider) -
+                                    1 ==
+                                index) {
+                              ref
+                                  .read(selectedProjectDetailIndexProvider
+                                      .notifier)
+                                  .change(0);
+                            } else {
+                              ref
+                                  .read(selectedProjectDetailIndexProvider
+                                      .notifier)
+                                  .change(index + 1);
+                            }
+                          });
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 2, vertical: 4),
+                          child: Card(
+                            elevation: 5,
+                            color: const Color(0xff222222),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            shadowColor:
+                                ref.watch(selectedProjectDetailIndexProvider) -
+                                            1 ==
+                                        index
+                                    ? const Color(0xffF58C82)
+                                    : null,
+                            child: Container(
+                              height: 40,
+                              width: 175,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(
+                                projectList[index].shortTitle,
+                                style:
+                                    ref.watch(selectedProjectDetailIndexProvider) -
+                                                1 ==
+                                            index
+                                        ? AppStyles.roboto12ColoredBold
+                                        : AppStyles.roboto12,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                      alignment: Alignment.center,
-                      child: Text(projectList[index].shortTitle, style: ref.watch(selectedProjectDetailIndexProvider) - 1 == index
-                              ? AppStyles.roboto14ColoredBold
-                              : AppStyles.roboto14,),
-                    ),
-                  ),
-                ),
-              ) : const SizedBox(),
+                    )
+                  : const SizedBox(),
             ),
           ),
           const SizedBox(height: 30),

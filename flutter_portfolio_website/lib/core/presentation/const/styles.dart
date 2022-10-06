@@ -19,6 +19,8 @@ class AppStyles {
   static const roboto14Colored = TextStyle(fontSize: 14.0, fontFamily: "Roboto", color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto14Bold = TextStyle(fontSize: 14.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto14ColoredBold = TextStyle(fontSize: 14.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
+  static const roboto12 = TextStyle(fontSize: 12.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);
+  static const roboto12ColoredBold = TextStyle(fontSize: 12.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto10 = TextStyle(fontSize: 10.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto10Bold = TextStyle(fontSize: 10.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
 
