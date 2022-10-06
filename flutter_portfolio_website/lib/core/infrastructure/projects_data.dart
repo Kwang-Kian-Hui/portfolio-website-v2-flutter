@@ -9,75 +9,92 @@ List<Project> projectList = [
         "\n\nThe application must run on a Jupyter notebook written in Python and use the OpenCV library. Technically, the algorithm of the "
         "application must be based on the frame differencing and background subtraction techniques."
         "\n\nTasks:"
-        "\n1) develop an application for detecting and tracking moving cars from a camera recording. "
-        "\n2) count the number of cars to the city center(towards left of the junction based on camera recording).",
+        "\n\n1) develop an application for detecting and tracking moving cars from a camera recording. "
+        "\n\n2) count the number of cars to the city center(towards left of the junction based on camera recording).",
     "Features Completed:"
-        "\n1) Object detection achieved using background subtraction. Differentiating pedestrians, cyclists and vehicles using contour area. "
-        "\n2) Object tracking achieved using centroid of contour area. Euclidean distance between centroids of current and previous frame "
+        "\n\n1) Object detection achieved using background subtraction. Differentiating pedestrians, cyclists and vehicles using contour area. "
+        "\n\n2) Object tracking achieved using centroid of contour area. Euclidean distance between centroids of current and previous frame "
         "calculated and used to decide if they are the same vehicle."
-        "\n3) When a vehicle exits the frame, its centroid from previous frame will not be close enough to any of the centroids in current "
+        "\n\n3) When a vehicle exits the frame, its centroid from previous frame will not be close enough to any of the centroids in current "
         "frame, this is how we decide if a vehicle has exited the screen. If the positional x value of an exiting centroid is below 215 pixels "
         "(about 1/4 of the screen), we will count it as one car going towards the city center."
-        "\n4) Vertically overlapping vehicles would have their contours combined and detected as one object. Thus, I split any detected object "
+        "\n\n4) Vertically overlapping vehicles would have their contours combined and detected as one object. Thus, I split any detected object "
         "into 2 separate objects if their height is greater than 130 and area greater than 13500. This allow us to track them as 2 separate vehicles."
-        "\n5) Stopped vehicles are still detected based on the difference of the background frame and the current frame (excluding the first 2 stopped vehicles).",
+        "\n\n5) Stopped vehicles are still detected based on the difference of the background frame and the current frame (excluding the first 2 stopped vehicles).",
     DateTime(2022, 3),
     "https://github.com/Kwang-Kian-Hui/Traffic-Monitoring-System--OpenCV-",
     "",
     "",
+    "",
+    "",
+    "",
     "Future Improvements:"
-        "\n1) Vehicle direction can be determined by calculating previous and current frame's positional x value and subtracting them to "
+        "\n\n1) Vehicle direction can be determined by calculating previous and current frame's positional x value and subtracting them to "
         "determine the direction. If current frame x - previous frame x is negative, it can be said that the vehicle is going towards the city center."
-        "\n2) Improve algorithm to detecting separate objects which are too close to each other."
-        "\n3) Background subtractor fails to detect the first 2 vehicles once they have stopped at the junction due to the learning rate of the "
+        "\n\n2) Improve algorithm to detecting separate objects which are too close to each other."
+        "\n\n3) Background subtractor fails to detect the first 2 vehicles once they have stopped at the junction due to the learning rate of the "
         "background subtractor. Parameters should be optimised for them to be detected.",
     [
-      "assets/images/projects/traffic-monitoring-system/traffic_monitoring_system_img_1",
-      "assets/images/projects/traffic-monitoring-system/traffic_monitoring_system_img_2"
+      "assets/images/traffic_monitoring_system_img_1.png",
+      "assets/images/traffic_monitoring_system_img_2.png",
     ],
   ),
   Project(
-    "Social Networking Web Application (Web, Django)",
+    "Social Networking Web Application",
     "SocialNetApp",
-    ["Frontend", "Backend", "Data", "Python", "HTML/CSS", "JavaScript", "Web/Mobile"],
-    "Project Description:"
+    [
+      "Frontend",
+      "Backend",
+      "Data",
+      "Python",
+      "HTML/CSS",
+      "JavaScript",
+      "Web/Mobile"
+    ],
+    "Frontend: HTML/CSS/JS (Bootstrap)"
+        "\nBackend: Python (Django)"
+        "\nDatabase: PostgreSQL"
+        "\n\nProject Description:"
         "\n\nImplement your own social network web application."
         "\n\nRequirements:"
-        "\n1) Allow users to create new password secured accounts."
-        "\n2) Collect and store an appropriate amount of information about each user (e.g. user name, use picture)."
-        "\n3) Each user should have a home page that shows their user information and any other interesting data such as images, picture galleries or other media files. And displays user status updates. These home pages should be discoverable and visible to other users."
-        "\n4) Users should be able to post status updates to their home page."
-        "\n5) Users should be able to search for other users and “add” them to their network of contacts or friends."
-        "\n6) Users should also be able to view a list of their friends."
-        "\n7) Additionally users should be able to use a portion of the application that makes use of real time communication by using web sockets. Some examples may be realtime chat between friends, a basic computer game or media/audio streaming. You are free to use web sockets as you wish but you must include 1 web sockets app in your application.",
+        "\n\n1) Allow users to create new password secured accounts."
+        "\n\n2) Collect and store an appropriate amount of information about each user (e.g. user name, use picture)."
+        "\n\n3) Each user should have a home page that shows their user information and any other interesting data such as images, picture galleries or other media files. And displays user status updates. These home pages should be discoverable and visible to other users."
+        "\n\n4) Users should be able to post status updates to their home page."
+        "\n\n5) Users should be able to search for other users and “add” them to their network of contacts or friends."
+        "\n\n6) Users should also be able to view a list of their friends."
+        "\n\n7) Additionally users should be able to use a portion of the application that makes use of real time communication by using web sockets. Some examples may be realtime chat between friends, a basic computer game or media/audio streaming. You are free to use web sockets as you wish but you must include 1 web sockets app in your application.",
     "Features Completed:"
-        "\n1) Users may register and login to their account with an email and password."
-        "\n2) Email, username, password, profile image, date joined and last login date of user is stored in the database."
-        "\n3) User may post status on their home page and it can be viewed only by themselves or their friends. Post may or may not include an image but must have captions or texts written."
-        "\n4) User may search for other users via the search bar."
-        "\n5) Users may view a list of their friends and chats with them."
-        "\n6) Users may start a new chat with friends. Past messages will be displayed."
-        "\n7) User and friend list API written. Nested serializers used to display list of friends of a specific user.",
+        "\n\n1) Users may register and login to their account with an email and password."
+        "\n\n2) Email, username, password, profile image, date joined and last login date of user is stored in the database."
+        "\n\n3) User may post status on their home page and it can be viewed only by themselves or their friends. Post may or may not include an image but must have captions or texts written."
+        "\n\n4) User may search for other users via the search bar."
+        "\n\n5) Users may view a list of their friends and chats with them."
+        "\n\n6) Users may start a new chat with friends. Past messages will be displayed."
+        "\n\n7) User and friend list API written. Nested serializers used to display list of friends of a specific user.",
     DateTime(2022, 3),
     "https://github.com/Kwang-Kian-Hui/Advanced-Web-Development-Final-Coursework",
     "",
     "",
+    "",
+    "",
+    "",
     "Future Improvements:"
-        "\n1) Use of websocket to enable async messages between friends. The current issue faced is that I am unable to display past messages despite the websocket private chat rooms being implemented successfully. How I would usually pass data using Objects.get() method does not work with the HTML codes for websocket private chat."
-        "\n2) When users update their profile image, it seems that the image does not update itself but when the web browser cache is cleared, the profile image updates to the correct image. Not sure if there is any solution for the cache to be cleared automatically when user updates the profile image."
-        "\n3) Resizing and recropping of images in application can be implemented to better standardize image size and ratio. Currently, images are forcibly resized to the size defined by the style of the element in HTML file."
-        "\n4) Infinite scrolling with pagination to improve home page loading performance as the number of data can be very large.",
+        "\n\n1) Use of websocket to enable async messages between friends. The current issue faced is that I am unable to display past messages despite the websocket private chat rooms being implemented successfully. How I would usually pass data using Objects.get() method does not work with the HTML codes for websocket private chat."
+        "\n\n2) When users update their profile image, it seems that the image does not update itself but when the web browser cache is cleared, the profile image updates to the correct image. Not sure if there is any solution for the cache to be cleared automatically when user updates the profile image."
+        "\n\n3) Resizing and recropping of images in application can be implemented to better standardize image size and ratio. Currently, images are forcibly resized to the size defined by the style of the element in HTML file."
+        "\n\n4) Infinite scrolling with pagination to improve home page loading performance as the number of data can grow to be very large in an actual social media app.",
     [
-      "assets/images/projects/social-net-app/registration-page",
-      "assets/images/projects/social-net-app/home-page",
-      "assets/images/projects/social-net-app/home-page-2",
-      "assets/images/projects/social-net-app/search-user-kwargs-b",
-      "assets/images/projects/social-net-app/self-profile-page",
-      "assets/images/projects/social-net-app/friend-list-page",
-      "assets/images/projects/social-net-app/friend-profile-page",
-      "assets/images/projects/social-net-app/chat-list-page",
-      "assets/images/projects/social-net-app/chat-page",
-      "assets/images/projects/social-net-app/friend-detail-api",
+      "assets/images/registration-page.png",
+      "assets/images/home-page.png",
+      "assets/images/home-page-2.png",
+      "assets/images/search-user-kwargs-b.png",
+      "assets/images/self-profile-page.png",
+      "assets/images/friend-list-page.png",
+      "assets/images/friend-profile-page.png",
+      "assets/images/chat-list-page.png",
+      "assets/images/chat-page.png",
+      "assets/images/friend-detail-api.png",
     ],
   ),
   Project(
@@ -92,8 +109,11 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "https://kwang-kian-hui.github.io/portfolio-website/",
+    "",
     [
-      "assets/images/projects/portfolio-website/home-section",
+      "assets/images/home-section.png",
     ],
   ),
   Project(
@@ -101,21 +121,19 @@ List<Project> projectList = [
     "Portfolio Website 2",
     ["Frontend", "Dart", "Web/Mobile"],
     "Project Description:"
-        "\n\nA different portfolio website done using Flutter. Design inspiration acquired from various sources."
-        "\nDid a different portfolio website as the previous portfolio website is done with the help of an online guide, it did not felt like it was a true 'personal' portfolio website",
+        "\n\nA different portfolio website done using Flutter."
+        "\nDeveloped a different portfolio website as the previous portfolio website is done with the help of an online guide, it did not felt like it was a true 'personal' portfolio website",
     "It has been over a year since Flutter 2.0 released with web support, thought I could take this chance to try building a web app with Flutter.",
     DateTime(2022, 10),
     "",
     "",
     "",
     "",
+    "",
+    "", // web
+    "",
     [
-      "assets/images/projects/fyp/login-page",
-      "assets/images/projects/fyp/signup-validation",
-      "assets/images/projects/fyp/calendar-page",
-      "assets/images/projects/fyp/add-task",
-      "assets/images/projects/fyp/settings-page",
-      "assets/images/projects/fyp/working-hours",
+      "assets/images/welcome-page.png",
     ],
   ),
   Project(
@@ -140,11 +158,14 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/mozilla-deepspeech/deepspeech-1",
-      "assets/images/projects/mozilla-deepspeech/deepspeech-2",
-      "assets/images/projects/mozilla-deepspeech/deepspeech-3",
-      "assets/images/projects/mozilla-deepspeech/deepspeech-4",
+      "assets/images/deepspeech-1.png",
+      "assets/images/deepspeech-2.png",
+      "assets/images/deepspeech-3.png",
+      "assets/images/deepspeech-4.png",
     ],
   ),
   Project(
@@ -166,10 +187,13 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/meyda/default-square",
-      "assets/images/projects/meyda/red-circle",
-      "assets/images/projects/meyda/white-circle",
+      "assets/images/default-square.png",
+      "assets/images/red-circle.png",
+      "assets/images/white-circle.png",
     ],
   ),
   Project(
@@ -190,10 +214,13 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/ffprobe-ffmpeg-converter/converter_format",
-      "assets/images/projects/ffprobe-ffmpeg-converter/converter_img_1",
-      "assets/images/projects/ffprobe-ffmpeg-converter/converter_img_2",
+      "assets/images/converter_format.png",
+      "assets/images/converter_img_1.png",
+      "assets/images/converter_img_2.png",
     ],
   ),
   Project(
@@ -211,19 +238,20 @@ List<Project> projectList = [
         "\n2) Google Places API (search bar, address/postal/building name suggestions)"
         "\n3) SQLite local device database"
         "\n4) Alarm rings when device is within set radius of destination."
-        "\n5) Ringtone or vibrate"
-    "\n\nApp can be downloaded from: https://play.google.com/store/apps/details?id=com.location_alarm"
-    "\n\nVideo demo: https://www.youtube.com/watch?v=9kuAkN7wnuQ",
+        "\n5) Ringtone or vibrate",
     DateTime(2022, 3),
     "https://github.com/Kwang-Kian-Hui/location-alarm_v2",
     "",
     "",
+    "https://play.google.com/store/apps/details?id=com.location_alarm",
+    "",
+    "https://www.youtube.com/watch?v=9kuAkN7wnuQ",
     "Future Improvements:"
         "\n1) Background location is not yet released. An additional change to the app where a prominent disclosure before the app's runtime is required to adhere to Google permissions policy in order for the update to be released. Without this, the location does not update when the screen is locked.",
     [
-      "assets/images/projects/location-alarm/initial-page-permission-request",
-      "assets/images/projects/location-alarm/add-edit-alarm-page",
-      "assets/images/projects/location-alarm/home-page-with-alarms",
+      "assets/images/initial-page-permission-request.png",
+      "assets/images/add-edit-alarm-page.png",
+      "assets/images/home-page-with-alarms.png",
     ],
   ),
   Project(
@@ -232,23 +260,25 @@ List<Project> projectList = [
     ["Frontend", "Data", "Dart", "Web/Mobile"],
     "Project Description:"
         "\n\nDEALL is a mobile platform that allow food retailers to list their surplus food on discount, while consumers can view them, with the goal of reducing food waste in the process."
-        "\n\nWork done by me in this group assignment:"
-        "\n1) Low fidelity and High fidelity prototyping using Figma"
-        "\n2) application logic for consumer's home page which displays the list of retailers available by calling Google Firestore conditional queries."
-        "\n3) add product feature for retailers where they will fill up a form with input validations before adding the product data to Google Firestore."
-        "\n4) application logic for consumer's retailer product list and detail page which displays the list of products offered by the specific retailer that the user has selected and the retailer's detail when the 'show detail' button is pressed."
-        "\n5) other minor changes in the nature of bug fixes and feedback."
-        "Google Firestore NoSQL database used",
-        "",
+        "\n\nDatabase: Google Firestore (NoSQL)",
+    "",
     DateTime(2021, 12),
     "https://github.com/sinhaugoh/DEALL",
     "https://www.figma.com/file/QGGYjGRb81bGE0eCbXgqLo/Lo-fi?node-id=274%3A817",
     "https://www.figma.com/file/ydrr0N3qhP3d9sjWAwJbxU/Hi-fi?node-id=315%3A2",
     "",
+    "",
+    "",
+    "\n\nWork done by me in this group assignment:"
+        "\n1) Low fidelity and High fidelity prototyping using Figma"
+        "\n2) application logic for consumer's home page which displays the list of retailers available by calling Google Firestore conditional queries."
+        "\n3) add product feature for retailers where they will fill up a form with input validations before adding the product data to Google Firestore."
+        "\n4) application logic for consumer's retailer product list and detail page which displays the list of products offered by the specific retailer that the user has selected and the retailer's detail when the 'show detail' button is pressed."
+        "\n5) other minor changes in the nature of bug fixes and feedback.",
     [
-      "assets/images/projects/location-alarm/initial-page-permission-request",
-      "assets/images/projects/location-alarm/add-edit-alarm-page",
-      "assets/images/projects/location-alarm/home-page-with-alarms",
+      "assets/images/consumer-home-page-retailer-list.png",
+      "assets/images/consumer-retailer-product-list-page.png",
+      "assets/images/consumer-retailer-details-page.png",
     ],
   ),
   Project(
@@ -272,16 +302,19 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/graphics-programming/solarSystem",
-      "assets/images/projects/graphics-programming/asteroidGameClone",
-      "assets/images/projects/graphics-programming/angryBirdsGameClone",
-      "assets/images/projects/graphics-programming/noisyGrid",
-      "assets/images/projects/graphics-programming/3DSinAnimation",
-      "assets/images/projects/graphics-programming/averageFace1",
-      "assets/images/projects/graphics-programming/averageFace2",
-      "assets/images/projects/graphics-programming/instagramFilter1",
-      "assets/images/projects/graphics-programming/instagramFilter2",
+      "assets/images/solarSystem.png",
+      "assets/images/asteroidGameClone.png",
+      "assets/images/angryBirdsGameClone.png",
+      "assets/images/noisyGrid.png",
+      "assets/images/3DSinAnimation.png",
+      "assets/images/averageFace1.png",
+      "assets/images/averageFace2.png",
+      "assets/images/instagramFilter1.png",
+      "assets/images/instagramFilter2.png",
     ],
   ),
   Project(
@@ -295,14 +328,17 @@ List<Project> projectList = [
     "https://github.com/Kwang-Kian-Hui/MerkelRex",
     "",
     "",
+    "",
+    "",
+    "",
     "Future Improvements:"
-    "\nConditions for making trades can be improved as bot stops making trades after the first time iteration due to the trading conditions not being met."
-    "\nCode and csv data is available in Github",
+        "\nConditions for making trades can be improved as bot stops making trades after the first time iteration due to the trading conditions not being met."
+        "\nCode and csv data is available in Github",
     [
-      "assets/images/projects/merkelrex/merkelrex-cover",
-      "assets/images/projects/merkelrex/merkelrex-img-1",
-      "assets/images/projects/merkelrex/merkelrex-img-2",
-      "assets/images/projects/merkelrex/merkelrex-img-3",
+      "assets/images/merkelrex-cover.png",
+      "assets/images/merkelrex-img-1.png",
+      "assets/images/merkelrex-img-2.png",
+      "assets/images/merkelrex-img-3.png",
     ],
   ),
   Project(
@@ -317,9 +353,12 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/otodecks/otodecks-img-1",
-      "assets/images/projects/otodecks/otodecks-img-2",
+      "assets/images/otodecks-img-1.png",
+      "assets/images/otodecks-img-2.png",
     ],
   ),
   Project(
@@ -334,11 +373,14 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/data-programming-research/web-scraping",
-      "assets/images/projects/data-programming-research/bar-chart",
-      "assets/images/projects/data-programming-research/sun-burst-chart",
-      "assets/images/projects/data-programming-research/heatmap-chart",
+      "assets/images/web-scraping.png",
+      "assets/images/bar-chart.png",
+      "assets/images/sun-burst-chart.png",
+      "assets/images/heatmap-chart.png",
     ],
   ),
   Project(
@@ -367,12 +409,15 @@ List<Project> projectList = [
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/machine-learning-mid/correlation_plot",
-      "assets/images/projects/machine-learning-mid/confusion_matrix",
-      "assets/images/projects/machine-learning-mid/confusion_matrix_grouping",
-      "assets/images/projects/machine-learning-mid/classifier_evaluation",
-      "assets/images/projects/machine-learning-mid/summary_results",
+      "assets/images/correlation_plot.png",
+      "assets/images/confusion_matrix.png",
+      "assets/images/confusion_matrix_grouping.png",
+      "assets/images/classifier_evaluation.png",
+      "assets/images/summary_results.png",
     ],
   ),
   Project(
@@ -394,17 +439,20 @@ List<Project> projectList = [
         "\nDropout is added to prevent overfitting of the model."
         "\nRegularizer is added to reduce the error by fitting a function appropriately on the given training set and avoid overfitting."
         "\nFinal model achieved accuracy of 96.88%",
-        "",
+    "",
     DateTime(2022, 3),
     "https://github.com/Kwang-Kian-Hui/Machine-Learning-and-Neural-Network-Final-Coursework",
     "",
     "",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/machine-learning-final/dataset",
-      "assets/images/projects/machine-learning-final/baseline",
-      "assets/images/projects/machine-learning-final/overfit",
-      "assets/images/projects/machine-learning-final/best",
+      "assets/images/dataset.png",
+      "assets/images/baseline.png",
+      "assets/images/overfit.png",
+      "assets/images/best.png",
     ],
   ),
   Project(
@@ -423,22 +471,25 @@ List<Project> projectList = [
         "\n6) Other personalization settings (Event/Task categories, Color Themes)"
         "\nGoogle Firestore NoSQL database used. Firebase Authentication, Google Calendar API",
     "Algorithm/Technique used: binary time list"
-    "\nAs the function loops through each available working day, the binary time list of each of those days are retrieved. Binary time list is represented"
-    "by an unsigned 8 bit integer list of length 288 where each element represents 5 minute intervals of 24 hours time period. As boolean in Dart language"
-    " uses 2 bytes while unsigned 8 bit integer uses 1 byte, it is used instead of boolean list. If an element is '1', it means that the particular 5 minute"
-    " in that specific time period is available while '0' represents unavailable.",
+        "\nAs the function loops through each available working day, the binary time list of each of those days are retrieved. Binary time list is represented"
+        "by an unsigned 8 bit integer list of length 288 where each element represents 5 minute intervals of 24 hours time period. As boolean in Dart language"
+        " uses 2 bytes while unsigned 8 bit integer uses 1 byte, it is used instead of boolean list. If an element is '1', it means that the particular 5 minute"
+        " in that specific time period is available while '0' represents unavailable.",
     DateTime(2022, 8),
     "",
     "https://www.figma.com/file/mV24w6TCa6yWRehhHPhW2D/Low-Fidelity-Prototype?node-id=0%3A1",
     "https://www.figma.com/file/JSJnW7sG8kSCEoNAxpATCO/High-Fidelity-Prototype?node-id=0%3A1",
     "",
+    "",
+    "",
+    "",
     [
-      "assets/images/projects/fyp/login-page",
-      "assets/images/projects/fyp/signup-validation",
-      "assets/images/projects/fyp/calendar-page",
-      "assets/images/projects/fyp/add-task",
-      "assets/images/projects/fyp/settings-page",
-      "assets/images/projects/fyp/working-hours",
+      "assets/images/login-page.png",
+      "assets/images/signup-validation.png",
+      "assets/images/add-task.png",
+      "assets/images/calendar-page.png",
+      "assets/images/settings-page.png",
+      "assets/images/working-hours.png",
     ],
   ),
 ];

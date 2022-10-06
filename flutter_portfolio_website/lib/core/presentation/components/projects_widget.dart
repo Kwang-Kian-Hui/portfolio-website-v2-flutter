@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/sub_components/project_display_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/project_selector_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -90,6 +91,7 @@ class _ProjectsWidgetState extends State<ProjectsWidget> {
                             color: const Color(0xff292929),
                             borderRadius: BorderRadius.circular(20),
                           ),
+                          child: const ProjectDisplayWidget(),
                         ),
                       ),
                     ),

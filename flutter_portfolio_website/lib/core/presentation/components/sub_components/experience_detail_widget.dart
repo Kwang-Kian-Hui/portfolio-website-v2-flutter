@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/draggable_logo_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:flutter_portfolio_website/core/shared/providers.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_portfolio_website/core/application/experience_class.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 // import 'package:video_player/video_player.dart';
 
 class ExperienceDetailWidget extends ConsumerStatefulWidget {

@@ -158,7 +158,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                             child: Column(
                               children: const [
                                 Text(
-                                  "My name is Kian Hui and I am a software engineer. I enjoy learning new technologies and applying them "
+                                  "Hi, my name is Kian Hui. I enjoy learning new technologies and applying them "
                                   "to various projects to reinforce my knowledge in their respective areas."
                                   "\n\nI have experience in frontend development using Flutter for web/mobile applications utilizing tools from "
                                   "cloud platforms such as Google Cloud and Microsoft Azure. However, that does not limit my learning to frontend "
@@ -176,6 +176,19 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                                   width: double.infinity,
                                   child: Text(
                                     "Things I do to relieve stress: gaming, running/hiking/cycling and gardening(just me and my 3 indoor plants)",
+                                    maxLines: 35,
+                                    style: AppStyles.roboto14,
+                                  ),
+                                ),
+                                Text(
+                                  "\nGoals:\n",
+                                  style: AppStyles.roboto18Bold,
+                                ),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: Text(
+                                    "1) Travel. I am fascinated by different cultures and histories and would love to be able to experience them."
+                                    "\n\n2) Be a wish adopter. \"We make a living by what we get. We make a life by what we give\" - Winston Churchill",
                                     maxLines: 35,
                                     style: AppStyles.roboto14,
                                   ),
