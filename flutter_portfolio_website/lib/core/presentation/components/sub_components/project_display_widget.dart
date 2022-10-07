@@ -51,75 +51,82 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                     layout: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
                         ? ResponsiveRowColumnType.COLUMN
                         : ResponsiveRowColumnType.ROW,
+                    rowCrossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ResponsiveRowColumnItem(
                         child: Expanded(
-                          child: SingleChildScrollView(
+                          child: Scrollbar(
                             controller: descriptionScrollerController,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 30),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                      "Date: ${DateFormat('MMM yyyy').format(projectList[projectIndex - 1].date)}"),
-                                  projectList[projectIndex - 1].githubLink != ""
-                                      ? LinkWidget(
-                                          titleString: "Github: ",
-                                          linkString:
-                                              projectList[projectIndex - 1]
-                                                  .githubLink,
-                                        )
-                                      : const SizedBox(),
-                                  projectList[projectIndex - 1]
-                                              .prototypeLink1 !=
-                                          ""
-                                      ? LinkWidget(
-                                          titleString: "Lo-Fi Prototype Link: ",
-                                          linkString:
-                                              projectList[projectIndex - 1]
-                                                  .prototypeLink1!,
-                                        )
-                                      : const SizedBox(),
-                                  projectList[projectIndex - 1]
-                                              .prototypeLink2 !=
-                                          ""
-                                      ? LinkWidget(
-                                          titleString: "Hi-Fi Prototype Link: ",
-                                          linkString:
-                                              projectList[projectIndex - 1]
-                                                  .prototypeLink2!,
-                                        )
-                                      : const SizedBox(),
-                                  projectList[projectIndex - 1].appLink != ""
-                                      ? LinkWidget(
-                                          titleString: "App Link: ",
-                                          linkString:
-                                              projectList[projectIndex - 1]
-                                                  .appLink!,
-                                        )
-                                      : const SizedBox(),
-                                  projectList[projectIndex - 1].webLink != ""
-                                      ? LinkWidget(
-                                          titleString: "Web Link: ",
-                                          linkString:
-                                              projectList[projectIndex - 1]
-                                                  .webLink!,
-                                        )
-                                      : const SizedBox(),
-                                  projectList[projectIndex - 1].demoLink != ""
-                                      ? LinkWidget(
-                                          titleString: "Demo Link: ",
-                                          linkString:
-                                              projectList[projectIndex - 1]
-                                                  .demoLink!,
-                                        )
-                                      : const SizedBox(),
-                                  Text(projectList[projectIndex - 1]
-                                      .description),
-                                ],
+                            thumbVisibility: true,
+                            child: SingleChildScrollView(
+                              controller: descriptionScrollerController,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 30),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                        "Date: ${DateFormat('MMM yyyy').format(projectList[projectIndex - 1].date)}"),
+                                    projectList[projectIndex - 1].githubLink !=
+                                            ""
+                                        ? LinkWidget(
+                                            titleString: "Github: ",
+                                            linkString:
+                                                projectList[projectIndex - 1]
+                                                    .githubLink,
+                                          )
+                                        : const SizedBox(),
+                                    projectList[projectIndex - 1]
+                                                .prototypeLink1 !=
+                                            ""
+                                        ? LinkWidget(
+                                            titleString:
+                                                "Lo-Fi Prototype: ",
+                                            linkString:
+                                                projectList[projectIndex - 1]
+                                                    .prototypeLink1!,
+                                          )
+                                        : const SizedBox(),
+                                    projectList[projectIndex - 1]
+                                                .prototypeLink2 !=
+                                            ""
+                                        ? LinkWidget(
+                                            titleString:
+                                                "Hi-Fi Prototype: ",
+                                            linkString:
+                                                projectList[projectIndex - 1]
+                                                    .prototypeLink2!,
+                                          )
+                                        : const SizedBox(),
+                                    projectList[projectIndex - 1].appLink != ""
+                                        ? LinkWidget(
+                                            titleString: "App Link: ",
+                                            linkString:
+                                                projectList[projectIndex - 1]
+                                                    .appLink!,
+                                          )
+                                        : const SizedBox(),
+                                    projectList[projectIndex - 1].webLink != ""
+                                        ? LinkWidget(
+                                            titleString: "Web Link: ",
+                                            linkString:
+                                                projectList[projectIndex - 1]
+                                                    .webLink!,
+                                          )
+                                        : const SizedBox(),
+                                    projectList[projectIndex - 1].demoLink != ""
+                                        ? LinkWidget(
+                                            titleString: "Demo Link: ",
+                                            linkString:
+                                                projectList[projectIndex - 1]
+                                                    .demoLink!,
+                                          )
+                                        : const SizedBox(),
+                                    Text(projectList[projectIndex - 1]
+                                        .description),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -185,27 +192,46 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 16),
                               Expanded(
-                                child: SingleChildScrollView(
+                                child: Scrollbar(
                                   controller: moreInfoScrollerController,
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 30),
-                                    child: Column(
-                                      children: [
-                                        projectList[projectIndex - 1]
-                                                    .additionalInfo !=
-                                                null
-                                            ? Text(projectList[projectIndex - 1]
-                                                .additionalInfo!)
-                                            : const SizedBox(),
-                                        projectList[projectIndex - 1]
-                                                    .futureWork !=
-                                                null
-                                            ? Text(projectList[projectIndex - 1]
-                                                .futureWork!)
-                                            : const SizedBox(),
-                                      ],
+                                  thumbVisibility: projectList[projectIndex - 1]
+                                                  .additionalInfo ==
+                                              null &&
+                                          projectList[projectIndex - 1]
+                                                  .futureWork ==
+                                              null
+                                      ? false
+                                      : true,
+                                  child: SingleChildScrollView(
+                                    controller: moreInfoScrollerController,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 30),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          projectList[projectIndex - 1]
+                                                      .additionalInfo !=
+                                                  null
+                                              ? Text(
+                                                  projectList[projectIndex - 1]
+                                                      .additionalInfo!)
+                                              : const SizedBox(),
+                                          const SizedBox(height: 30),
+                                          projectList[projectIndex - 1]
+                                                      .futureWork !=
+                                                  null
+                                              ? Text(
+                                                  projectList[projectIndex - 1]
+                                                      .futureWork!)
+                                              : const SizedBox(),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -254,7 +280,17 @@ class LinkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(titleString),
+        SizedBox(
+          width: ResponsiveWrapper.of(context).isLargerThan(DESKTOP) ? 160
+          : ResponsiveWrapper.of(context).isLargerThan("MINI-DESKTOP") ? 135
+          : ResponsiveWrapper.of(context).isLargerThan(TABLET) ? 90
+          : ResponsiveWrapper.of(context).isLargerThan("BP-FOR-MOBILE") ? 125
+          : 150,
+          child: Text(
+            titleString,
+            maxLines: 2,
+          ),
+        ),
         Expanded(
           child: Align(
             alignment: Alignment.centerRight,
