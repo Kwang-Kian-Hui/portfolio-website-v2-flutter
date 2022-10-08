@@ -38,6 +38,7 @@ dependencies:
   # video_player: ^2.4.7 #displaying inline video with other Flutter widgets on Android, iOS, and web, BSD-3-Clause License
   url_launcher: ^6.1.6 # launching url, BSD-3-Clause License
   carousel_slider: ^4.1.1 # carousel slider widget, MIT License
+  flutter_inset_box_shadow: ^1.0.8 # BSD-3-Clause License
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

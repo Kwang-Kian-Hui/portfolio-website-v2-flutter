@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
@@ -68,18 +70,54 @@ class _InitWidgetState extends State<InitWidget>
               particleTypeIndex = 0;
               setState(() {});
             },
-            child: ResponsiveRowColumn(
-              rowMainAxisAlignment: MainAxisAlignment.center,
-              columnMainAxisAlignment: MainAxisAlignment.center,
-              rowMainAxisSize: MainAxisSize.min,
-              columnMainAxisSize: MainAxisSize.min,
-              layout: ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
-            ? ResponsiveRowColumnType.COLUMN
-            : ResponsiveRowColumnType.ROW,
-              children: const [
-                ResponsiveRowColumnItem(child: Text("Welcome to my ", style: AppStyles.roboto30Bold)),
-                ResponsiveRowColumnItem(child: Text("Portfolio Website", style: AppStyles.roboto30ColoredBold)),
-              ],
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                  width: 2,
+                  color: Colors.white30,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: particleTypeIndex == 1
+                        ? Colors.white
+                        : Colors.white.withOpacity(0.2),
+                    blurRadius: particleTypeIndex == 1 ? 25 : 5,
+                    spreadRadius: -5,
+                    blurStyle: particleTypeIndex == 1
+                        ? BlurStyle.outer
+                        : BlurStyle.inner,
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              child: BackdropFilter(
+                filter: particleTypeIndex == 1
+                    ? ImageFilter.blur(sigmaX: 2, sigmaY: 2)
+                    : ImageFilter.blur(),
+                child: ResponsiveRowColumn(
+                  rowMainAxisAlignment: MainAxisAlignment.center,
+                  columnMainAxisAlignment: MainAxisAlignment.center,
+                  rowMainAxisSize: MainAxisSize.min,
+                  columnMainAxisSize: MainAxisSize.min,
+                  layout: ResponsiveWrapper.of(context)
+                          .isSmallerThan("MINI-DESKTOP")
+                      ? ResponsiveRowColumnType.COLUMN
+                      : ResponsiveRowColumnType.ROW,
+                  children: [
+                    ResponsiveRowColumnItem(
+                        child: Text("Welcome to my ",
+                            style: particleTypeIndex == 1
+                                ? AppStyles.roboto30w500Neon
+                                : AppStyles.roboto30w500)),
+                    ResponsiveRowColumnItem(
+                        child: Text("Portfolio Website",
+                            style: particleTypeIndex == 1
+                                ? AppStyles.roboto30Coloredw500Neon
+                                : AppStyles.roboto30Coloredw500)),
+                  ],
+                ),
+              ),
             ),
           ),
         ),

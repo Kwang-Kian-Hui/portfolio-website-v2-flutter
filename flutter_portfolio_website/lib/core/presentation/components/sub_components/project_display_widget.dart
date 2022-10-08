@@ -81,8 +81,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                                 .prototypeLink1 !=
                                             ""
                                         ? LinkWidget(
-                                            titleString:
-                                                "Lo-Fi Prototype: ",
+                                            titleString: "Lo-Fi Prototype: ",
                                             linkString:
                                                 projectList[projectIndex - 1]
                                                     .prototypeLink1!,
@@ -92,8 +91,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                                 .prototypeLink2 !=
                                             ""
                                         ? LinkWidget(
-                                            titleString:
-                                                "Hi-Fi Prototype: ",
+                                            titleString: "Hi-Fi Prototype: ",
                                             linkString:
                                                 projectList[projectIndex - 1]
                                                     .prototypeLink2!,
@@ -123,7 +121,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                                     .demoLink!,
                                           )
                                         : const SizedBox(),
-                                    Text(projectList[projectIndex - 1]
+                                    SelectableText(projectList[projectIndex - 1]
                                         .description),
                                   ],
                                 ),
@@ -132,23 +130,6 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                           ),
                         ),
                       ),
-                      // ResponsiveWrapper.of(context)
-                      // .isSmallerThan("BP-FOR-MOBILE") ? const ResponsiveRowColumnItem(child: SizedBox()) : ResponsiveRowColumnItem(
-                      //   child: Expanded(
-                      //                         child: SingleChildScrollView(
-                      //                           controller: descriptionScrollerController,
-                      //                           child: Padding(
-                      //                             padding: const EdgeInsets.symmetric(horizontal: 30),
-                      //                             child: Column(
-                      //   mainAxisSize: MainAxisSize.min,
-                      //   children: [
-                      //     Text(projectList[projectIndex - 1].description),
-                      //   ],
-                      //                             ),
-                      //                           ),
-                      //                         ),
-                      //                       ),
-                      // ),
                       ResponsiveRowColumnItem(
                         child: Expanded(
                           flex: 2,
@@ -162,13 +143,13 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                       .map((imagePath) {
                                     return Builder(
                                         builder: (BuildContext context) {
-                                      return Container(
-                                        child: Image(
-                                          image: AssetImage(imagePath),
-                                          errorBuilder: (context, index, _) =>
-                                              const Image(
-                                                  image: AssetImage(
-                                                      "assets/images/img_placeholder.png")),
+                                      return Image(
+                                        image: AssetImage(imagePath),
+                                        errorBuilder: (context, index, _) =>
+                                            const Image(
+                                          image: AssetImage(
+                                            "assets/images/img_placeholder.png",
+                                          ),
                                         ),
                                       );
                                     });
@@ -218,7 +199,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                           projectList[projectIndex - 1]
                                                       .additionalInfo !=
                                                   null
-                                              ? Text(
+                                              ? SelectableText(
                                                   projectList[projectIndex - 1]
                                                       .additionalInfo!)
                                               : const SizedBox(),
@@ -226,7 +207,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                           projectList[projectIndex - 1]
                                                       .futureWork !=
                                                   null
-                                              ? Text(
+                                              ? SelectableText(
                                                   projectList[projectIndex - 1]
                                                       .futureWork!)
                                               : const SizedBox(),
@@ -240,23 +221,6 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                           ),
                         ),
                       ),
-                      // ResponsiveWrapper.of(context)
-                      //         .isSmallerThan("BP-FOR-MOBILE") ? ResponsiveRowColumnItem(
-                      //           child: Expanded(
-                      //                                 child: SingleChildScrollView(
-                      //                                   controller: descriptionScrollerController,
-                      //                                   child: Padding(
-                      //                                     padding: const EdgeInsets.symmetric(horizontal: 30),
-                      //                                     child: Column(
-                      //           mainAxisSize: MainAxisSize.min,
-                      //           children: [
-                      //             Text(projectList[projectIndex - 1].description),
-                      //           ],
-                      //                                     ),
-                      //                                   ),
-                      //                                 ),
-                      //                               ),
-                      //         ) : const ResponsiveRowColumnItem(child: SizedBox()),
                     ],
                   ),
                 ),
@@ -281,11 +245,16 @@ class LinkWidget extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: ResponsiveWrapper.of(context).isLargerThan(DESKTOP) ? 160
-          : ResponsiveWrapper.of(context).isLargerThan("MINI-DESKTOP") ? 135
-          : ResponsiveWrapper.of(context).isLargerThan(TABLET) ? 90
-          : ResponsiveWrapper.of(context).isLargerThan("BP-FOR-MOBILE") ? 125
-          : 150,
+          width: ResponsiveWrapper.of(context).isLargerThan(DESKTOP)
+              ? 160
+              : ResponsiveWrapper.of(context).isLargerThan("MINI-DESKTOP")
+                  ? 135
+                  : ResponsiveWrapper.of(context).isLargerThan(TABLET)
+                      ? 90
+                      : ResponsiveWrapper.of(context)
+                              .isLargerThan("BP-FOR-MOBILE")
+                          ? 125
+                          : 150,
           child: Text(
             titleString,
             maxLines: 2,

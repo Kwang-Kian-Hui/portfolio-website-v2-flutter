@@ -14,7 +14,7 @@ class ProjectsWidget extends StatefulWidget {
 class _ProjectsWidgetState extends State<ProjectsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
           ? MediaQuery.of(context).size.height * 2
           : MediaQuery.of(context).size.height,
@@ -39,6 +39,7 @@ class _ProjectsWidgetState extends State<ProjectsWidget> {
                       ? ResponsiveRowColumnType.COLUMN
                       : ResponsiveRowColumnType.ROW,
               rowMainAxisAlignment: MainAxisAlignment.spaceAround,
+              rowCrossAxisAlignment: CrossAxisAlignment.start,
               columnMainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ResponsiveRowColumnItem(

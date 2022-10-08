@@ -4,8 +4,10 @@ class AppStyles {
   static const webBorderPadding = 60.0;
   static const mobileBorderPadding = 20.0;
 
-  static const roboto30ColoredBold = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
-  static const roboto30Bold = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
+  static final roboto30w500Neon = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w500, color: Colors.white, overflow: TextOverflow.ellipsis, shadows: [for(int i = 0; i < 8; i++)Shadow(color: Colors.white.withOpacity(0.3), blurRadius: 3.0 * i),]);
+  static final roboto30Coloredw500Neon = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w500, color: const Color(0xffF58C82), overflow: TextOverflow.ellipsis, shadows: [for(int i = 0; i < 8; i++)Shadow(color: Colors.red.shade300, blurRadius: 3.0 * i),]);
+  static const roboto30Coloredw500 = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w500, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
+  static const roboto30w500 = TextStyle(fontSize: 30.0, fontFamily: "Roboto", fontWeight: FontWeight.w500, color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto25ColoredBold = TextStyle(fontSize: 25.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Color(0xffF58C82), overflow: TextOverflow.ellipsis);
   static const roboto25Bold = TextStyle(fontSize: 25.0, fontFamily: "Roboto", fontWeight: FontWeight.w700, color: Colors.white, overflow: TextOverflow.ellipsis);
   static const roboto20 = TextStyle(fontSize: 20.0, fontFamily: "Roboto", color: Colors.white, overflow: TextOverflow.ellipsis);

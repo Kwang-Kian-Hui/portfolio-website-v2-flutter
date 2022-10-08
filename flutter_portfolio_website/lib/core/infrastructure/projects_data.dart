@@ -140,7 +140,7 @@ List<Project> projectList = [
     "Speech Recognition System (Mozilla DeepSpeech)",
     "Speech Recognition System",
     ["Others", "Python"],
-    "Project Description:"
+    "\nProject Description:"
         "\n\nA software development company has contacted you to create a speech recognition system to integrate in a Python project they are developing. In particular, the project consists of an airport virtual assistant."
         "\n\nRequirements:"
         "\n\n1) Base the speech recognition system on the Mozilla DeepSpeech software package."
@@ -150,7 +150,7 @@ List<Project> projectList = [
     "Features Completed:"
         "\n\n1) Console based application. Allows language selection by entering the language name. e.g. 'English', 'english' or 'en'."
         "\n\n2) Mozilla DeepSpeech model and scorer is loaded in the application based on the language selected by user."
-        "\n\n3) Spectral subtraction and low pass filter applied to audio files to attempt to reduce background noise. Crowd noise used for spectral subtraction downloaded from: https://mixkit.co/free-sound-effects/crowd/ Librosa library load() and stft() function is used, along with numpy to load and transform the sample values into a subtractable form for spectral subtraction. Scipy library is used to perform low pass filter."
+        "\n\n3) Spectral subtraction and low pass filter applied to audio files to attempt to reduce background noise. Crowd noise used for spectral subtraction downloaded from: https://mixkit.co/free-sound-effects/crowd/. \n\nLibrosa library load() and stft() function is used, along with numpy to load and transform the sample values into a subtractable form for spectral subtraction. Scipy library is used to perform low pass filter."
         "\n\n4) Performance is evaluated by processing the predicted texts with the transcript texts. Overall performance result:"
         "\n\nEnglish word error rate(WER) of 18.84%, Spanish WER of 35.71% and Italian WER of 36.67",
     DateTime(2021, 12),
@@ -401,7 +401,7 @@ List<Project> projectList = [
     "\nProject Description:"
         "\n\nIn this coursework, the Wine dataset (178 sample dataset that categorises three different types of Italian wine using 13 different features) is used."
         "We will need to present our own code that performs nested cross-validation and the k-nearest neighbour algorithm, build confusion matrices, and estimate distances between data samples.",
-    "\n\nSteps:"
+    "Steps:"
         "\n\n1) Exploratory Data Analysis - columns, min/max/mean/sd per column, class distribution"
         "\n\n1.1) Data Visualisation - identify correlations between alcohol level, flavanoids, color_intensity and ash using sns pair grid correlation plot"
         "\n\n1.2) Exploratory Data Analysis under noise - (Gaussian noise)"
