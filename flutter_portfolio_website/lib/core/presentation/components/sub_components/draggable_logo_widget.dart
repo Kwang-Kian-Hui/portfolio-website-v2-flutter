@@ -31,7 +31,10 @@ class _LogoWidgetState extends State<LogoWidget> {
           radius: 16,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50.0),
-            child: Image.asset(widget.logoImagePath, fit: BoxFit.fill),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(widget.logoImagePath, fit: BoxFit.fitHeight, filterQuality: FilterQuality.medium),
+            ),
           ),
         ),
       ),

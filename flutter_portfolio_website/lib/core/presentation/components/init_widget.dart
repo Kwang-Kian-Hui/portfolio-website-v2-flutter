@@ -91,10 +91,6 @@ class _InitWidgetState extends State<InitWidget>
                 ],
               ),
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-              child: BackdropFilter(
-                filter: particleTypeIndex == 1
-                    ? ImageFilter.blur(sigmaX: 2, sigmaY: 2)
-                    : ImageFilter.blur(),
                 child: ResponsiveRowColumn(
                   rowMainAxisAlignment: MainAxisAlignment.center,
                   columnMainAxisAlignment: MainAxisAlignment.center,
@@ -120,7 +116,6 @@ class _InitWidgetState extends State<InitWidget>
               ),
             ),
           ),
-        ),
       ),
     );
   }
