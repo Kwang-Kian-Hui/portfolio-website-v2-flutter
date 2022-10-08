@@ -28,7 +28,7 @@ class MainPageWidgetState extends ConsumerState<MainPageWidget> {
     return Scaffold(
       appBar: const AppBarWidget(),
       backgroundColor: const Color(0xff222222),
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height * 3,
         child: ScrollablePositionedList.builder(
           itemScrollController: ref.watch(scrollControllerProvider),

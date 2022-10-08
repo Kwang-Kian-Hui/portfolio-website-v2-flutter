@@ -268,9 +268,7 @@ class LinkWidget extends StatelessWidget {
                 try {
                   await launchUrl(Uri.parse(linkString),
                       mode: LaunchMode.inAppWebView);
-                } on Exception {
-                  print("error");
-                }
+                } on Exception {}
               },
               child: const Text("Link"),
             ),

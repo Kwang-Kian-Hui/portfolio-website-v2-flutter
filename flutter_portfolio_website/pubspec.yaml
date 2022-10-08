@@ -48,10 +48,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  freezed: ^2.1.1 # code generator for data classes, MIT License
-  freezed_annotation: ^2.0.3 # required annotations for freezed package ->
-                            # tells flutter what to do when they see those annotations, MIT License
-  build_runner: ^2.1.11 # generate files based on the code generators for freezed and json_serializable, BSD-3-Clause License
+  # freezed: ^2.1.1 # code generator for data classes, MIT License
+  # freezed_annotation: ^2.0.3 # required annotations for freezed package ->
+  #                           # tells flutter what to do when they see those annotations, MIT License
+  # build_runner: ^2.1.11 # generate files based on the code generators for freezed and json_serializable, BSD-3-Clause License
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

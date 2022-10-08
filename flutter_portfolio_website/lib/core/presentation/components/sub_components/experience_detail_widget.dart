@@ -150,7 +150,7 @@ class ExperienceDetailWidgetState
                   onPressed: () async {
                     try {
                       await launchUrl(_url, mode: LaunchMode.inAppWebView);
-                    } on Exception catch (e) {
+                    } on Exception {
                       urlError = true;
                     }
                   },

@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/buttons/project_button.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/buttons/project_filter_buttons.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/buttons/project_type_buttons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:flutter_portfolio_website/core/application/project_class.dart';
 import 'package:flutter_portfolio_website/core/infrastructure/projects_data.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
