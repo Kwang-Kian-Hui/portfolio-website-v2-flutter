@@ -186,9 +186,9 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                                 ),
                                 SizedBox(
                                   width: double.infinity,
-                                  child: Text(
+                                  child: SelectableText(
                                     "1) Travel. I am fascinated by different cultures and histories and would love to be able to experience them."
-                                    "\n\n2) Be a wish adopter. \"We make a living by what we get. We make a life by what we give\" - Winston Churchill",
+                                    "\n\n2) Be a wish adopter. https://www.makeawish.org.sg/",
                                     maxLines: 35,
                                     style: AppStyles.roboto14,
                                   ),
