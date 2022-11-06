@@ -13,6 +13,7 @@ class _MainAppWidgetState extends State<MainAppWidget> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Kwang Kian Hui",
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: const Color(0xff222222),
