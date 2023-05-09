@@ -25,13 +25,14 @@ jobs:
           cache: true
       - name: Enable Flutter Web
         run: flutter config --enable-web
-      - name: Get dependencies
+      - name: Get dependencies and build Web
         working-directory: ./flutter_portfolio_website
-        run: flutter pub get
-      - name: Build Web
+        run: |
+          flutter pub get
+          flutter build web --release
+      - name: cd build/web
         working-directory: ./flutter_portfolio_website
-        run: flutter build web --release
-      - run: |
+        run: |
           cd build/web
           git init
           # type configurations: your user.email and user.name followed lines 
