@@ -1,9 +1,9 @@
 name: Flutter Web
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 jobs:
   build:
@@ -26,8 +26,10 @@ jobs:
       - name: Enable Flutter Web
         run: flutter config --enable-web
       - name: Get dependencies
+        working-directory: ./flutter_portfolio_website
         run: flutter pub get
       - name: Build Web
+        working-directory: ./flutter_portfolio_website
         run: flutter build web --release
       - run: |
           cd build/web
