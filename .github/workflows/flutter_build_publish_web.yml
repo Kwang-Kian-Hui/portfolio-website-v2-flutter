@@ -29,7 +29,7 @@ jobs:
         working-directory: ./flutter_portfolio_website
         run: |
           flutter pub get
-          flutter build web --release --base-href=/Kwang-Kian-Hui/portfolio-website-v2-flutter/gh-pages/
+          flutter build web --release --base-href=/Kwang-Kian-Hui/portfolio-website-v2-flutter/
       - name: cd build/web
         working-directory: ./flutter_portfolio_website
         run: |
