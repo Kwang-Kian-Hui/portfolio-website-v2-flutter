@@ -7,6 +7,7 @@ import 'package:flutter_portfolio_website/core/presentation/components/sub_compo
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/empty_selection_edu.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/empty_selection_exp.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/experience_detail_widget.dart';
+import 'package:flutter_portfolio_website/core/shared/const.dart';
 import 'package:flutter_portfolio_website/core/shared/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -131,7 +132,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       width: 250,
                       height: 190,
                       alignment: Alignment.center,
-                      color: const Color(0xff222222),
+                      color: AppStyles.mainAppColour,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -147,7 +148,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     child: Draggable<ExperienceClass>(
                       data: expClassList[0],
                       feedback: const LogoWidget(
-                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          logoImagePath: ConstObjects.s8Logo,
                           hasBackground: false),
                       childWhenDragging: const SizedBox(),
                       child: GestureDetector(
@@ -155,7 +156,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                             .read(selectedExperienceIndexProvider.notifier)
                             .change(1),
                         child: const LogoWidget(
-                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          logoImagePath: ConstObjects.s8Logo,
                           hasBackground: false,
                         ),
                       ),
@@ -167,7 +168,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     child: Draggable<ExperienceClass>(
                       data: expClassList[1],
                       feedback: const LogoWidget(
-                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          logoImagePath: ConstObjects.s8Logo,
                           hasBackground: false),
                       childWhenDragging: const SizedBox(),
                       child: GestureDetector(
@@ -175,7 +176,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                             .read(selectedExperienceIndexProvider.notifier)
                             .change(2),
                         child: const LogoWidget(
-                          logoImagePath: 'assets/images/synpulse8_logo.png',
+                          logoImagePath: ConstObjects.s8Logo,
                           hasBackground: false,
                         ),
                       ),
@@ -188,7 +189,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       data: expClassList[2],
                       feedback: const LogoWidget(
                           logoImagePath:
-                              'assets/images/abundant_accounting_logo.png',
+                              ConstObjects.abundantAccountingLogo,
                           hasBackground: true),
                       childWhenDragging: const SizedBox(),
                       child: GestureDetector(
@@ -197,7 +198,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                             .change(3),
                         child: const LogoWidget(
                           logoImagePath:
-                              'assets/images/abundant_accounting_logo.png',
+                              ConstObjects.abundantAccountingLogo,
                           hasBackground: true,
                         ),
                       ),
@@ -214,7 +215,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       ),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color(0xff292929),
+                          color: AppStyles.containerColour,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         height: getWidgetHeight(),
@@ -306,7 +307,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       width: 250,
                       height: 190,
                       alignment: Alignment.center,
-                      color: const Color(0xff222222),
+                      color: AppStyles.mainAppColour,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -323,7 +324,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     child: Draggable<EducationClass>(
                       data: eduClassList[0],
                       feedback: const LogoWidget(
-                          logoImagePath: 'assets/images/sim_logo.png',
+                          logoImagePath: ConstObjects.simLogo,
                           hasBackground: true),
                       childWhenDragging: const SizedBox(),
                       child: GestureDetector(
@@ -331,7 +332,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                             .read(selectedEducationIndexProvider.notifier)
                             .change(1),
                         child: const LogoWidget(
-                            logoImagePath: 'assets/images/sim_logo.png',
+                            logoImagePath: ConstObjects.simLogo,
                             hasBackground: true),
                       ),
                     ),
@@ -342,7 +343,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     child: Draggable<EducationClass>(
                       data: eduClassList[1],
                       feedback: const LogoWidget(
-                          logoImagePath: 'assets/images/np_logo.png',
+                          logoImagePath: ConstObjects.npLogo,
                           hasBackground: true),
                       childWhenDragging: const SizedBox(),
                       child: GestureDetector(
@@ -350,7 +351,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                             .read(selectedEducationIndexProvider.notifier)
                             .change(2),
                         child: const LogoWidget(
-                            logoImagePath: 'assets/images/np_logo.png',
+                            logoImagePath: ConstObjects.npLogo,
                             hasBackground: true),
                       ),
                     ),
@@ -366,7 +367,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       ),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color(0xff292929),
+                          color: AppStyles.containerColour,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         height: getWidgetHeight(),

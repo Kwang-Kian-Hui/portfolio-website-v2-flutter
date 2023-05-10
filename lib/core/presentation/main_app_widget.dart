@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:flutter_portfolio_website/core/presentation/main_page_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -16,7 +17,7 @@ class _MainAppWidgetState extends State<MainAppWidget> {
       title: "Kwang Kian Hui",
       theme: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: const Color(0xff222222),
+        primaryColor: AppStyles.mainAppColour,
         fontFamily: 'Roboto',
       ),
       builder: (context, child) => ResponsiveWrapper.builder(

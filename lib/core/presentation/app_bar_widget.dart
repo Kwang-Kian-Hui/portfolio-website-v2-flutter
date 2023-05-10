@@ -17,13 +17,13 @@ class AppBarWidget extends ConsumerStatefulWidget with PreferredSizeWidget {
 class AppBarWidgetState extends ConsumerState<AppBarWidget> {
   bool hoverOnIcon = false;
   bool hoverOnAbout = false;
-  bool hoverOnExp = false;
-  bool hoverOnProj = false;
+  bool hoverOnExperience = false;
+  bool hoverOnProject = false;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color(0xff222222),
+      backgroundColor: AppStyles.mainAppColour,
       title: SizedBox(
         height: 75,
         child: Row(
@@ -99,12 +99,12 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
             MouseRegion(
               onEnter: (pointerEvent){
                   setState(() {
-                    hoverOnExp = true;
+                    hoverOnExperience = true;
                   });
                 },
                 onExit: (pointerEvent){
                   setState((){
-                    hoverOnExp = false;
+                    hoverOnExperience = false;
                   });
                 },
               cursor: SystemMouseCursors.click,
@@ -121,7 +121,7 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                   alignment: Alignment.center,
                   child: Text(
                     "Experiences",
-                    style: hoverOnExp ? AppStyles.roboto20Colored : AppStyles.roboto20,
+                    style: hoverOnExperience ? AppStyles.roboto20Colored : AppStyles.roboto20,
                   ),
                 ),
               ),
@@ -129,12 +129,12 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
             MouseRegion(
               onEnter: (pointerEvent){
                   setState(() {
-                    hoverOnProj = true;
+                    hoverOnProject = true;
                   });
                 },
                 onExit: (pointerEvent){
                   setState((){
-                    hoverOnProj = false;
+                    hoverOnProject = false;
                   });
                 },
               cursor: SystemMouseCursors.click,
@@ -151,7 +151,7 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                   alignment: Alignment.center,
                   child: Text(
                     "Projects",
-                    style: hoverOnProj ? AppStyles.roboto20Colored : AppStyles.roboto20,
+                    style: hoverOnProject ? AppStyles.roboto20Colored : AppStyles.roboto20,
                   ),
                 ),
               ),

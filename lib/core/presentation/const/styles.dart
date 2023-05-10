@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppStyles {
+  static const mainAppColour = Color(0xff222222);
+  static const containerColour = Color(0xff292929);
+
   static const webBorderPadding = 60.0;
   static const mobileBorderPadding = 20.0;
 

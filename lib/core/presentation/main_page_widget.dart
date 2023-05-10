@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_portfolio_website/core/presentation/app_bar_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/about_me_widget.dart';
@@ -27,7 +28,7 @@ class MainPageWidgetState extends ConsumerState<MainPageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarWidget(),
-      backgroundColor: const Color(0xff222222),
+      backgroundColor: AppStyles.mainAppColour,
       body: SizedBox(
         height: MediaQuery.of(context).size.height * 3,
         child: ScrollablePositionedList.builder(

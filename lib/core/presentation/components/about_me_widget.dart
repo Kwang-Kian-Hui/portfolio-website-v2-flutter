@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
+import 'package:flutter_portfolio_website/core/shared/const.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class AboutMeWidget extends StatefulWidget {
@@ -34,10 +35,10 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                 height: double.infinity,
                 width: double.infinity,
                 child: CircleAvatar(
-                  backgroundColor: const Color(0xff292929),
+                  backgroundColor: AppStyles.containerColour,
                   child: Card(
                     elevation: 2,
-                    color: const Color(0xff292929),
+                    color: AppStyles.containerColour,
                     shadowColor: Colors.transparent,
                     borderOnForeground: false,
                     shape: RoundedRectangleBorder(
@@ -122,7 +123,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                         width: 150,
                         height: 190,
                         alignment: Alignment.center,
-                        color: const Color(0xff222222),
+                        color: AppStyles.mainAppColour,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
@@ -147,10 +148,9 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                         ),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: const Color(0xff292929),
+                            color: AppStyles.containerColour,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          // height: getWidgetHeight(),
                           padding: const EdgeInsets.symmetric(
                               vertical: 30, horizontal: 30),
                           alignment: Alignment.topCenter,
@@ -158,12 +158,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                             child: Column(
                               children: const [
                                 Text(
-                                  "Hi, my name is Kian Hui. I enjoy learning new technologies and applying them "
-                                  "to various projects to reinforce my knowledge in their respective areas."
-                                  "\n\nI have experience in frontend development using Flutter for web/mobile applications utilizing tools from "
-                                  "cloud platforms such as Google Cloud and Microsoft Azure. However, that does not limit my learning to frontend "
-                                  "technologies as I look for opportunities to expand my knowledge towards other fields."
-                                  "\n\nRead more about my experiences and skills below.",
+                                  ConstObjects.aboutMeDescription,
                                   maxLines: 35,
                                   style: AppStyles.roboto14,
                                   textAlign: TextAlign.justify,
@@ -175,7 +170,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                                 SizedBox(
                                   width: double.infinity,
                                   child: Text(
-                                    "Things I do to relieve stress: gaming, running/hiking/cycling and gardening(just me and my 3 indoor plants)",
+                                    ConstObjects.aboutMeTrivia,
                                     maxLines: 35,
                                     style: AppStyles.roboto14,
                                   ),
@@ -187,8 +182,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                                 SizedBox(
                                   width: double.infinity,
                                   child: SelectableText(
-                                    "1) Travel. I am fascinated by different cultures and histories and would love to be able to experience them."
-                                    "\n\n2) Be a wish adopter. https://www.makeawish.org.sg/",
+                                    ConstObjects.aboutMeGoals,
                                     maxLines: 35,
                                     style: AppStyles.roboto14,
                                   ),
