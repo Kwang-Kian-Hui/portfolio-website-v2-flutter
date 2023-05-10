@@ -50,7 +50,9 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
       ProjectFiltersButton(
           index: 2, buttonTitle: "Data", categoryType: "Tech Stacks"),
       ProjectFiltersButton(
-          index: 3, buttonTitle: "Others", categoryType: "Tech Stacks"),
+          index: 3, buttonTitle: "CI/CD", categoryType: "Tech Stacks"),
+      ProjectFiltersButton(
+          index: 4, buttonTitle: "Others", categoryType: "Tech Stacks"),
     ];
 
     List<Widget> languagesList = const [
@@ -64,13 +66,15 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           index: 3, buttonTitle: "HTML/CSS", categoryType: "Languages"),
       ProjectFiltersButton(
           index: 4, buttonTitle: "C++", categoryType: "Languages"),
+      ProjectFiltersButton(
+          index: 5, buttonTitle: "Scala", categoryType: "Languages"),
     ];
 
     List<Widget> projectTypeList = const [
       ProjectFiltersButton(
           index: 0, buttonTitle: "Web/Mobile", categoryType: "Project Type"),
       ProjectFiltersButton(
-          index: 1, buttonTitle: "Data Analytics", categoryType: "Project Type"),
+          index: 1, buttonTitle: "Data Analytics/Engineering", categoryType: "Project Type"),
       ProjectFiltersButton(
           index: 2, buttonTitle: "Predictive Analytics", categoryType: "Project Type"),
       ProjectFiltersButton(

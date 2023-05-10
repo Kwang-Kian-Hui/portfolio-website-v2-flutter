@@ -17,7 +17,7 @@ class _InitWidgetState extends State<InitWidget>
   int particleTypeIndex = 0;
 
   static ParticleOptions particles = const ParticleOptions(
-    baseColor: Color(0xffF58C82),
+    baseColor: AppStyles.appSubColour,
     spawnOpacity: 0.0,
     opacityChangeRate: 0.25,
     minOpacity: 0.1,
@@ -30,7 +30,7 @@ class _InitWidgetState extends State<InitWidget>
   );
 
   static ParticleOptions hoverParticles = const ParticleOptions(
-    baseColor: Color(0xffF58C82),
+    baseColor: AppStyles.appSubColour,
     spawnOpacity: 0.0,
     opacityChangeRate: 0.25,
     minOpacity: 0.5,

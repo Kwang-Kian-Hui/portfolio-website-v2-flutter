@@ -119,19 +119,19 @@ List<Project> projectList = [
   Project(
     "Portfolio Website 2 (Flutter)",
     "Portfolio Website 2",
-    ["Frontend", "Dart", "Web/Mobile"],
+    ["Frontend", "Dart", "Web/Mobile", "CI/CD"],
     "\nProject Description:"
-        "\n\nA different portfolio website done using Flutter."
-        "\n\nDeveloped a different portfolio website as the previous portfolio website is done with the help of an online guide, it did not felt like it was a true 'personal' portfolio website",
-    "It has been over a year since Flutter 2.0 released with web support, thought I could take this chance to try building a web app with Flutter.",
+    "\n\nCoded in Dart (Flutter)"
+    "\n\nImplementing CI/CD pipeline using Github Actions to automate deployment process for Flutter web.",
+    "As Flutter web becomes more mature and stable over the years, I thought this could be a good opportunity to test it out for myself.",
     DateTime(2022, 10),
-    "",
+    "https://github.com/Kwang-Kian-Hui/portfolio-website-v2-flutter",
     "",
     "",
     "",
     "", // web
     "", 
-    "",
+    "Adding end-to-end tests and include it into the Github Actions workflow.",
     [
       "assets/images/welcome-page.png",
     ],
@@ -371,7 +371,7 @@ List<Project> projectList = [
   Project(
     "Data Programming Research",
     "Data Research",
-    ["Others", "Python", "Data Analytics"],
+    ["Others", "Python", "Data Analytics/Engineering"],
     "\nProject Description:"
         "\n\nThe project's research is on \"Correlation between key variables of the countries' happiness index and COVID-19 vaccinations\".",
     "Steps:"
@@ -468,7 +468,7 @@ List<Project> projectList = [
   Project(
     "Automatic Time Scheduler - Mobile App (Flutter)",
     "Automatic Time Scheduler",
-    ["Frontend", "Data", "Dart", "Data Analytics", "Web/Mobile"],
+    ["Frontend", "Data", "Dart", "Data Analytics/Engineering", "Web/Mobile"],
     "\nProject Description:"
         "\n\nThis app helps to schedule tasks for users based on deadline priorities. Users are able to set several personalization settings such as working hours, break hours, and days that they are working on."
         "Tasks will not be scheduled on non working hours including breaks."
@@ -501,5 +501,26 @@ List<Project> projectList = [
       "assets/images/settings-page.png",
       "assets/images/working-hours.png",
     ],
+  ),
+  Project(
+    "Quantexa Data Engineer Certification Project",
+    "Quantexa Project",
+    ["Data", "HTML/CSS", "Scala", "Data Analytics/Engineering"],
+    "\nProject Description:"
+        "\n\nThis project equips us with the following skill sets:"
+        "\n\n1) Writing correctly defined Document Models and convert CSV to parquet files."
+        "\n\n2) Writing Spark scripts in Scala to join datasets using Spark Dataset API."
+        "\n\n3) Compound resolution, compound exclusions, entity network graph and document scoring for Quantexa tool UI."
+        "\n\n4) HTML/CSS to customise Quantexa UI",
+        "",
+    DateTime(2023, 5),
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    [],
   ),
 ];

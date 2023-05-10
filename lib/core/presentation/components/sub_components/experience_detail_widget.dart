@@ -69,7 +69,7 @@ class ExperienceDetailWidgetState
               child: Container(
                 height: 54,
                 alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: AppStyles.horizontalPadding10,
                 child: Text(
                   widget.currentSelection.expTitle,
                   maxLines: 3,
@@ -88,7 +88,7 @@ class ExperienceDetailWidgetState
         Expanded(
           child: Container(
             alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: AppStyles.horizontalPadding10,
             child: Text(
               widget.currentSelection.jobTitle,
               maxLines: 3,
@@ -104,7 +104,7 @@ class ExperienceDetailWidgetState
         Expanded(
           child: Container(
             alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: AppStyles.horizontalPadding10,
             child: Text(
               "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
               maxLines: 3,
@@ -127,7 +127,7 @@ class ExperienceDetailWidgetState
               controller: detailScrollController,
               child: Container(
                 alignment: Alignment.topLeft,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: AppStyles.horizontalPadding10,
                 child: Text(
                   widget.currentSelection.description,
                   maxLines: 100,
