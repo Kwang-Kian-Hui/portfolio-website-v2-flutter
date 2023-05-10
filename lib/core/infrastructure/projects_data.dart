@@ -121,17 +121,19 @@ List<Project> projectList = [
     "Portfolio Website 2",
     ["Frontend", "Dart", "Web/Mobile", "CI/CD"],
     "\nProject Description:"
-    "\n\nCoded in Dart (Flutter)"
-    "\n\nImplementing CI/CD pipeline using Github Actions to automate deployment process for Flutter web.",
+    "\n\nDeveloped using Flutter (Dart)"
+    "\n\nImplementing CI/CD pipeline using Github Actions to automate deployment process for Flutter web."
+    "\n\nWorkflow is triggered on changes to main branch",
     "As Flutter web becomes more mature and stable over the years, I thought this could be a good opportunity to test it out for myself.",
     DateTime(2022, 10),
     "https://github.com/Kwang-Kian-Hui/portfolio-website-v2-flutter",
     "",
     "",
     "",
-    "", // web
     "", 
-    "Adding end-to-end tests and include it into the Github Actions workflow.",
+    "", 
+    "Future Work:"
+    "\n\nAdding end-to-end tests and include it into the Github Actions workflow.",
     [
       "assets/images/welcome-page.png",
     ],
