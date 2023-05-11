@@ -23,13 +23,13 @@ class ProjectTypeButtonsState extends ConsumerState<ProjectTypeButtons> {
       child: GestureDetector(
         onTap: () {
           if (ref.read(selectedProjectIndexProvider) == widget.index) {
-            ref.read(selectedProjectIndexProvider.notifier).change(3);
+            ref.read(selectedProjectIndexProvider.notifier).change(-1);
           } else {
             ref.read(selectedProjectIndexProvider.notifier).change(widget.index);
           }
-          ref.read(selectedTechStackIndexProvider.notifier).change(4);
-          ref.read(selectedLanguagesIndexProvider.notifier).change(5);
-          ref.read(selectedProjectTypeIndexProvider.notifier).change(4);
+          ref.read(selectedTechStackIndexProvider.notifier).change(-1);
+          ref.read(selectedLanguagesIndexProvider.notifier).change(-1);
+          ref.read(selectedProjectTypeIndexProvider.notifier).change(-1);
           ref.read(selectedProjectFiltersProvider.notifier).resetList();
         },
         child: Container(

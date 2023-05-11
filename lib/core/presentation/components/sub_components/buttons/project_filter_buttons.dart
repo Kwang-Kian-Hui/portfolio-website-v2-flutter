@@ -35,7 +35,7 @@ class ProjectFiltersButtonState extends ConsumerState<ProjectFiltersButton> {
       watchProvider = ref.watch(selectedProjectTypeIndexProvider);
       notifierProvider = ref.read(selectedProjectTypeIndexProvider.notifier);
     }
-
+    
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(

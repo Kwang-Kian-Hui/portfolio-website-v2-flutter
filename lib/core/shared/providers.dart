@@ -10,7 +10,7 @@ final selectedExperienceIndexProvider =
 final selectedEducationIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(0));
 final selectedProjectIndexProvider =
-    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(3));
+    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 
 final selectedTechStackIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));

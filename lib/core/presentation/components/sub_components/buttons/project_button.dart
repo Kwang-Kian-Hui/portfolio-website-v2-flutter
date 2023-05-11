@@ -22,20 +22,15 @@ class ProjectButtonState extends ConsumerState<ProjectButton> {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-            if (ref.read(selectedProjectDetailIndexProvider) -
-                                    1 ==
-                                widget.index) {
-                              ref
-                                  .read(selectedProjectDetailIndexProvider
-                                      .notifier)
-                                  .change(0);
-                            } else {
-                              ref
-                                  .read(selectedProjectDetailIndexProvider
-                                      .notifier)
-                                  .change(widget.index + 1);
-                            }
-          },
+          if (ref.read(selectedProjectDetailIndexProvider) - 1 ==
+              widget.index) {
+            ref.read(selectedProjectDetailIndexProvider.notifier).change(0);
+          } else {
+            ref
+                .read(selectedProjectDetailIndexProvider.notifier)
+                .change(widget.index + 1);
+          }
+        },
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
           height: 40,
@@ -48,10 +43,12 @@ class ProjectButtonState extends ConsumerState<ProjectButton> {
             ),
             borderRadius: BorderRadius.circular(15),
             gradient: LinearGradient(
-              begin: ref.watch(selectedProjectDetailIndexProvider) - 1 == widget.index
+              begin: ref.watch(selectedProjectDetailIndexProvider) - 1 ==
+                      widget.index
                   ? Alignment.bottomRight
                   : Alignment.topLeft,
-              end: ref.watch(selectedProjectDetailIndexProvider) - 1 == widget.index
+              end: ref.watch(selectedProjectDetailIndexProvider) - 1 ==
+                      widget.index
                   ? Alignment.topLeft
                   : Alignment.bottomRight,
               colors: const [
@@ -65,7 +62,8 @@ class ProjectButtonState extends ConsumerState<ProjectButton> {
                 offset: const Offset(-5.4, -5.4),
                 blurRadius: 30,
                 spreadRadius: 0.0,
-                inset: ref.watch(selectedProjectDetailIndexProvider) - 1 == widget.index
+                inset: ref.watch(selectedProjectDetailIndexProvider) - 1 ==
+                        widget.index
                     ? true
                     : false,
               ),
@@ -74,7 +72,8 @@ class ProjectButtonState extends ConsumerState<ProjectButton> {
                 offset: const Offset(15.4, 15.4),
                 blurRadius: 30,
                 spreadRadius: 0.0,
-                inset: ref.watch(selectedProjectDetailIndexProvider) - 1 == widget.index
+                inset: ref.watch(selectedProjectDetailIndexProvider) - 1 ==
+                        widget.index
                     ? true
                     : false,
               ),
@@ -82,7 +81,8 @@ class ProjectButtonState extends ConsumerState<ProjectButton> {
           ),
           child: Text(
             widget.buttonTitle,
-            style: ref.watch(selectedProjectDetailIndexProvider) - 1 == widget.index
+            style: ref.watch(selectedProjectDetailIndexProvider) - 1 ==
+                    widget.index
                 ? AppStyles.roboto12ColoredBold
                 : AppStyles.roboto12,
           ),
