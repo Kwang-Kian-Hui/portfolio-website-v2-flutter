@@ -18,7 +18,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
           ? MediaQuery.of(context).size.height * 1.4
           : ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
               ? MediaQuery.of(context).size.height * 1.25
-              : MediaQuery.of(context).size.height,
+              : MediaQuery.of(context).size.height * 0.9,
       child: ResponsiveRowColumn(
         layout: ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
             ? ResponsiveRowColumnType.COLUMN

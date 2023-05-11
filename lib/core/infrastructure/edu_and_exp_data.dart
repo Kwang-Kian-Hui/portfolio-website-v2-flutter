@@ -12,9 +12,10 @@ List<ExperienceClass> expClassList = [
       DateTime(0, 0, 0),
       false,
       "Writing end-to-end and unit tests for web-based dashboard Flutter application."
-      "\n\nInvolved in the release of v1.0"
-      "\n\nQuantexa Data Engineer Certification (In progress, pending Final Assessment review)"
-      "\n\nDataCamp - Data Engineer with Python Track(In progress)"
+      "\n\nInvolved in the release of v1.0, contributing to 66% of total frontend tasks."
+      "\n\nOthers:"
+      "\n\nQuantexa Data Engineer Certification (In progress, pending Final Assessment review)."
+      "\n\nDataCamp - Data Engineer with Python Track(In progress)."
       ),
   ExperienceClass(
       2,
@@ -24,10 +25,10 @@ List<ExperienceClass> expClassList = [
       DateTime(2022, 6, 1),
       DateTime(2022, 9, 30),
       false,
-      "Involved in part of the life cycle through concept to the development of web-based dashboard Flutter application. "
+      "Involved in SDLC through concept to the development of web-based dashboard Flutter application. "
       "\n\nGuide a small development team of fellow junior/intern developers in developing application using MVVM architecture."
       "\n\nIncorporate Figma designs into responsive functional application and provided documentation through development."
-      "\n\nWork closely with backend team to establish various API endpoints to improve app performance when dealing with large volume data requests"),
+      "\n\nWork closely with backend team to establish various API endpoints to improve app performance when dealing with large volume data requests."),
   ExperienceClass(
       3,
       "Abundant Accounting",

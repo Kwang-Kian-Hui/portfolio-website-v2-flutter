@@ -41,11 +41,7 @@ class ProjectFiltersButtonState extends ConsumerState<ProjectFiltersButton> {
       child: GestureDetector(
         onTap: () {
             if (readProvider == widget.index) {
-              if (widget.categoryType == "Languages"){
-                notifierProvider.change(5);
-              } else {
-                notifierProvider.change(4);
-              }
+              notifierProvider.change(-1);
               ref.read(selectedProjectFiltersProvider.notifier).resetList();
             } else {
               notifierProvider.change(widget.index);
@@ -102,8 +98,8 @@ class ProjectFiltersButtonState extends ConsumerState<ProjectFiltersButton> {
           child: Text(
             widget.buttonTitle,
             style: watchProvider == widget.index
-                ? AppStyles.roboto14ColoredBold
-                : AppStyles.roboto14,
+                ? AppStyles.roboto12ColoredBold
+                : AppStyles.roboto12,
           ),
         ),
       ),

@@ -3,15 +3,17 @@ import 'package:flutter_portfolio_website/core/application/education_class.dart'
 import 'package:flutter_portfolio_website/core/application/experience_class.dart';
 import 'package:flutter_portfolio_website/core/infrastructure/edu_and_exp_data.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/draggable_logo_widget.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/sub_components/education_detail_widget.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/sub_components/empty_selection_edu.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/sub_components/empty_selection_exp.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/sub_components/experience_detail_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/experience_and_education/education_detail_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/experience_and_education/empty_selection_edu.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/experience_and_education/empty_selection_exp.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/experience_and_education/experience_detail_widget.dart';
 import 'package:flutter_portfolio_website/core/shared/const.dart';
 import 'package:flutter_portfolio_website/core/shared/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
+
+import 'empty_selection_edu.dart';
 
 class ExperiencesWidget extends ConsumerStatefulWidget {
   const ExperiencesWidget({Key? key}) : super(key: key);
@@ -34,19 +36,9 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
     EducationDetailWidget(currentSelection: eduClassList[1]),
   ];
 
-  double getWidgetHeight() {
-    if (ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")) {
-      return 550;
-    }
-    if (ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP") &&
-        ResponsiveWrapper.of(context).isLargerThan(MOBILE)) {
-      return 450;
-    }
-    return 500;
-  }
-
   @override
   Widget build(BuildContext context) {
+    bool isSmallerThanTablet = ResponsiveWrapper.of(context).isSmallerThan(TABLET);
     return SizedBox(
       height: ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
           ? MediaQuery.of(context).size.height * 2
@@ -64,8 +56,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                 children: [
                   Positioned(
                     top: 90,
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
+                    left: isSmallerThanTablet ? 70 : 100,
+                    right: isSmallerThanTablet ? 70 : 100,
                     child: SizedBox(
                       height: 10.0,
                       child: Center(
@@ -80,8 +72,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 100,
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 70 : 100,
+                    left: isSmallerThanTablet ? 70 : 100,
+                    right: isSmallerThanTablet ? 70 : 100,
                     child: SizedBox(
                       height: 10.0,
                       child: Center(
@@ -96,7 +88,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 50 : 70,
+                    left: isSmallerThanTablet ? 50 : 70,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -112,7 +104,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 80,
+                    left: isSmallerThanTablet ? 60 : 80,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -144,7 +136,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 180,
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
+                    left: isSmallerThanTablet ? 27.5 : 47.5,
                     child: Draggable<ExperienceClass>(
                       data: expClassList[0],
                       feedback: const LogoWidget(
@@ -164,7 +156,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 250,
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
+                    left: isSmallerThanTablet ? 27.5 : 47.5,
                     child: Draggable<ExperienceClass>(
                       data: expClassList[1],
                       feedback: const LogoWidget(
@@ -184,7 +176,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 320,
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
+                    left: isSmallerThanTablet ? 27.5 : 47.5,
                     child: Draggable<ExperienceClass>(
                       data: expClassList[2],
                       feedback: const LogoWidget(
@@ -205,9 +197,9 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     ),
                   ),
                   Positioned(
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 100 : 130,
+                    left: isSmallerThanTablet ? 100 : 130,
                     top: 150,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 100,
+                    right: isSmallerThanTablet ? 60 : 100,
                     child: Card(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
@@ -218,7 +210,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                           color: AppStyles.containerColour,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        height: getWidgetHeight(),
+                        height: MediaQuery.of(context).size.height * 0.65,
                         padding: const EdgeInsets.symmetric(
                             vertical: 30, horizontal: 30),
                         alignment: Alignment.topCenter,
@@ -271,7 +263,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 50 : 70,
+                    right: isSmallerThanTablet ? 50 : 70,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -287,7 +279,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 150,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 80,
+                    right: isSmallerThanTablet ? 60 : 80,
                     bottom: 150,
                     child: SizedBox(
                       height: 10.0,
@@ -320,7 +312,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 180,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
+                    right: isSmallerThanTablet ? 27.5 : 47.5,
                     child: Draggable<EducationClass>(
                       data: eduClassList[0],
                       feedback: const LogoWidget(
@@ -339,7 +331,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 250,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 27.5 : 47.5,
+                    right: isSmallerThanTablet ? 27.5 : 47.5,
                     child: Draggable<EducationClass>(
                       data: eduClassList[1],
                       feedback: const LogoWidget(
@@ -357,9 +349,9 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                     ),
                   ),
                   Positioned(
-                    left: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 60 : 100,
+                    left: isSmallerThanTablet ? 60 : 100,
                     top: 150,
-                    right: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 100 : 130,
+                    right: isSmallerThanTablet ? 100 : 130,
                     child: Card(
                       elevation: 5,
                       shape: RoundedRectangleBorder(
@@ -370,7 +362,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                           color: AppStyles.containerColour,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        height: getWidgetHeight(),
+                        height: MediaQuery.of(context).size.height * 0.65,
                         padding: const EdgeInsets.symmetric(
                             vertical: 30, horizontal: 30),
                         alignment: Alignment.topCenter,

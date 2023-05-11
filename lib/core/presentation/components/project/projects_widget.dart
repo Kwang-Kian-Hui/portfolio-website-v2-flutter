@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/sub_components/project_display_widget.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/sub_components/project_selector_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/project/project_display_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/project/project_selector_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

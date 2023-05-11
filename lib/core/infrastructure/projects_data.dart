@@ -321,7 +321,7 @@ List<Project> projectList = [
   ),
   Project(
     "MerkelRexBot(C++) - Crypto Trading Bot",
-    "Crypto Trading Bot",
+    "C++ Crypto Trading Bot",
     ["Others", "C++", "Predictive Analytics"],
     "\nProject Description:"
         "\n\nMerkelRexBot is a command-line UI exchange simulation which allows a human to carry out market analysis and trading activities "
@@ -373,7 +373,7 @@ List<Project> projectList = [
   Project(
     "Data Programming Research",
     "Data Research",
-    ["Others", "Python", "Data Analytics/Engineering"],
+    ["Data", "Others", "Python", "Data Analytics/Engineering"],
     "\nProject Description:"
         "\n\nThe project's research is on \"Correlation between key variables of the countries' happiness index and COVID-19 vaccinations\".",
     "Steps:"

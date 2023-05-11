@@ -84,7 +84,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
     return SingleChildScrollView(
       controller: projectSelectorScrollController,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             height: 50,
@@ -94,7 +94,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           Container(
             alignment: Alignment.center,
             child: Wrap(
-              alignment: WrapAlignment.spaceAround,
+              alignment: WrapAlignment.start,
               children: const [
                 ProjectTypeButtons(index: 0, buttonTitle: "Tech Stacks"),
                 ProjectTypeButtons(index: 1, buttonTitle: "Languages"),
@@ -104,7 +104,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           ),
           const SizedBox(height: 10),
           Wrap(
-            alignment: WrapAlignment.spaceAround,
+            alignment: WrapAlignment.start,
             children: ref.watch(selectedProjectIndexProvider) == 0
                 ? techStackList
                 : ref.watch(selectedProjectIndexProvider) == 1
@@ -119,7 +119,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
             child: const Text("Projects", style: AppStyles.roboto18ColoredBold),
           ),
           Wrap(
-            alignment: WrapAlignment.spaceBetween,
+            alignment: WrapAlignment.start,
             children: List.generate(
               projectList.length,
               (index) => containsCategory(projectList[index],
