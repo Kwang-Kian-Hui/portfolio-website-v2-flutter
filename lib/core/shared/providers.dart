@@ -13,11 +13,11 @@ final selectedProjectIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(3));
 
 final selectedTechStackIndexProvider =
-    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(4));
+    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 final selectedLanguagesIndexProvider =
-    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(5));
+    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 final selectedProjectTypeIndexProvider =
-    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(4));
+    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 
 final selectedProjectDetailIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(0));
