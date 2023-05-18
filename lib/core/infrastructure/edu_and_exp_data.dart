@@ -11,11 +11,11 @@ List<ExperienceClass> expClassList = [
       DateTime(2022, 10, 1),
       DateTime(0, 0, 0),
       false,
-      "Writing end-to-end and unit tests for web-based dashboard Flutter application."
-      "\n\nInvolved in the release of v1.0, contributing to 66% of total frontend tasks."
-      "\n\nOthers:"
-      "\n\nQuantexa Data Engineer Certification (In progress, pending Final Assessment review)."
-      "\n\nDataCamp - Data Engineer with Python Track(In progress)."
+      "Led a team of junior/intern frontend developers in designing and  building a Flutter web application using MVVM architecture."
+      "\n\nCollaborated effectively with cross-functional stakeholders, resulting in a clear understanding of project requirements and smooth delivery of solutions based on Figma designs."
+      "\n\nPlayed a pivotal role in test automation efforts, working closely with the senior test engineer to implement comprehensive end-to-end tests(integration_test package) that enhanced overall product quality, achieving 80% code coverage."
+      "\n\nPlayed a key role in the release of v1.0, contributing to 66% of the total frontend tasks, demonstrating efficiency and proficiency in meeting project milestones."
+      "\n\nDemonstrated commitment to continuous learning and professional growth by attaining the Quantexa Certified Data Engineer certification."
       ),
   ExperienceClass(
       2,
@@ -25,10 +25,10 @@ List<ExperienceClass> expClassList = [
       DateTime(2022, 6, 1),
       DateTime(2022, 9, 30),
       false,
-      "Involved in SDLC through concept to the development of web-based dashboard Flutter application. "
+      "Involved in SDLC through concept to the development of a responsive web-based dashboard Flutter application."
       "\n\nGuide a small development team of fellow junior/intern developers in developing application using MVVM architecture."
-      "\n\nIncorporate Figma designs into responsive functional application and provided documentation through development."
-      "\n\nWork closely with backend team to establish various API endpoints to improve app performance when dealing with large volume data requests."),
+      "\n\nTranslated Figma designs into a responsive and functional application, ensuring alignment with design specifications and providing documentation throughout the development process."
+      "\n\nCollaborated closely with the backend team to establish various API endpoints."),
   ExperienceClass(
       3,
       "Abundant Accounting",
@@ -37,16 +37,15 @@ List<ExperienceClass> expClassList = [
       DateTime(2016, 9, 1),
       DateTime(2017, 3, 30),
       true,
-      "Develop excel spreadsheets with macros to improve efficiency in generating and editing AGM and other forms,"
-          " reducing time required from half a day to 1 hour per form."
-          "\n\nMeeting and presenting company's services to prospective clients."
-          "\n\nConduct training on the usage of macros in spreadsheets for colleagues."),
+      "Implemented Excel spreadsheets with macros, resulting in a substantial reduction in time spent (from half a day to 1 hour per form) on generating and editing AGM and other forms, significantly improving workflow efficiency."
+      "\n\nDelivered engaging meetings and presentations to prospective clients, effectively highlighting the company's services and generating interest, contributing to potential business opportunities."
+      "\n\nConducted comprehensive training sessions on macros in spreadsheets, equipping colleagues with valuable skills that improved their effectiveness in handling data and streamlining processes."),
 ];
 
 List<EducationClass> eduClassList = [
   EducationClass(
       1,
-      "Singapore Institute of Management (SIM-UOL)",
+      "Singapore Institute of Management - University of London (SIM-UOL)",
       "BSc (Honours) in Computer Science",
       DateTime(2019, 9, 1),
       DateTime(2022, 9, 30),
