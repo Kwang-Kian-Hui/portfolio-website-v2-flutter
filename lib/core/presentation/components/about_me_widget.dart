@@ -176,7 +176,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                                   ),
                                 ),
                                 Text(
-                                  "\nGoals:\n",
+                                  "\nLife Goals:\n",
                                   style: AppStyles.roboto18Bold,
                                 ),
                                 SizedBox(
