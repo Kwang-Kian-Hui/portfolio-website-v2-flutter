@@ -28,10 +28,9 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
               child: Container(
                 height: 54,
                 alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
+                padding: AppStyles.horizontalPadding10,
+                child: SelectableText(
                   widget.currentSelection.eduTitle,
-                  maxLines: 3,
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                       ? AppStyles.roboto14ColoredBold
@@ -64,10 +63,9 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
         Expanded(
           child: Container(
             alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
+            padding: AppStyles.horizontalPadding10,
+            child: SelectableText(
               widget.currentSelection.courseTitle,
-              maxLines: 3,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                   ? AppStyles.roboto14Bold
@@ -80,10 +78,9 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
         Expanded(
           child: Container(
             alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
+            padding: AppStyles.horizontalPadding10,
+            child: SelectableText(
               "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
-              maxLines: 3,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                   ? AppStyles.roboto14Bold
@@ -96,10 +93,9 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
         Expanded(
           child: Container(
             alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
+            padding: AppStyles.horizontalPadding10,
+            child: SelectableText(
               widget.currentSelection.grade,
-              maxLines: 3,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                   ? AppStyles.roboto10
@@ -113,10 +109,9 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
           flex: 5,
           child: Container(
             alignment: Alignment.topLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
+            padding: AppStyles.horizontalPadding10,
+            child: SelectableText(
               widget.currentSelection.description,
-              maxLines: 20,
               textAlign: TextAlign.start,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)

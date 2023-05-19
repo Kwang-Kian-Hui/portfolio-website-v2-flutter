@@ -25,7 +25,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
 
     return projectIndex == 0
         ? const Center(
-            child: Text("Select a project to view details",
+            child: SelectableText("Select a project to view details",
                 style: AppStyles.roboto18Bold),
           )
         : Column(
@@ -66,7 +66,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    SelectableText(
                                         "Date: ${DateFormat('MMM yyyy').format(projectList[projectIndex - 1].date)}"),
                                     projectList[projectIndex - 1].githubLink !=
                                             ""
@@ -255,7 +255,7 @@ class LinkWidget extends StatelessWidget {
                               .isLargerThan("BP-FOR-MOBILE")
                           ? 125
                           : 150,
-          child: Text(
+          child: SelectableText(
             titleString,
             maxLines: 2,
           ),
@@ -270,7 +270,7 @@ class LinkWidget extends StatelessWidget {
                       mode: LaunchMode.inAppWebView);
                 } on Exception {}
               },
-              child: const Text("Link"),
+              child: const SelectableText("Link"),
             ),
           ),
         ),

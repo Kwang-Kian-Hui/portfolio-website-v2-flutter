@@ -51,7 +51,7 @@ List<EducationClass> eduClassList = [
       DateTime(2022, 9, 30),
       "First Class Honours",
       "Module projects: Traffic Monitoring with OpenCV; Speech Recognition with p5.js (Meyda) and Mozilla DeepSpeech; Web and Mobile Applications; and more."
-      "\n\nFinal Year Project: Time Scheduler Bot (Mobile App)."
+      "\n\nFinal Year Project: Automatic Time Scheduler (Mobile App)."
       "\n\nRead more about my projects in the projects section.",
       ConstObjects.simLogo,
       true),

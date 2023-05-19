@@ -23,24 +23,26 @@ class EmptySelectionEduState extends ConsumerState<EmptySelectionEdu> {
           child: Container(
             height: 50,
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.symmetric(horizontal: 
-            ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
-                            ResponsiveWrapper.of(context)
-                                .isSmallerThan(DESKTOP)
-                        ? 8
-                        : ResponsiveWrapper.of(context)
-                                .isSmallerThan("BP-FOR-MOBILE")
-                            ? 8
-                            : 16,),
-            child: const Text("Click or drag and drop to view", maxLines: 3, style: AppStyles.roboto14),
+            padding: EdgeInsets.symmetric(
+              horizontal: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
+                      ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                  ? 8
+                  : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
+                      ? 8
+                      : 16,
+            ),
+            child: const Text("Click or drag and drop to view",
+                maxLines: 3, style: AppStyles.roboto14),
           ),
         ),
         DragTarget<EducationClass>(
           onAccept: (droppedIndex) {
-            ref.read(selectedEducationIndexProvider.notifier).change(droppedIndex.index);
+            ref
+                .read(selectedEducationIndexProvider.notifier)
+                .change(droppedIndex.index);
           },
           onWillAccept: (droppedData) {
-            if(droppedData != null){
+            if (droppedData != null) {
               return true;
             }
             return false;
@@ -58,7 +60,6 @@ class EmptySelectionEduState extends ConsumerState<EmptySelectionEdu> {
             ),
           ),
         ),
-        
       ],
     );
   }

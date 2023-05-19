@@ -128,8 +128,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Text("Where I've", style: AppStyles.roboto25Bold),
-                          Text(" Worked", style: AppStyles.roboto25ColoredBold),
+                          SelectableText("Where I've", style: AppStyles.roboto25Bold),
+                          SelectableText(" Worked", style: AppStyles.roboto25ColoredBold),
                         ],
                       ),
                     ),
@@ -231,8 +231,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                 children: [
                   Positioned(
                     top: 90,
-                    left: 100,
-                    right: 100,
+                    left: isSmallerThanTablet ? 70 : 100,
+                    right: isSmallerThanTablet ? 70 : 100,
                     child: SizedBox(
                       height: 10.0,
                       child: Center(
@@ -247,8 +247,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   ),
                   Positioned(
                     top: 100,
-                    left: 100,
-                    right: 100,
+                    left: isSmallerThanTablet ? 70 : 100,
+                    right: isSmallerThanTablet ? 70 : 100,
                     child: SizedBox(
                       height: 10.0,
                       child: Center(
@@ -303,8 +303,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Text("Where I've", style: AppStyles.roboto25Bold),
-                          Text(" Studied",
+                          SelectableText("Where I've", style: AppStyles.roboto25Bold),
+                          SelectableText(" Studied",
                               style: AppStyles.roboto25ColoredBold),
                         ],
                       ),

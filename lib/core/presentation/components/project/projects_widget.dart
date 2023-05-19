@@ -27,8 +27,8 @@ class _ProjectsWidgetState extends State<ProjectsWidget> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Text("What I've", style: AppStyles.roboto25Bold),
-                Text(" Done", style: AppStyles.roboto25ColoredBold),
+                SelectableText("What I've", style: AppStyles.roboto25Bold),
+                SelectableText(" Done", style: AppStyles.roboto25ColoredBold),
               ],
             ),
           ),

@@ -44,7 +44,7 @@ class ExperienceDetailWidgetState
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -70,9 +70,8 @@ class ExperienceDetailWidgetState
                 height: 54,
                 alignment: Alignment.centerLeft,
                 padding: AppStyles.horizontalPadding10,
-                child: Text(
+                child: SelectableText(
                   widget.currentSelection.expTitle,
-                  maxLines: 3,
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                       ? AppStyles.roboto14ColoredBold
@@ -89,9 +88,8 @@ class ExperienceDetailWidgetState
           child: Container(
             alignment: Alignment.centerLeft,
             padding: AppStyles.horizontalPadding10,
-            child: Text(
+            child: SelectableText(
               widget.currentSelection.jobTitle,
-              maxLines: 3,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                   ? AppStyles.roboto14Bold
@@ -105,9 +103,8 @@ class ExperienceDetailWidgetState
           child: Container(
             alignment: Alignment.centerLeft,
             padding: AppStyles.horizontalPadding10,
-            child: Text(
+            child: SelectableText(
               "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
-              maxLines: 3,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                   ? AppStyles.roboto14Bold
@@ -128,9 +125,8 @@ class ExperienceDetailWidgetState
               child: Container(
                 alignment: Alignment.topLeft,
                 padding: AppStyles.horizontalPadding10,
-                child: Text(
+                child: SelectableText(
                   widget.currentSelection.description,
-                  maxLines: 100,
                   textAlign: TextAlign.start,
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
@@ -154,11 +150,10 @@ class ExperienceDetailWidgetState
                       urlError = true;
                     }
                   },
-                  child: Text(
+                  child: SelectableText(
                     !urlError
                         ? "Have a sneak peek of the project here!"
-                        : "An error occurred. You can access the link here: https://www.linkedin.com/posts/synpulsemc_synpulse-risk-supervisory-srs-framework-activity-6952861626907713536-nbBF/",
-                    maxLines: 2,
+                        : "Have a sneak peek of the project here: https://www.linkedin.com/posts/synpulsemc_synpulse-risk-supervisory-srs-framework-activity-6952861626907713536-nbBF/",
                     style: AppStyles.roboto14Colored,
                   ),
                 ),

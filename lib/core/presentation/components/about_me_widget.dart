@@ -14,10 +14,8 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-          ? MediaQuery.of(context).size.height * 1.4
-          : ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
-              ? MediaQuery.of(context).size.height * 1.25
+      height: ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
+              ? MediaQuery.of(context).size.height
               : MediaQuery.of(context).size.height * 0.9,
       child: ResponsiveRowColumn(
         layout: ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP")
@@ -127,8 +125,8 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Who", style: AppStyles.roboto25ColoredBold),
-                            Text(" Am I", style: AppStyles.roboto25Bold),
+                            SelectableText("Who", style: AppStyles.roboto25ColoredBold),
+                            SelectableText(" Am I", style: AppStyles.roboto25Bold),
                           ],
                         ),
                       ),
@@ -141,6 +139,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                       right: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
                           ? 30
                           : 100,
+                          bottom: 10,
                       child: Card(
                         elevation: 5,
                         shape: RoundedRectangleBorder(
@@ -157,25 +156,23 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                           child: SingleChildScrollView(
                             child: Column(
                               children: const [
-                                Text(
+                                SelectableText(
                                   ConstObjects.aboutMeDescription,
-                                  maxLines: 35,
                                   style: AppStyles.roboto14,
-                                  textAlign: TextAlign.justify,
+                                  textAlign: TextAlign.start,
                                 ),
-                                Text(
+                                SelectableText(
                                   "\n\nPersonal Trivia:\n",
                                   style: AppStyles.roboto18Bold,
                                 ),
                                 SizedBox(
                                   width: double.infinity,
-                                  child: Text(
+                                  child: SelectableText(
                                     ConstObjects.aboutMeTrivia,
-                                    maxLines: 35,
                                     style: AppStyles.roboto14,
                                   ),
                                 ),
-                                Text(
+                                SelectableText(
                                   "\nLife Goals:\n",
                                   style: AppStyles.roboto18Bold,
                                 ),
@@ -183,7 +180,6 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                                   width: double.infinity,
                                   child: SelectableText(
                                     ConstObjects.aboutMeGoals,
-                                    maxLines: 35,
                                     style: AppStyles.roboto14,
                                   ),
                                 ),

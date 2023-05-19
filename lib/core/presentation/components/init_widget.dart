@@ -100,12 +100,12 @@ class _InitWidgetState extends State<InitWidget>
                       : ResponsiveRowColumnType.ROW,
                   children: [
                     ResponsiveRowColumnItem(
-                        child: Text("Welcome to my ",
+                        child: SelectableText("Welcome to my ",
                             style: particleTypeIndex == 1
                                 ? AppStyles.roboto30w500Neon
                                 : AppStyles.roboto30w500)),
                     ResponsiveRowColumnItem(
-                        child: Text("Portfolio Website",
+                        child: SelectableText("Portfolio Website",
                             style: particleTypeIndex == 1
                                 ? AppStyles.roboto30Coloredw500Neon
                                 : AppStyles.roboto30Coloredw500)),
