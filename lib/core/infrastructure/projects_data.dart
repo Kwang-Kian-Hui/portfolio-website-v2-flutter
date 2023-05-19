@@ -241,7 +241,7 @@ List<Project> projectList = [
         "\n\n3) SQLite local device database"
         "\n\n4) Alarm rings when device is within set radius of destination."
         "\n\n5) Ringtone or vibrate",
-    DateTime(2022, 3),
+    DateTime(2021, 3),
     "https://github.com/Kwang-Kian-Hui/location-alarm_v2",
     "",
     "",
