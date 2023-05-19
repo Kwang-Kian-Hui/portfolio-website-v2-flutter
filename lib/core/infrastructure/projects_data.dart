@@ -121,19 +121,19 @@ List<Project> projectList = [
     "Portfolio Website 2",
     ["Frontend", "Dart", "Web/Mobile", "CI/CD"],
     "\nProject Description:"
-    "\n\nDeveloped using Flutter (Dart)"
-    "\n\nImplementing CI/CD pipeline using Github Actions to automate deployment process for Flutter web."
-    "\n\nWorkflow is triggered on changes to main branch",
+        "\n\nDeveloped using Flutter (Dart)"
+        "\n\nImplementing CI/CD pipeline using Github Actions to automate deployment process for Flutter web."
+        "\n\nWorkflow is triggered on changes to main branch",
     "As Flutter web becomes more mature and stable over the years, I thought this could be a good opportunity to test it out for myself.",
     DateTime(2022, 10),
     "https://github.com/Kwang-Kian-Hui/portfolio-website-v2-flutter",
     "",
     "",
     "",
-    "", 
-    "", 
+    "",
+    "",
     "Future Work:"
-    "\n\nAdding end-to-end tests and include it into the Github Actions workflow.",
+        "\n\nAdding end-to-end tests and include it into the Github Actions workflow.",
     [
       "assets/images/welcome-page.png",
     ],
@@ -230,17 +230,17 @@ List<Project> projectList = [
     "Location Alarm",
     ["Frontend", "Data", "Dart", "Web/Mobile"],
     "\nProject Description:"
-    "\n\nLocation Alarm is an app that allow users to create an alarm with a set destination and radius, and when their devices are within the radius of their destination, the alarm will ring. This app uses the Map and Places API of Google Cloud Platform for the map features and address suggestions when users are searching for their destination. Some android devices are unable to receive background location updates due to the device's battery saving processes."
-    "\n\nKey Takeaways:"
-    "\n\n1) Usage of Google Map and Places APIs."
-    "\n\n2) Publishing app to Google Play Store for internal testing, and releasing for public use."
-    "\nBackground location packages' limitations as the feature only works for certain android devices and a better solution is required.",
+        "\n\nLocation Alarm is an app that allow users to create an alarm with a set destination and radius, and when their devices are within the radius of their destination, the alarm will ring. This app uses the Map and Places API of Google Cloud Platform for the map features and address suggestions when users are searching for their destination. Some android devices are unable to receive background location updates due to the device's battery saving processes."
+        "\n\nKey Takeaways:"
+        "\n\n1) Usage of Google Map and Places APIs."
+        "\n\n2) Publishing app to Google Play Store for internal testing, and releasing for public use."
+        "\nBackground location packages' limitations as the feature only works for certain android devices and a better solution is required.",
     "Features Completed:"
-    "\n\n1) Google Maps API (map features, markers, and positional radius)"
-    "\n\n2) Google Places API (search bar, address/postal/building name suggestions)"
-    "\n\n3) SQLite local device database"
-    "\n\n4) Alarm rings when device is within set radius of destination."
-    "\n\n5) Ringtone or vibrate",
+        "\n\n1) Google Maps API (map features, markers, and positional radius)"
+        "\n\n2) Google Places API (search bar, address/postal/building name suggestions)"
+        "\n\n3) SQLite local device database"
+        "\n\n4) Alarm rings when device is within set radius of destination."
+        "\n\n5) Ringtone or vibrate",
     DateTime(2022, 3),
     "https://github.com/Kwang-Kian-Hui/location-alarm_v2",
     "",
@@ -329,10 +329,10 @@ List<Project> projectList = [
         "Linear regression model is used on a group of sample data to generate the price predictions. Trades will then be made based on the predictions."
         "\n\nCode and csv data is available in Github",
     "Before linear regression model is used to predict future price, we will analyse different digital currencies' exchange rates, ask volume, and bid volume."
-    "The ask and bid volume is used to produce an ask/bid volume ratio. When the ask volume is higher than bid volume, the prices of the products are likely to increase"
-    "as it indicates strong buying pressure (higher ask/bid ratio). If the ask/bid ratio of an exchange is high, we will check if the spread is low enough."
-    " Low spread means that the cost of trading a certain product is lower and it usually indicates a high trading volume. If these conditions are met, "
-    "the price prediction is made and if the potential return exceeds the spread, we will make a trade order",
+        "The ask and bid volume is used to produce an ask/bid volume ratio. When the ask volume is higher than bid volume, the prices of the products are likely to increase"
+        "as it indicates strong buying pressure (higher ask/bid ratio). If the ask/bid ratio of an exchange is high, we will check if the spread is low enough."
+        " Low spread means that the cost of trading a certain product is lower and it usually indicates a high trading volume. If these conditions are met, "
+        "the price prediction is made and if the potential return exceeds the spread, we will make a trade order",
     DateTime(2021, 10),
     "https://github.com/Kwang-Kian-Hui/MerkelRex",
     "",
@@ -377,10 +377,10 @@ List<Project> projectList = [
     "\nProject Description:"
         "\n\nThe project's research is on \"Correlation between key variables of the countries' happiness index and COVID-19 vaccinations\".",
     "Steps:"
-    "\n\n1) Data Extraction: Two relevant csv data files were downloaded, and web scraping was performed with BeautifulSoup to extract key data. "
-    "\n\n2) Data Preparation: The pandas dataframes were merged along with the web scraped data to form a single large dataframe. "
-    "Data cleaning and transformation is then performed."
-    "\n\n3) Data Analysis: Bar chart, Sunburst chart and Heatmap charts were produced and analysed to construct findings.",
+        "\n\n1) Data Extraction: Two relevant csv data files were downloaded, and web scraping was performed with BeautifulSoup to extract key data. "
+        "\n\n2) Data Preparation: The pandas dataframes were merged along with the web scraped data to form a single large dataframe. "
+        "Data cleaning and transformation is then performed."
+        "\n\n3) Data Analysis: Bar chart, Sunburst chart and Heatmap charts were produced and analysed to construct findings.",
     DateTime(2021, 10),
     "",
     "",
@@ -439,7 +439,7 @@ List<Project> projectList = [
     "\nProject Description:"
         "\n\nIn this coursework, the Sign Language MNIST dataset (27455 training, 7172 testing dataset, 28x28 pixel image, 24 labels representing each alphabet where J and Z is not included as it requires motion (unable to represent in 1 image)) is used.",
     "Steps: "
-    "\n\n1) Data Preparation - Converting data into tensors:"
+        "\n\n1) Data Preparation - Converting data into tensors:"
         "\n\nNormalize tensor values"
         "\n\n2) Develop baseline model and another model that performs better"
         "\n\nModels developed using tensorflow keras models"
@@ -473,20 +473,27 @@ List<Project> projectList = [
     ["Frontend", "Data", "Dart", "Data Analytics/Engineering", "Web/Mobile"],
     "\nProject Description:"
         "\n\nThis app helps to schedule tasks for users based on deadline priorities. Users are able to set several personalization settings such as working hours, break hours, and days that they are working on."
-        "Tasks will not be scheduled on non working hours including breaks."
+        " Tasks will not be scheduled on non working hours including breaks."
         "\n\nKey Features:"
         "\n\n1) Add/Edit/Delete events or tasks on calendar. Events - events that does not require any action from user. Tasks - events that require a set duration of time from user (must not overlap with other tasks)."
-        "\n\n2) For events, user must specify start and end date. For tasks, if not start and end date is specified, a duration must be provided and the app will schedule the task for the user."
+        "\n\n2) For events, user must specify start and end date. For tasks, if no start and end date is specified, a duration must be provided and the app will schedule the task for the user."
         "\n\n3) Users can mark existing tasks as completed or uncompleted."
-        "\n\n4) User can view different calendar views (month/week/day) or view and filter tasks only (completed or uncompleted)."
+        "\n\n4) Different calendar views (day/week/month) and filter tasks by completion status."
         "\n\n5) Import events from Google Calendar."
         "\n\n6) Other personalization settings (Event/Task categories, Color Themes)"
         "\n\nGoogle Firestore NoSQL database used. Firebase Authentication, Google Calendar API",
     "Algorithm/Technique used: binary time list"
-        "\n\nAs the function loops through each available working day, the binary time list of each of those days are retrieved. Binary time list is represented"
-        "by an unsigned 8 bit integer list of length 288 where each element represents 5 minute intervals of 24 hours time period. As boolean in Dart language"
-        " uses 2 bytes while unsigned 8 bit integer uses 1 byte, it is used instead of boolean list. If an element is '1', it means that the particular 5 minute"
-        " in that specific time period is available while '0' represents unavailable.",
+        "\n\nOne challenge I encountered was determining the available time for scheduling, considering varying break hours and non-working hours for each day. Using conditional statements (if conditions) to handle this "
+        "scenario proved highly inefficient and made the feature difficult to debug. To address this, I devised an alternative approach."
+        "\n\nI devised a solution by utilizing a list structure to represent time availability. Each element in the list corresponds to a one-minute interval, where '1' represents availability and '0' represents "
+        "unavailability. To represent a full day of 24 hours, the initial list length was set to 1440 elements (one for each minute). However, to optimize efficiency, I condensed the list to a length of 288, with each "
+        "element representing a five-minute interval."
+        "\n\nTo determine the available working hours for a given day, the process followed these steps:"
+        "\n1) Initialize the list with 288 elements, all set to '0' to indicate unavailability."
+        "\n2)Based on customized working hours, set the corresponding range of indexes to '1' to indicate availability."
+        "\n3)Similarly, considering customized break hours, set the corresponding range of indexes to '0' to indicate unavailability."
+        "\n\nBy following these steps, the resulting list provides a clear representation of the available working hours for the specific day, incorporating variations in working and break hours."
+        "\n\nUnsigned 8 bit integer was used instead of boolean as boolean in Dart language uses 2 bytes while unsigned 8 bit integer uses 1 byte, reducing the memory usage by half.",
     DateTime(2022, 8),
     "",
     "https://www.figma.com/file/mV24w6TCa6yWRehhHPhW2D/Low-Fidelity-Prototype?node-id=0%3A1",
@@ -514,7 +521,7 @@ List<Project> projectList = [
         "\n\n2) Writing Spark scripts in Scala to join datasets using Spark Dataset API."
         "\n\n3) Compound resolution, compound exclusions, entity network graph and document scoring for Quantexa tool UI."
         "\n\n4) HTML/CSS to customise Quantexa UI",
-        "",
+    "",
     DateTime(2023, 5),
     "",
     "",
