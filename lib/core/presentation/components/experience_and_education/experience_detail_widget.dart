@@ -22,7 +22,7 @@ class ExperienceDetailWidget extends ConsumerStatefulWidget {
 class ExperienceDetailWidgetState
     extends ConsumerState<ExperienceDetailWidget> {
   final Uri _url = Uri.parse(
-      'https://www.linkedin.com/posts/synpulsemc_synpulse-risk-supervisory-srs-framework-activity-6952861626907713536-nbBF/');
+      'https://synpulse8.com/our-solutions/pulse8-srs-framework');
 
   bool urlError = false;
 
@@ -34,7 +34,7 @@ class ExperienceDetailWidgetState
   // void initState() {
   //   super.initState();
   //   _videoController = VideoPlayerController.network(
-  //       'https://www.linkedin.com/posts/synpulsemc_synpulse-risk-supervisory-srs-framework-activity-6952861626907713536-nbBF/')
+  //       'https://synpulse8.com/our-solutions/pulse8-srs-framework')
   //     ..initialize().then((_) {
   //       // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
   //       setState(() {});
@@ -152,8 +152,8 @@ class ExperienceDetailWidgetState
                   },
                   child: SelectableText(
                     !urlError
-                        ? "Have a sneak peek of the project here!"
-                        : "Have a sneak peek of the project here: https://www.linkedin.com/posts/synpulsemc_synpulse-risk-supervisory-srs-framework-activity-6952861626907713536-nbBF/",
+                        ? "Have a look at the project here!"
+                        : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
                     style: AppStyles.roboto14Colored,
                   ),
                 ),
