@@ -140,7 +140,7 @@ class ExperienceDetailWidgetState
             ),
           ),
         ),
-        widget.currentSelection.index == 2
+        widget.currentSelection.index == 1 || widget.currentSelection.index == 2
             ? Expanded(
               child: TextButton(
                   onPressed: () async {
@@ -150,9 +150,9 @@ class ExperienceDetailWidgetState
                       urlError = true;
                     }
                   },
-                  child: SelectableText(
+                  child: Text(
                     !urlError
-                        ? "Have a look at the project here!"
+                        ? "Click here to learn more about the project"
                         : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
                     style: AppStyles.roboto14Colored,
                   ),
