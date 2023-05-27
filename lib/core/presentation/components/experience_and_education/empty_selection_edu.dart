@@ -32,7 +32,7 @@ class EmptySelectionEduState extends ConsumerState<EmptySelectionEdu> {
                       : 16,
             ),
             child: const Text("Click or drag and drop to view",
-                maxLines: 3, style: AppStyles.roboto14),
+                maxLines: 3, style: AppStyles.montserrat14),
           ),
         ),
         DragTarget<EducationClass>(

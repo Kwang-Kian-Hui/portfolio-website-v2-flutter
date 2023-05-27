@@ -1,8 +1,11 @@
 class ConstObjects{
-  static const String npLogo = 'assets/images/np_logo.png';
-  static const String simLogo = 'assets/images/sim_logo.png';
-  static const String s8Logo = 'assets/images/synpulse8_logo.png';
-  static const String abundantAccountingLogo = 'assets/images/abundant_accounting_logo.png';
+  static const String npLogo = 'assets/images/icons/np_logo.png';
+  static const String simLogo = 'assets/images/icons/sim_logo.png';
+  static const String s8Logo = 'assets/images/icons/synpulse8_logo.png';
+  static const String abundantAccountingLogo = 'assets/images/icons/abundant_accounting_logo.png';
+
+  static const String backgroundImage = 'assets/images/background-image.png';
+  static const String placeholderImage = 'assets/images/img_placeholder.png';
 
   static const String aboutMeDescription =
     "Hi, my name is Kian Hui. I have a deep passion for learning and applying new technologies to diverse projects,"

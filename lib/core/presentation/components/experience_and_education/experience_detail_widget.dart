@@ -74,11 +74,11 @@ class ExperienceDetailWidgetState
                   widget.currentSelection.expTitle,
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                      ? AppStyles.roboto14ColoredBold
+                      ? AppStyles.montserrat14ColoredBold
                       : ResponsiveWrapper.of(context)
                               .isSmallerThan("BP-FOR-MOBILE")
-                          ? AppStyles.roboto14ColoredBold
-                          : AppStyles.roboto20ColoredBold,
+                          ? AppStyles.montserrat14ColoredBold
+                          : AppStyles.montserrat20ColoredBold,
                 ),
               ),
             ),
@@ -92,10 +92,10 @@ class ExperienceDetailWidgetState
               widget.currentSelection.jobTitle,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.roboto14Bold
+                  ? AppStyles.montserrat14Bold
                   : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.roboto14Bold
-                      : AppStyles.roboto18Bold,
+                      ? AppStyles.montserrat14Bold
+                      : AppStyles.montserrat18Bold,
             ),
           ),
         ),
@@ -107,10 +107,10 @@ class ExperienceDetailWidgetState
               "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.roboto14Bold
+                  ? AppStyles.montserrat14Bold
                   : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.roboto14Bold
-                      : AppStyles.roboto18Bold,
+                      ? AppStyles.montserrat14Bold
+                      : AppStyles.montserrat18Bold,
             ),
           ),
         ),
@@ -130,11 +130,11 @@ class ExperienceDetailWidgetState
                   textAlign: TextAlign.start,
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                      ? AppStyles.roboto10
+                      ? AppStyles.montserrat10
                       : ResponsiveWrapper.of(context)
                               .isSmallerThan("BP-FOR-MOBILE")
-                          ? AppStyles.roboto10
-                          : AppStyles.roboto14,
+                          ? AppStyles.montserrat10
+                          : AppStyles.montserrat14,
                 ),
               ),
             ),
@@ -154,7 +154,7 @@ class ExperienceDetailWidgetState
                     !urlError
                         ? "Click here to learn more about the project"
                         : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
-                    style: AppStyles.roboto14Colored,
+                    style: AppStyles.montserrat14Colored,
                   ),
                 ),
             )

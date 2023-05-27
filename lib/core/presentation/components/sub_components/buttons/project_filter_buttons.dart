@@ -98,8 +98,8 @@ class ProjectFiltersButtonState extends ConsumerState<ProjectFiltersButton> {
           child: Text(
             widget.buttonTitle,
             style: watchProvider == widget.index
-                ? AppStyles.roboto12ColoredBold
-                : AppStyles.roboto12,
+                ? AppStyles.montserrat12ColoredBold
+                : AppStyles.montserrat12,
           ),
         ),
       ),

@@ -35,8 +35,8 @@ List<Project> projectList = [
         "\n\n3) Background subtractor fails to detect the first 2 vehicles once they have stopped at the junction due to the learning rate of the "
         "background subtractor. Parameters should be optimised for them to be detected.",
     [
-      "assets/images/traffic_monitoring_system_img_1.png",
-      "assets/images/traffic_monitoring_system_img_2.png",
+      "assets/images/projects/traffic_monitoring_system_img_1.png",
+      "assets/images/projects/traffic_monitoring_system_img_2.png",
     ],
   ),
   Project(
@@ -85,16 +85,16 @@ List<Project> projectList = [
         "\n\n3) Resizing and recropping of images in application can be implemented to better standardize image size and ratio. Currently, images are forcibly resized to the size defined by the style of the element in HTML file."
         "\n\n4) Infinite scrolling with pagination to improve home page loading performance as the number of data can grow to be very large in an actual social media app.",
     [
-      "assets/images/registration-page.png",
-      "assets/images/home-page.png",
-      "assets/images/home-page-2.png",
-      "assets/images/search-user-kwargs-b.png",
-      "assets/images/self-profile-page.png",
-      "assets/images/friend-list-page.png",
-      "assets/images/friend-profile-page.png",
-      "assets/images/chat-list-page.png",
-      "assets/images/chat-page.png",
-      "assets/images/friend-detail-api.png",
+      "assets/images/projects/registration-page.png",
+      "assets/images/projects/home-page.png",
+      "assets/images/projects/home-page-2.png",
+      "assets/images/projects/search-user-kwargs-b.png",
+      "assets/images/projects/self-profile-page.png",
+      "assets/images/projects/friend-list-page.png",
+      "assets/images/projects/friend-profile-page.png",
+      "assets/images/projects/chat-list-page.png",
+      "assets/images/projects/chat-page.png",
+      "assets/images/projects/friend-detail-api.png",
     ],
   ),
   Project(
@@ -113,7 +113,7 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/home-section.png",
+      "assets/images/projects/home-section.png",
     ],
   ),
   Project(
@@ -135,7 +135,7 @@ List<Project> projectList = [
     "Future Work:"
         "\n\nAdding end-to-end tests and include it into the Github Actions workflow.",
     [
-      "assets/images/welcome-page.png",
+      "assets/images/projects/welcome-page.png",
     ],
   ),
   Project(
@@ -164,10 +164,10 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/deepspeech-1.png",
-      "assets/images/deepspeech-2.png",
-      "assets/images/deepspeech-3.png",
-      "assets/images/deepspeech-4.png",
+      "assets/images/projects/deepspeech-1.png",
+      "assets/images/projects/deepspeech-2.png",
+      "assets/images/projects/deepspeech-3.png",
+      "assets/images/projects/deepspeech-4.png",
     ],
   ),
   Project(
@@ -193,9 +193,9 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/default-square.png",
-      "assets/images/red-circle.png",
-      "assets/images/white-circle.png",
+      "assets/images/projects/default-square.png",
+      "assets/images/projects/red-circle.png",
+      "assets/images/projects/white-circle.png",
     ],
   ),
   Project(
@@ -220,9 +220,9 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/converter_format.png",
-      "assets/images/converter_img_1.png",
-      "assets/images/converter_img_2.png",
+      "assets/images/projects/converter_format.png",
+      "assets/images/projects/converter_img_1.png",
+      "assets/images/projects/converter_img_2.png",
     ],
   ),
   Project(
@@ -251,9 +251,9 @@ List<Project> projectList = [
     "Future Improvements:"
         "\n\n1) Background location is not yet released. An additional change to the app where a prominent disclosure before the app's runtime is required to adhere to Google permissions policy in order for the update to be released. Without this, the location does not update when the screen is locked.",
     [
-      "assets/images/initial-page-permission-request.png",
-      "assets/images/add-edit-alarm-page.png",
-      "assets/images/home-page-with-alarms.png",
+      "assets/images/projects/initial-page-permission-request.png",
+      "assets/images/projects/add-edit-alarm-page.png",
+      "assets/images/projects/home-page-with-alarms.png",
     ],
   ),
   Project(
@@ -278,9 +278,9 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/consumer-home-page-retailer-list.png",
-      "assets/images/consumer-retailer-product-list-page.png",
-      "assets/images/consumer-retailer-details-page.png",
+      "assets/images/projects/consumer-home-page-retailer-list.png",
+      "assets/images/projects/consumer-retailer-product-list-page.png",
+      "assets/images/projects/consumer-retailer-details-page.png",
     ],
   ),
   Project(
@@ -308,15 +308,15 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/solarSystem.png",
-      "assets/images/asteroidGameClone.png",
-      "assets/images/angryBirdsGameClone.png",
-      "assets/images/noisyGrid.png",
-      "assets/images/3DSinAnimation.png",
-      "assets/images/averageFace1.png",
-      "assets/images/averageFace2.png",
-      "assets/images/instagramFilter1.png",
-      "assets/images/instagramFilter2.png",
+      "assets/images/projects/solarSystem.png",
+      "assets/images/projects/asteroidGameClone.png",
+      "assets/images/projects/angryBirdsGameClone.png",
+      "assets/images/projects/noisyGrid.png",
+      "assets/images/projects/3DSinAnimation.png",
+      "assets/images/projects/averageFace1.png",
+      "assets/images/projects/averageFace2.png",
+      "assets/images/projects/instagramFilter1.png",
+      "assets/images/projects/instagramFilter2.png",
     ],
   ),
   Project(
@@ -343,10 +343,10 @@ List<Project> projectList = [
     "Future Improvements:"
         "\n\nConditions for making trades can be improved as bot stops making trades after the first time iteration due to the trading conditions not being met.",
     [
-      "assets/images/merkelrex-cover.png",
-      "assets/images/merkelrex-img-1.png",
-      "assets/images/merkelrex-img-2.png",
-      "assets/images/merkelrex-img-3.png",
+      "assets/images/projects/merkelrex-cover.png",
+      "assets/images/projects/merkelrex-img-1.png",
+      "assets/images/projects/merkelrex-img-2.png",
+      "assets/images/projects/merkelrex-img-3.png",
     ],
   ),
   Project(
@@ -366,8 +366,8 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/otodecks-img-1.png",
-      "assets/images/otodecks-img-2.png",
+      "assets/images/projects/otodecks-img-1.png",
+      "assets/images/projects/otodecks-img-2.png",
     ],
   ),
   Project(
@@ -390,10 +390,10 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/web-scraping.png",
-      "assets/images/bar-chart.png",
-      "assets/images/sun-burst-chart.png",
-      "assets/images/heatmap-chart.png",
+      "assets/images/projects/web-scraping.png",
+      "assets/images/projects/bar-chart.png",
+      "assets/images/projects/sun-burst-chart.png",
+      "assets/images/projects/heatmap-chart.png",
     ],
   ),
   Project(
@@ -425,11 +425,11 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/correlation_plot.png",
-      "assets/images/confusion_matrix.png",
-      "assets/images/confusion_matrix_grouping.png",
-      "assets/images/classifier_evaluation.png",
-      "assets/images/summary_results.png",
+      "assets/images/projects/correlation_plot.png",
+      "assets/images/projects/confusion_matrix.png",
+      "assets/images/projects/confusion_matrix_grouping.png",
+      "assets/images/projects/classifier_evaluation.png",
+      "assets/images/projects/summary_results.png",
     ],
   ),
   Project(
@@ -461,10 +461,10 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/dataset.png",
-      "assets/images/baseline.png",
-      "assets/images/overfit.png",
-      "assets/images/best.png",
+      "assets/images/projects/dataset.png",
+      "assets/images/projects/baseline.png",
+      "assets/images/projects/overfit.png",
+      "assets/images/projects/best.png",
     ],
   ),
   Project(
@@ -503,12 +503,12 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/login-page.png",
-      "assets/images/signup-validation.png",
-      "assets/images/add-task.png",
-      "assets/images/calendar-page.png",
-      "assets/images/settings-page.png",
-      "assets/images/working-hours.png",
+      "assets/images/projects/login-page.png",
+      "assets/images/projects/signup-validation.png",
+      "assets/images/projects/add-task.png",
+      "assets/images/projects/calendar-page.png",
+      "assets/images/projects/settings-page.png",
+      "assets/images/projects/working-hours.png",
     ],
   ),
   Project(

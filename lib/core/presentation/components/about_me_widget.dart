@@ -125,8 +125,8 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            SelectableText("Who", style: AppStyles.roboto25ColoredBold),
-                            SelectableText(" Am I", style: AppStyles.roboto25Bold),
+                            SelectableText("Who", style: AppStyles.montserrat25ColoredBold),
+                            SelectableText(" Am I", style: AppStyles.montserrat25Bold),
                           ],
                         ),
                       ),
@@ -158,29 +158,29 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                               children: const [
                                 SelectableText(
                                   ConstObjects.aboutMeDescription,
-                                  style: AppStyles.roboto14,
+                                  style: AppStyles.montserrat14,
                                   textAlign: TextAlign.start,
                                 ),
                                 SelectableText(
                                   "\n\nPersonal Trivia:\n",
-                                  style: AppStyles.roboto18Bold,
+                                  style: AppStyles.montserrat18Bold,
                                 ),
                                 SizedBox(
                                   width: double.infinity,
                                   child: SelectableText(
                                     ConstObjects.aboutMeTrivia,
-                                    style: AppStyles.roboto14,
+                                    style: AppStyles.montserrat14,
                                   ),
                                 ),
                                 SelectableText(
                                   "\nLife Goals:\n",
-                                  style: AppStyles.roboto18Bold,
+                                  style: AppStyles.montserrat18Bold,
                                 ),
                                 SizedBox(
                                   width: double.infinity,
                                   child: SelectableText(
                                     ConstObjects.aboutMeGoals,
-                                    style: AppStyles.roboto14,
+                                    style: AppStyles.montserrat14,
                                   ),
                                 ),
                               ],

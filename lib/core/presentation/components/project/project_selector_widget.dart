@@ -24,7 +24,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
       width: 250,
       alignment: Alignment.center,
       child: const SelectableText("Select a category to filter projects",
-          style: AppStyles.roboto14),
+          style: AppStyles.montserrat14),
     ),
   ];
 
@@ -89,7 +89,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           Container(
             height: 50,
             alignment: Alignment.center,
-            child: const SelectableText("Categories", style: AppStyles.roboto18ColoredBold),
+            child: const SelectableText("Categories", style: AppStyles.montserrat18ColoredBold),
           ),
           Container(
             alignment: Alignment.center,
@@ -116,7 +116,7 @@ class ProjectSelectorWidgetState extends ConsumerState<ProjectSelectorWidget> {
           Container(
             height: 50,
             alignment: Alignment.center,
-            child: const SelectableText("Projects", style: AppStyles.roboto18ColoredBold),
+            child: const SelectableText("Projects", style: AppStyles.montserrat18ColoredBold),
           ),
           Wrap(
             alignment: WrapAlignment.start,

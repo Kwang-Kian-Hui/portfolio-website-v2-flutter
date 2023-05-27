@@ -33,11 +33,11 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
                   widget.currentSelection.eduTitle,
                   style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                           ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                      ? AppStyles.roboto14ColoredBold
+                      ? AppStyles.montserrat14ColoredBold
                       : ResponsiveWrapper.of(context)
                               .isSmallerThan("BP-FOR-MOBILE")
-                          ? AppStyles.roboto14ColoredBold
-                          : AppStyles.roboto20ColoredBold,
+                          ? AppStyles.montserrat14ColoredBold
+                          : AppStyles.montserrat20ColoredBold,
                 ),
               ),
             ),
@@ -68,10 +68,10 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
               widget.currentSelection.courseTitle,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.roboto14Bold
+                  ? AppStyles.montserrat14Bold
                   : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.roboto14Bold
-                      : AppStyles.roboto18Bold,
+                      ? AppStyles.montserrat14Bold
+                      : AppStyles.montserrat18Bold,
             ),
           ),
         ),
@@ -83,10 +83,10 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
               "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.roboto14Bold
+                  ? AppStyles.montserrat14Bold
                   : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.roboto14Bold
-                      : AppStyles.roboto18Bold,
+                      ? AppStyles.montserrat14Bold
+                      : AppStyles.montserrat18Bold,
             ),
           ),
         ),
@@ -98,10 +98,10 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
               widget.currentSelection.grade,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.roboto10
+                  ? AppStyles.montserrat10
                   : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.roboto10
-                      : AppStyles.roboto14,
+                      ? AppStyles.montserrat10
+                      : AppStyles.montserrat14,
             ),
           ),
         ),
@@ -115,10 +115,10 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
               textAlign: TextAlign.start,
               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.roboto10
+                  ? AppStyles.montserrat10
                   : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.roboto10
-                      : AppStyles.roboto14,
+                      ? AppStyles.montserrat10
+                      : AppStyles.montserrat14,
             ),
           ),
         ),

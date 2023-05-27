@@ -128,8 +128,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          SelectableText("Where I've", style: AppStyles.roboto25Bold),
-                          SelectableText(" Worked", style: AppStyles.roboto25ColoredBold),
+                          SelectableText("Where I've", style: AppStyles.montserrat25Bold),
+                          SelectableText(" Worked", style: AppStyles.montserrat25ColoredBold),
                         ],
                       ),
                     ),
@@ -303,9 +303,9 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          SelectableText("Where I've", style: AppStyles.roboto25Bold),
+                          SelectableText("Where I've", style: AppStyles.montserrat25Bold),
                           SelectableText(" Studied",
-                              style: AppStyles.roboto25ColoredBold),
+                              style: AppStyles.montserrat25ColoredBold),
                         ],
                       ),
                     ),
