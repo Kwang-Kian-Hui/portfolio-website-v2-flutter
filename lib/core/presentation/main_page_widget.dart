@@ -30,7 +30,11 @@ class MainPageWidgetState extends ConsumerState<MainPageWidget> {
     print(MediaQuery.of(context).size.width);
     return Scaffold(
       backgroundColor: AppStyles.mainAppColour,
-      body: SizedBox(
+      body: Container(
+        constraints: const BoxConstraints(
+          minWidth: 480,
+          minHeight: 2160,
+        ),
         height: MediaQuery.of(context).size.height * 3,
         child: Stack(
           children: [

@@ -11,6 +11,9 @@ class AppStyles {
   static const horizontalPadding10 = EdgeInsets.symmetric(horizontal: 10);
 
   static const montserratAlt210 = TextStyle(fontSize: 210, fontFamily: "Montserrat_Alternates", fontWeight: FontWeight.w400, color: Color(0xffffffff)) ;
+  static const montserratAlt150 = TextStyle(fontSize: 150, fontFamily: "Montserrat_Alternates", fontWeight: FontWeight.w400, color: Color(0xffffffff)) ;
+  static const montserratAlt125 = TextStyle(fontSize: 125, fontFamily: "Montserrat_Alternates", fontWeight: FontWeight.w400, color: Color(0xffffffff)) ;
+  static const montserratAlt90 = TextStyle(fontSize: 90, fontFamily: "Montserrat_Alternates", fontWeight: FontWeight.w400, color: Color(0xffffffff)) ;
 
   static final montserrat30w500Neon = TextStyle(fontSize: 30.0, fontFamily: "Montserrat", fontWeight: FontWeight.w500, color: Colors.white, overflow: TextOverflow.ellipsis, shadows: [for(int i = 0; i < 8; i++)Shadow(color: Colors.white.withOpacity(0.3), blurRadius: 3.0 * i),]);
   static final montserrat30Coloredw500Neon = TextStyle(fontSize: 30.0, fontFamily: "Montserrat", fontWeight: FontWeight.w500, color: appSubColour, overflow: TextOverflow.ellipsis, shadows: [for(int i = 0; i < 8; i++)Shadow(color: Colors.red.shade300, blurRadius: 3.0 * i),]);

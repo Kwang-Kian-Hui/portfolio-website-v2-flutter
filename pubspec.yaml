@@ -113,7 +113,7 @@ flutter:
           weight: 300
         - asset: assets/fonts/Montserrat/static/Montserrat-ExtraLight.ttf
           weight: 200
-    - family: Montserrat_Alternatives
+    - family: Montserrat_Alternates
       fonts:
         - asset: assets/fonts/Montserrat_Alternates/MontserratAlternates-Bold.ttf
           weight: 700
