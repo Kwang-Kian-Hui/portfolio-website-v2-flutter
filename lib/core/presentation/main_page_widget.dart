@@ -3,7 +3,7 @@ import 'package:flutter_portfolio_website/core/presentation/app_bar_widget.dart'
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_portfolio_website/core/presentation/app_bar_widget.dart';
-import 'package:flutter_portfolio_website/core/presentation/components/about_me_widget.dart';
+import 'package:flutter_portfolio_website/core/presentation/components/about_me/about_me_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/experience_and_education/experiences_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/init_page/init_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/project/projects_widget.dart';
