@@ -6,6 +6,7 @@ class AppStyles {
   static const greyColour = Color(0xffDCDCDC);
   static const appSubColour = greyColour;
 
+  static const containerBorderRadius = 15.0;
   static const webBorderPadding = 60.0;
   static const mobileBorderPadding = 20.0;
   static const horizontalPadding10 = EdgeInsets.symmetric(horizontal: 10);

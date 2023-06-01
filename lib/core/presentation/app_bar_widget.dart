@@ -22,20 +22,21 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppStyles.containerBorderRadius)),
       elevation: 10,
       child: Container(
         height: 80,
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         decoration: BoxDecoration(
           color: AppStyles.containerColour,
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(AppStyles.containerBorderRadius),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              padding: const EdgeInsets.only(left: 20.0),
               child: MouseRegion(
                 onEnter: (pointerEvent) {
                   setState(() {
@@ -47,9 +48,9 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                     hoverOnIcon = false;
                   });
                 },
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () {
+                child: FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  onPressed: () {
                     ref
                         .read(scrollControllerProvider.notifier)
                         .scrollToIndex(0);
@@ -69,6 +70,7 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                             : AppStyles.courgette20,
                       ),
                     ),
+                    // ),
                   ),
                 ),
               ),
@@ -88,7 +90,6 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                             hoverOnAbout = false;
                           });
                         },
-                        cursor: SystemMouseCursors.click,
                         child: ClickAndScrollButtons(
                             index: 1,
                             buttonText: "ABOUT ME",
@@ -130,10 +131,13 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                       ),
                     ],
                   )
-                : DropdownMenuButton(
-                    hoverOnAbout: hoverOnAbout,
-                    hoverOnExperience: hoverOnExperience,
-                    hoverOnProject: hoverOnProject,
+                : Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: DropdownMenuButton(
+                      hoverOnAbout: hoverOnAbout,
+                      hoverOnExperience: hoverOnExperience,
+                      hoverOnProject: hoverOnProject,
+                    ),
                   ),
           ],
         ),

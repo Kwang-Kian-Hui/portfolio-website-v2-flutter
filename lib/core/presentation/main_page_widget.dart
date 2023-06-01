@@ -17,13 +17,27 @@ class MainPageWidget extends ConsumerStatefulWidget {
   MainPageWidgetState createState() => MainPageWidgetState();
 }
 
-class MainPageWidgetState extends ConsumerState<MainPageWidget> {
+class MainPageWidgetState extends ConsumerState<MainPageWidget>
+    with TickerProviderStateMixin {
   List<Widget> sectionsList = const [
     InitWidget(),
     AboutMeWidget(),
     ExperiencesWidget(),
     ProjectsWidget(),
   ];
+
+  @override
+  void initState() {
+    // initialise animation controllers for radial menu in "experiences" section to avoid reinitialising controller on resizing
+    ref.read(expRadialMenuAnimationController.notifier).change(
+        AnimationController(
+            duration: const Duration(milliseconds: 900), vsync: this));
+    ref.read(eduRadialMenuAnimationController.notifier).change(
+        AnimationController(
+            duration: const Duration(milliseconds: 900), vsync: this));
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +59,7 @@ class MainPageWidgetState extends ConsumerState<MainPageWidget> {
             ),
             Container(
               height: 107,
-              margin: const EdgeInsets.only(top: 27, left: 40, right: 40),
+              margin: const EdgeInsets.only(top: 27, left: 35, right: 35),
               child: const AppBarWidget(),
             ),
           ],

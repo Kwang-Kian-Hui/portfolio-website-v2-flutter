@@ -34,10 +34,10 @@ class _IconAnimationWidgetState extends State<IconAnimationWidget>
     super.initState();
     _controller = AnimationController(
       duration: widget.isSmallerThanMobileBP
-          ? const Duration(seconds: 2, milliseconds: 400)
+          ? const Duration(seconds: 3)
           : widget.isSmallerThanDesktop
-              ? const Duration(seconds: 3)
-              : const Duration(seconds: 3, milliseconds: 600),
+              ? const Duration(seconds: 3, milliseconds: 600)
+              : const Duration(seconds: 4, milliseconds: 200),
       vsync: this,
     );
 

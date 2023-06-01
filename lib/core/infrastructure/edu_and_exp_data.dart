@@ -45,7 +45,7 @@ List<ExperienceClass> expClassList = [
 List<EducationClass> eduClassList = [
   EducationClass(
       1,
-      "Singapore Institute of Management - University of London (SIM-UOL)",
+      "Singapore Institute of Management\nUniversity of London\n(SIM-UOL)",
       "BSc (Honours) in Computer Science",
       DateTime(2019, 9, 1),
       DateTime(2022, 9, 30),

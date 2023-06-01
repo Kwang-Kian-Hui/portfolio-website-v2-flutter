@@ -62,7 +62,6 @@ class _InitWidgetState extends State<InitWidget> {
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.fill,
               errorBuilder: (context, index, _) => const SizedBox()),
-          const TextDisplay(),
           IconAnimationWidget(
             iconPath: 'assets/images/icons/icons8-flutter-96.png',
             beginOffset: getBeginOffSet(),
@@ -119,6 +118,7 @@ class _InitWidgetState extends State<InitWidget> {
             isSmallerThanMobileBP: isSmallerThanMobileBp,
             isSmallerThanDesktop: isSmallerThanDesktop,
           ),
+          const TextDisplay(),
         ],
       ),
     );

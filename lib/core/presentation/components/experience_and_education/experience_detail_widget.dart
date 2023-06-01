@@ -21,8 +21,8 @@ class ExperienceDetailWidget extends ConsumerStatefulWidget {
 
 class ExperienceDetailWidgetState
     extends ConsumerState<ExperienceDetailWidget> {
-  final Uri _url = Uri.parse(
-      'https://synpulse8.com/our-solutions/pulse8-srs-framework');
+  final Uri _url =
+      Uri.parse('https://synpulse8.com/our-solutions/pulse8-srs-framework');
 
   bool urlError = false;
 
@@ -43,123 +43,191 @@ class ExperienceDetailWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            DragTarget<ExperienceClass>(
-              onAccept: (droppedIndex) {
-                ref
-                    .read(selectedExperienceIndexProvider.notifier)
-                    .change(droppedIndex.index);
-              },
-              onWillAccept: (droppedData) {
-                if (droppedData != null) {
-                  return true;
-                }
-                return false;
-              },
-              builder: (context, candidateData, rejectedData) => LogoWidget(
-                logoImagePath: widget.currentSelection.imagePath,
-                hasBackground: widget.currentSelection.hasBackground,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                height: 54,
-                alignment: Alignment.centerLeft,
-                padding: AppStyles.horizontalPadding10,
-                child: SelectableText(
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            alignment: Alignment.center,
+            padding: AppStyles.horizontalPadding10,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SelectableText(
                   widget.currentSelection.expTitle,
-                  style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
-                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                      ? AppStyles.montserrat14ColoredBold
-                      : ResponsiveWrapper.of(context)
-                              .isSmallerThan("BP-FOR-MOBILE")
-                          ? AppStyles.montserrat14ColoredBold
-                          : AppStyles.montserrat20ColoredBold,
+                  style: AppStyles.montserrat25,
+                  textAlign: TextAlign.center,
                 ),
-              ),
-            ),
-          ],
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.centerLeft,
-            padding: AppStyles.horizontalPadding10,
-            child: SelectableText(
-              widget.currentSelection.jobTitle,
-              style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
-                      ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.montserrat14Bold
-                  : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.montserrat14Bold
-                      : AppStyles.montserrat18Bold,
-            ),
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.centerLeft,
-            padding: AppStyles.horizontalPadding10,
-            child: SelectableText(
-              "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
-              style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
-                      ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                  ? AppStyles.montserrat14Bold
-                  : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
-                      ? AppStyles.montserrat14Bold
-                      : AppStyles.montserrat18Bold,
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 6,
-          child: Scrollbar(
-            thumbVisibility: true,
-            thickness: 5,
-            controller: detailScrollController,
-            child: SingleChildScrollView(
-              controller: detailScrollController,
-              child: Container(
-                alignment: Alignment.topLeft,
-                padding: AppStyles.horizontalPadding10,
-                child: SelectableText(
-                  widget.currentSelection.description,
-                  textAlign: TextAlign.start,
-                  style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
-                          ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
-                      ? AppStyles.montserrat10
-                      : ResponsiveWrapper.of(context)
-                              .isSmallerThan("BP-FOR-MOBILE")
-                          ? AppStyles.montserrat10
-                          : AppStyles.montserrat14,
+                const SizedBox(height: 10),
+                SelectableText(
+                  widget.currentSelection.jobTitle,
+                  style: AppStyles.montserrat18,
+                  textAlign: TextAlign.center,
                 ),
-              ),
+                const SizedBox(height: 10),
+                SelectableText(
+                  "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - "
+                  "${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
+                  style: AppStyles.montserrat18,
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
-        ),
-        widget.currentSelection.index == 1 || widget.currentSelection.index == 2
-            ? Expanded(
-              child: TextButton(
-                  onPressed: () async {
-                    try {
-                      await launchUrl(_url, mode: LaunchMode.inAppWebView);
-                    } on Exception {
-                      urlError = true;
-                    }
-                  },
-                  child: Text(
-                    !urlError
-                        ? "Click here to learn more about the project"
-                        : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
-                    style: AppStyles.montserrat14Colored,
+          const SizedBox(height: 10),
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: ResponsiveWrapper.of(context)
+                            .isSmallerThan(TABLET)
+                    ? AppStyles.mobileBorderPadding
+                    : AppStyles.webBorderPadding),
+            child: SelectableText(
+              widget.currentSelection.description,
+              style: AppStyles.montserrat14,
+            ),
+          ),
+          const SizedBox(height: 10),
+          widget.currentSelection.expTitle == "Synpulse8"
+              ? Padding(
+                padding: const EdgeInsets.only(top: 15),
+                child: TextButton(
+                    onPressed: () async {
+                      try {
+                        await launchUrl(_url, mode: LaunchMode.inAppWebView);
+                      } on Exception {
+                        urlError = true;
+                      }
+                    },
+                    child: Text(
+                      !urlError
+                          ? "Click here to learn more about the project"
+                          : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
+                      style: AppStyles.montserrat14Bold,
+                    ),
                   ),
-                ),
-            )
-            : const SizedBox(),
-      ],
+              )
+              : const SizedBox(),
+        ],
+      ),
     );
+    // return Column(
+    //   mainAxisAlignment: MainAxisAlignment.start,
+    //   children: [
+    //     Row(
+    //       children: [
+    //         DragTarget<ExperienceClass>(
+    //           onAccept: (droppedIndex) {
+    //             ref
+    //                 .read(selectedExperienceIndexProvider.notifier)
+    //                 .change(droppedIndex.index);
+    //           },
+    //           onWillAccept: (droppedData) {
+    //             if (droppedData != null) {
+    //               return true;
+    //             }
+    //             return false;
+    //           },
+    //           builder: (context, candidateData, rejectedData) => LogoWidget(
+    //             logoImagePath: widget.currentSelection.imagePath,
+    //             hasBackground: widget.currentSelection.hasBackground,
+    //             width: 80,
+    //           ),
+    //         ),
+    //         Expanded(
+    //           child: Container(
+    //             height: 54,
+    //             alignment: Alignment.centerLeft,
+    //             padding: AppStyles.horizontalPadding10,
+    //             child: SelectableText(
+    //               widget.currentSelection.expTitle,
+    //               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
+    //                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+    //                   ? AppStyles.montserrat14ColoredBold
+    //                   : ResponsiveWrapper.of(context)
+    //                           .isSmallerThan("BP-FOR-MOBILE")
+    //                       ? AppStyles.montserrat14ColoredBold
+    //                       : AppStyles.montserrat20ColoredBold,
+    //             ),
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //     Expanded(
+    //       child: Container(
+    //         alignment: Alignment.centerLeft,
+    //         padding: AppStyles.horizontalPadding10,
+    //         child: SelectableText(
+    //           widget.currentSelection.jobTitle,
+    //           style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
+    //                   ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+    //               ? AppStyles.montserrat14Bold
+    //               : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
+    //                   ? AppStyles.montserrat14Bold
+    //                   : AppStyles.montserrat18Bold,
+    //         ),
+    //       ),
+    //     ),
+    //     Expanded(
+    //       child: Container(
+    //         alignment: Alignment.centerLeft,
+    //         padding: AppStyles.horizontalPadding10,
+    //         child: SelectableText(
+    //           "${DateFormat("MMM yyyy").format(widget.currentSelection.startDate)} - ${widget.currentSelection.endDate == DateTime(0, 0, 0) ? "Present" : DateFormat("MMM yyyy").format(widget.currentSelection.endDate)}",
+    //           style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
+    //                   ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+    //               ? AppStyles.montserrat14Bold
+    //               : ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-MOBILE")
+    //                   ? AppStyles.montserrat14Bold
+    //                   : AppStyles.montserrat18Bold,
+    //         ),
+    //       ),
+    //     ),
+    //     Expanded(
+    //       flex: 6,
+    //       child: Scrollbar(
+    //         thumbVisibility: true,
+    //         thickness: 5,
+    //         controller: detailScrollController,
+    //         child: SingleChildScrollView(
+    //           controller: detailScrollController,
+    //           child: Container(
+    //             alignment: Alignment.topLeft,
+    //             padding: AppStyles.horizontalPadding10,
+    //             child: SelectableText(
+    //               widget.currentSelection.description,
+    //               textAlign: TextAlign.start,
+    //               style: ResponsiveWrapper.of(context).isLargerThan(TABLET) &&
+    //                       ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+    //                   ? AppStyles.montserrat10
+    //                   : ResponsiveWrapper.of(context)
+    //                           .isSmallerThan("BP-FOR-MOBILE")
+    //                       ? AppStyles.montserrat10
+    //                       : AppStyles.montserrat14,
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //     widget.currentSelection.index == 1 || widget.currentSelection.index == 2
+    //         ? Expanded(
+    //           child: TextButton(
+    //               onPressed: () async {
+    //                 try {
+    //                   await launchUrl(_url, mode: LaunchMode.inAppWebView);
+    //                 } on Exception {
+    //                   urlError = true;
+    //                 }
+    //               },
+    //               child: Text(
+    //                 !urlError
+    //                     ? "Click here to learn more about the project"
+    //                     : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
+    //                 style: AppStyles.montserrat14Colored,
+    //               ),
+    //             ),
+    //         )
+    //         : const SizedBox(),
+    //   ],
+    // );
   }
 }

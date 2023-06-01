@@ -19,6 +19,14 @@ final selectedLanguagesIndexProvider =
 final selectedProjectTypeIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 
+final expRadialMenuAnimationController =
+    StateNotifierProvider<AnimationControllerProvider, AnimationController?>(
+        (ref) => AnimationControllerProvider());
+
+final eduRadialMenuAnimationController =
+    StateNotifierProvider<AnimationControllerProvider, AnimationController?>(
+        (ref) => AnimationControllerProvider());
+
 final selectedProjectDetailIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(0));
 
@@ -37,6 +45,13 @@ class ScrollControllerProvider extends StateNotifier<ItemScrollController> {
 class IntegerProvider extends StateNotifier<int> {
   IntegerProvider(int initial) : super(initial);
   void change(int index) => state = index;
+}
+
+class AnimationControllerProvider extends StateNotifier<AnimationController?> {
+  AnimationControllerProvider() : super(null);
+  void forward() => state?.forward();
+  void reverse() => state?.reverse();
+  void change(AnimationController controller) => state = controller;
 }
 
 class StringListProvider extends StateNotifier<List<String>> {
