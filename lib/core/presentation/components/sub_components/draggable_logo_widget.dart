@@ -17,7 +17,7 @@ class _LogoWidgetState extends State<LogoWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 15,
+      // elevation: 15,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(widget.width/2),
       ),
@@ -26,6 +26,7 @@ class _LogoWidgetState extends State<LogoWidget> {
         width: widget.width,
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
+          boxShadow: AppStyles.roundedButtonShadow,
         ),
         child: CircleAvatar(
           backgroundColor: widget.hasBackground

@@ -17,6 +17,8 @@ class EducationDetailWidget extends ConsumerStatefulWidget {
 }
 
 class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
+  ScrollController detailScrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -50,30 +52,44 @@ class EducationDetailWidgetState extends ConsumerState<EducationDetailWidget> {
               ],
             ),
           ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: ResponsiveWrapper.of(context)
-                            .isSmallerThan(TABLET)
-                    ? AppStyles.mobileBorderPadding
-                    : AppStyles.webBorderPadding),
-            child: SelectableText(
-              "(${widget.currentSelection.grade})",
-              style: AppStyles.montserrat14,
+          Expanded(
+            child: Scrollbar(
+              thumbVisibility: true,
+              controller: detailScrollController,
+              child: SingleChildScrollView(
+                controller: detailScrollController,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ResponsiveWrapper.of(context)
+                                  .isSmallerThan(TABLET)
+                              ? AppStyles.mobileBorderPadding
+                              : AppStyles.webBorderPadding),
+                      child: SelectableText(
+                        "(${widget.currentSelection.grade})",
+                        style: AppStyles.montserrat14,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ResponsiveWrapper.of(context)
+                                  .isSmallerThan(TABLET)
+                              ? AppStyles.mobileBorderPadding
+                              : AppStyles.webBorderPadding),
+                      child: SelectableText(
+                        widget.currentSelection.description,
+                        style: AppStyles.montserrat14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: ResponsiveWrapper.of(context)
-                            .isSmallerThan(TABLET)
-                    ? AppStyles.mobileBorderPadding
-                    : AppStyles.webBorderPadding),
-            child: SelectableText(
-              widget.currentSelection.description,
-              style: AppStyles.montserrat14,
-            ),
-          ),
+
           // widget.currentSelection.eduTitle == "Synpulse8"
           //     ? Padding(
           //       padding: const EdgeInsets.only(top: 15),

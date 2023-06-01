@@ -26,8 +26,9 @@ class DropdownMenuButtonState extends ConsumerState<DropdownMenuButton> {
       width: 60,
       margin: const EdgeInsets.symmetric(horizontal: 10),
       decoration: const BoxDecoration(
-        color: AppStyles.mainAppColour,
         shape: BoxShape.circle,
+        gradient: AppStyles.containerGradient,
+        boxShadow: AppStyles.roundedButtonShadow,
       ),
       alignment: Alignment.center,
       child: Padding(

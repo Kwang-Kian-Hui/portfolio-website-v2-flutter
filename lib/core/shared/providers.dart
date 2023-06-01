@@ -9,6 +9,8 @@ final selectedExperienceIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(0));
 final selectedEducationIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(0));
+final viewingProjectIndex =
+    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(0));    
 final selectedProjectIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 

@@ -74,39 +74,53 @@ class ExperienceDetailWidgetState
               ],
             ),
           ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: ResponsiveWrapper.of(context)
-                            .isSmallerThan(TABLET)
-                    ? AppStyles.mobileBorderPadding
-                    : AppStyles.webBorderPadding),
-            child: SelectableText(
-              widget.currentSelection.description,
-              style: AppStyles.montserrat14,
+          Expanded(
+            child: Scrollbar(
+              thumbVisibility: true,
+              controller: detailScrollController,
+              child: SingleChildScrollView(
+                controller: detailScrollController,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal:
+                              ResponsiveWrapper.of(context).isSmallerThan(TABLET)
+                                  ? AppStyles.mobileBorderPadding
+                                  : AppStyles.webBorderPadding),
+                      child: SelectableText(
+                        widget.currentSelection.description,
+                        style: AppStyles.montserrat14,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    widget.currentSelection.expTitle == "Synpulse8"
+                        ? Padding(
+                            padding: const EdgeInsets.only(top: 15),
+                            child: TextButton(
+                              onPressed: () async {
+                                try {
+                                  await launchUrl(_url,
+                                      mode: LaunchMode.inAppWebView);
+                                } on Exception {
+                                  urlError = true;
+                                }
+                              },
+                              child: Text(
+                                !urlError
+                                    ? "Click here to learn more about the project"
+                                    : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
+                                style: AppStyles.montserrat14Bold,
+                              ),
+                            ),
+                          )
+                        : const SizedBox(),
+                  ],
+                ),
+              ),
             ),
           ),
-          const SizedBox(height: 10),
-          widget.currentSelection.expTitle == "Synpulse8"
-              ? Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: TextButton(
-                    onPressed: () async {
-                      try {
-                        await launchUrl(_url, mode: LaunchMode.inAppWebView);
-                      } on Exception {
-                        urlError = true;
-                      }
-                    },
-                    child: Text(
-                      !urlError
-                          ? "Click here to learn more about the project"
-                          : "Have a look at the project here: https://synpulse8.com/our-solutions/pulse8-srs-framework",
-                      style: AppStyles.montserrat14Bold,
-                    ),
-                  ),
-              )
-              : const SizedBox(),
         ],
       ),
     );

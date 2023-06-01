@@ -17,6 +17,8 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
     bool smallerThanMinHeight = MediaQuery.of(context).size.height < 720;
     bool smallerThanMiniDesktop =
         ResponsiveWrapper.of(context).isSmallerThan("MINI-DESKTOP");
+    bool smallerThanDesktop =
+        ResponsiveWrapper.of(context).isSmallerThan(DESKTOP);
     bool smallerThanCustomBp =
         ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-INIT-PAGE-TEXT");
 
@@ -49,14 +51,14 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("HI MY NAME IS KIAN HUI, I AM A SOFTWARE ENGINEER.",
-                    style: smallerThanMiniDesktop
+                    style: smallerThanDesktop
                         ? AppStyles.montserrat20
                         : smallerThanCustomBp
                             ? AppStyles.montserrat25
                             : AppStyles.montserrat32),
                 const SizedBox(height: 30),
                 Text(ConstObjects.aboutMeDescription2,
-                    style: smallerThanMiniDesktop
+                    style: smallerThanDesktop
                         ? AppStyles.montserrat12
                         : smallerThanCustomBp
                             ? AppStyles.montserrat18
@@ -68,12 +70,13 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
       ),
     ];
 
-    return SizedBox(
+    return Container(
       height: smallerThanMinHeight && smallerThanMiniDesktop
           ? 1440
           : smallerThanMinHeight
               ? 720
-              : MediaQuery.of(context).size.height,
+              : MediaQuery.of(context).size.height - 120,
+      margin: const EdgeInsets.only(top: 120),
       child: Stack(
         children: [
           ResponsiveRowColumn(

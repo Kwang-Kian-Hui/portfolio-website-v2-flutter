@@ -142,20 +142,59 @@ class RadialMenuWidgetState extends ConsumerState<RadialMenuWidget>
     listOfWidgets.add(Transform.scale(
       scale: scale.value -
           1.5, // subtract the beginning value to run the opposite animation
-      child: FloatingActionButton(
-        onPressed: _close,
-        backgroundColor: AppStyles.mainAppColour,
-        child: const Icon(Icons.cancel_outlined, color: AppStyles.appSubColour),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: _close,
+          child: Container(
+            height: 60,
+            width: 60,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  AppStyles.buttonGradientColour,
+                  AppStyles.mainAppColour,
+                ],
+              ),
+              shape: BoxShape.circle,
+              boxShadow: AppStyles.roundedButtonShadow,
+            ),
+            child: const Icon(Icons.cancel_outlined,
+                color: AppStyles.appSubColour),
+          ),
+        ),
       ),
     ));
     listOfWidgets.add(Transform.scale(
       scale: scale.value,
-      child: FloatingActionButton(
-        backgroundColor: AppStyles.mainAppColour,
-        onPressed: _open,
-        child: widget.isExp ? const Icon(Icons.work_outline_rounded,
-            color: AppStyles.appSubColour) : const Icon(Icons.school_outlined,
-            color: AppStyles.appSubColour),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: _open,
+          child: Container(
+            height: 60,
+            width: 60,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xff222222),
+                  AppStyles.mainAppColour,
+                ],
+              ),
+              shape: BoxShape.circle,
+              boxShadow: AppStyles.roundedButtonShadow,
+            ),
+            child: widget.isExp
+                ? const Icon(Icons.work_outline_rounded,
+                    color: AppStyles.appSubColour)
+                : const Icon(Icons.school_outlined,
+                    color: AppStyles.appSubColour),
+          ),
+        ),
       ),
     ));
 

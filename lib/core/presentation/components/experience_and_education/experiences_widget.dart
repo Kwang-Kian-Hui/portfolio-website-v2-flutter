@@ -51,8 +51,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
         ResponsiveWrapper.of(context).isSmallerThan("BP-FOR-INIT-PAGE-TEXT");
     return Container(
       height: isSmallerThanCustomBp
-          ? MediaQuery.of(context).size.height * 2
-          : MediaQuery.of(context).size.height,
+          ? (MediaQuery.of(context).size.height - 120) * 2
+          : MediaQuery.of(context).size.height - 120,
       margin: const EdgeInsets.only(top: 120),
       child: ResponsiveRowColumn(
         layout: isSmallerThanCustomBp
@@ -70,12 +70,13 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   color: AppStyles.containerColour,
                   borderRadius:
                       BorderRadius.circular(AppStyles.containerBorderRadius),
+                  boxShadow: AppStyles.containerShadow,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 225,
+                      height: 215,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -120,57 +121,50 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                                 builder: ((context, candidateData,
                                         rejectedData) =>
                                     Container(
-                                      height: 60,
-                                      width: 60,
                                       decoration: BoxDecoration(
-                                        color: AppStyles.mainAppColour,
                                         shape: BoxShape.circle,
-                                        boxShadow: selectedExperiencesIndex != 0
-                                            ? [
-                                                const BoxShadow(
-                                                  offset: Offset(-30, -30),
-                                                  blurRadius: 60,
-                                                  color:
-                                                      AppStyles.containerColour,
-                                                  inset: true,
-                                                ),
-                                                const BoxShadow(
-                                                  offset: Offset(30, 30),
-                                                  blurRadius: 60,
-                                                  color:
-                                                      AppStyles.mainAppColour,
-                                                  inset: true,
-                                                ),
-                                              ]
+                                        boxShadow: selectedExperiencesIndex == 0
+                                            ? AppStyles
+                                                .invertedRoundedButtonShadow
                                             : [],
                                       ),
-                                      child: selectedExperiencesIndex == 0
-                                          ? const SizedBox()
-                                          : MouseRegion(
-                                              cursor: SystemMouseCursors.click,
-                                              child: GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    ref
-                                                        .read(
-                                                            selectedExperienceIndexProvider
-                                                                .notifier)
-                                                        .change(0);
-                                                  });
-                                                },
-                                                child: LogoWidget(
-                                                  logoImagePath: expClassList[
-                                                          selectedExperiencesIndex -
-                                                              1]
-                                                      .imagePath,
-                                                  hasBackground: expClassList[
-                                                          selectedExperiencesIndex -
-                                                              1]
-                                                      .hasBackground,
-                                                  width: 60,
+                                      child: Container(
+                                        height: 60,
+                                        width: 60,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: AppStyles
+                                              .invertedContainerGradient,
+                                        ),
+                                        child: selectedExperiencesIndex == 0
+                                            ? const SizedBox()
+                                            : MouseRegion(
+                                                cursor:
+                                                    SystemMouseCursors.click,
+                                                child: GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      ref
+                                                          .read(
+                                                              selectedExperienceIndexProvider
+                                                                  .notifier)
+                                                          .change(0);
+                                                    });
+                                                  },
+                                                  child: LogoWidget(
+                                                    logoImagePath: expClassList[
+                                                            selectedExperiencesIndex -
+                                                                1]
+                                                        .imagePath,
+                                                    hasBackground: expClassList[
+                                                            selectedExperiencesIndex -
+                                                                1]
+                                                        .hasBackground,
+                                                    width: 60,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
+                                      ),
                                     )),
                               ),
                             ),
@@ -179,6 +173,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       ),
                     ),
                     expWidgetsList[selectedExperiencesIndex],
+                    const SizedBox(height: 39),
                   ],
                 ),
               ),
@@ -195,12 +190,13 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                   color: AppStyles.containerColour,
                   borderRadius:
                       BorderRadius.circular(AppStyles.containerBorderRadius),
+                  boxShadow: AppStyles.containerShadow,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 225,
+                      height: 215,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -231,57 +227,48 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                                 builder: ((context, candidateData,
                                         rejectedData) =>
                                     Container(
-                                      height: 60,
-                                      width: 60,
                                       decoration: BoxDecoration(
-                                        color: AppStyles.mainAppColour,
                                         shape: BoxShape.circle,
-                                        boxShadow: selectedEducationIndex != 0
-                                            ? [
-                                                const BoxShadow(
-                                                  offset: Offset(-30, -30),
-                                                  blurRadius: 60,
-                                                  color:
-                                                      AppStyles.containerColour,
-                                                  inset: true,
-                                                ),
-                                                const BoxShadow(
-                                                  offset: Offset(30, 30),
-                                                  blurRadius: 60,
-                                                  color:
-                                                      AppStyles.mainAppColour,
-                                                  inset: true,
-                                                ),
-                                              ]
-                                            : [],
+                                        boxShadow: selectedEducationIndex == 0
+                                              ? AppStyles.invertedRoundedButtonShadow
+                                              : [],
                                       ),
-                                      child: selectedEducationIndex == 0
-                                          ? const SizedBox()
-                                          : MouseRegion(
-                                              cursor: SystemMouseCursors.click,
-                                              child: GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    ref
-                                                        .read(
-                                                            selectedEducationIndexProvider
-                                                                .notifier)
-                                                        .change(0);
-                                                  });
-                                                },
-                                                child: LogoWidget(
-                                                  logoImagePath: eduClassList[
-                                                          selectedEducationIndex -
-                                                              1]
-                                                      .imagePath,
-                                                  hasBackground: eduClassList[
-                                                          selectedEducationIndex -
-                                                              1]
-                                                      .hasBackground,
-                                                  width: 60,
+                                      child: Container(
+                                        height: 60,
+                                        width: 60,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: AppStyles.invertedContainerGradient,
+                                          
+                                        ),
+                                        child: selectedEducationIndex == 0
+                                            ? const SizedBox()
+                                            : MouseRegion(
+                                                cursor: SystemMouseCursors.click,
+                                                child: GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      ref
+                                                          .read(
+                                                              selectedEducationIndexProvider
+                                                                  .notifier)
+                                                          .change(0);
+                                                    });
+                                                  },
+                                                  child: LogoWidget(
+                                                    logoImagePath: eduClassList[
+                                                            selectedEducationIndex -
+                                                                1]
+                                                        .imagePath,
+                                                    hasBackground: eduClassList[
+                                                            selectedEducationIndex -
+                                                                1]
+                                                        .hasBackground,
+                                                    width: 60,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
+                                      ),
                                     )),
                               ),
                             ),
@@ -304,6 +291,7 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                       ),
                     ),
                     eduWidgetsList[selectedEducationIndex],
+                    const SizedBox(height: 39),
                   ],
                 ),
               ),

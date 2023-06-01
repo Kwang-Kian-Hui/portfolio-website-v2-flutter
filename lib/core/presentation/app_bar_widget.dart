@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:flutter_portfolio_website/core/presentation/click_and_scroll_buttons.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/dropdown_menu_button.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
@@ -31,6 +32,7 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
         decoration: BoxDecoration(
           color: AppStyles.containerColour,
           borderRadius: BorderRadius.circular(AppStyles.containerBorderRadius),
+          boxShadow: AppStyles.containerShadow,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,9 +50,10 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                     hoverOnIcon = false;
                   });
                 },
-                child: FloatingActionButton(
-                  backgroundColor: Colors.transparent,
-                  onPressed: () {
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                  onTap: () {
                     ref
                         .read(scrollControllerProvider.notifier)
                         .scrollToIndex(0);
@@ -59,8 +62,9 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                     height: 60,
                     width: 60,
                     decoration: const BoxDecoration(
-                      color: AppStyles.mainAppColour,
                       shape: BoxShape.circle,
+                      gradient: AppStyles.containerGradient,
+                      boxShadow: AppStyles.roundedButtonShadow,
                     ),
                     child: Center(
                       child: Text(
@@ -73,7 +77,7 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                     // ),
                   ),
                 ),
-              ),
+              ),),
             ),
             ResponsiveWrapper.of(context).isLargerThan(MOBILE)
                 ? Row(
