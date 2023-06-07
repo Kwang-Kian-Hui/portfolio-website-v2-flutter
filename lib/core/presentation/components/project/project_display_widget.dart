@@ -26,7 +26,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
     return projectIndex == 0
         ? const Center(
             child: SelectableText("Select a project to view details",
-                style: AppStyles.roboto18Bold),
+                style: AppStyles.montserrat18Bold),
           )
         : Column(
             children: [
@@ -39,7 +39,7 @@ class ProjectDisplayWidgetState extends ConsumerState<ProjectDisplayWidget> {
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Text(
                   projectList[projectIndex - 1].title,
-                  style: AppStyles.roboto18ColoredBold,
+                  style: AppStyles.montserrat18ColoredBold,
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),

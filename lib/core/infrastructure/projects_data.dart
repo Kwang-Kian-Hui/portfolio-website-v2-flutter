@@ -2,9 +2,128 @@ import 'package:flutter_portfolio_website/core/application/project_class.dart';
 
 List<Project> projectList = [
   Project(
+    "Quantexa Data Engineer Certification Project",
+    "Quantexa Project",
+    [
+      "Spark",
+      "Scala",
+      "HTML",
+      "CSS",
+      "Data Engineering",
+      "ETL",
+      "Entity Resolution"
+    ],
+    "\nProject Description:"
+        "\n\nThis project equips us with the following skill sets:"
+        "\n\n1) Writing correctly defined Document Models and convert CSV to parquet files."
+        "\n\n2) Writing Spark scripts in Scala to join datasets using Spark Dataset API."
+        "\n\n3) Compound resolution, compound exclusions, entity network graph and document scoring for Quantexa tool UI."
+        "\n\n4) HTML/CSS to customise Quantexa UI",
+    "",
+    DateTime(2023, 5),
+    "", // github
+    "", // prototype link 1
+    "", // prototype link 2
+    "", // app link
+    "", // web link
+    "", // demo link
+    "", // future work
+    [],
+  ),
+  Project(
+    "Pulse8 Synpulse Risk Supervisory(SRS) Dashboard",
+    "Pulse8 SRS",
+    ["Flutter", "Dart", "Web", "End-to-end Testing"],
+    "\nProject Description:"
+        "\n\nThis is a Web dashboard app that is developed using Flutter during my employment with Synpulse8.",
+    "Contributions:"
+        "\n\n1) Developed map, bar, treemap, bubble, and more charts using various Flutter libraries."
+        "\n\n2) Established and guided fellow junior developers in developing app with MVVM architecture."
+        "\n\n3) Writen end-to-end tests using Flutter integration_test package, achieving 80% test coverage.",
+    DateTime(2023, 4),
+    "", // github
+    "", // prototype link 1
+    "", // prototype link 2
+    "", // app link
+    "https://synpulse8.com/our-solutions/pulse8-srs-framework", // web link
+    "", // demo link
+    "", // future work
+    [
+      "assets/images/projects/srs_overview.png",
+      "assets/images/projects/srs_riskinsights.png",
+      "assets/images/projects/srs_rmreport.png",
+    ],
+  ),
+  Project(
+    "Portfolio Website 2 (Flutter)",
+    "Portfolio Website 2",
+    ["Flutter", "Dart", "Web", "Mobile", "Github Actions", "CI/CD"],
+    "\nProject Description:"
+        "\n\nDeveloped using Flutter (Dart)"
+        "\n\nImplementing CI/CD pipeline using Github Actions to automate deployment process for Flutter web."
+        "\n\nWorkflow is triggered on changes to main branch",
+    "As Flutter web becomes more mature and stable over the years, I thought this could be a good opportunity to test it out for myself.",
+    DateTime(2022, 10),
+    "https://github.com/Kwang-Kian-Hui/portfolio-website-v2-flutter",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Future Work:"
+        "\n\nAdding end-to-end tests and include it into the Github Actions workflow.",
+    [
+      "assets/images/projects/portfolio-website-2.png",
+    ],
+  ),
+  Project(
+    "Automatic Time Scheduler - Mobile App (Flutter)",
+    "Automatic Time Scheduler",
+    ["Flutter", "Dart", "Mobile", "Google Firebase", "Firebase Authentication", "Google Firestore", "NoSQL"],
+    "\nProject Description:"
+        "\n\nThis app helps to schedule tasks for users based on deadline priorities. Users are able to set several personalization settings such as working hours, break hours, and days that they are working on."
+        " Tasks will not be scheduled on non working hours including breaks."
+        "\n\nKey Features:"
+        "\n\n1) Add/Edit/Delete events or tasks on calendar. Events - events that does not require any action from user. Tasks - events that require a set duration of time from user (must not overlap with other tasks)."
+        "\n\n2) For events, user must specify start and end date. For tasks, if no start and end date is specified, a duration must be provided and the app will schedule the task for the user."
+        "\n\n3) Users can mark existing tasks as completed or uncompleted."
+        "\n\n4) Different calendar views (day/week/month) and filter tasks by completion status."
+        "\n\n5) Import events from Google Calendar."
+        "\n\n6) Other personalization settings (Event/Task categories, Color Themes)"
+        "\n\nGoogle Firestore NoSQL database used. Firebase Authentication, Google Calendar API",
+    "Algorithm/Technique used: binary time list"
+        "\n\nOne challenge I encountered was determining the available time for scheduling, considering varying break hours and non-working hours for each day. Using conditional statements (if conditions) to handle this "
+        "scenario proved highly inefficient and made the feature difficult to debug. To address this, I devised an alternative approach."
+        "\n\nI devised a solution by utilizing a list structure to represent time availability. Each element in the list corresponds to a one-minute interval, where '1' represents availability and '0' represents "
+        "unavailability. To represent a full day of 24 hours, the initial list length was set to 1440 elements (one for each minute). However, to optimize efficiency, I condensed the list to a length of 288, with each "
+        "element representing a five-minute interval."
+        "\n\nTo determine the available working hours for a given day, the process followed these steps:"
+        "\n1) Initialize the list with 288 elements, all set to '0' to indicate unavailability."
+        "\n2)Based on customized working hours, set the corresponding range of indexes to '1' to indicate availability."
+        "\n3)Similarly, considering customized break hours, set the corresponding range of indexes to '0' to indicate unavailability."
+        "\n\nBy following these steps, the resulting list provides a clear representation of the available working hours for the specific day, incorporating variations in working and break hours."
+        "\n\nUnsigned 8 bit integer was used instead of boolean as boolean in Dart language uses 2 bytes while unsigned 8 bit integer uses 1 byte, reducing the memory usage by half.",
+    DateTime(2022, 8),
+    "",
+    "https://www.figma.com/file/mV24w6TCa6yWRehhHPhW2D/Low-Fidelity-Prototype?node-id=0%3A1",
+    "https://www.figma.com/file/JSJnW7sG8kSCEoNAxpATCO/High-Fidelity-Prototype?node-id=0%3A1",
+    "",
+    "",
+    "",
+    "",
+    [
+      "assets/images/projects/login-page.png",
+      "assets/images/projects/signup-validation.png",
+      "assets/images/projects/add-task.png",
+      "assets/images/projects/calendar-page.png",
+      "assets/images/projects/settings-page.png",
+      "assets/images/projects/working-hours.png",
+    ],
+  ),
+  Project(
     "Traffic Monitoring System (OpenCV)",
     "Traffic Monitoring",
-    ["Python, Others"],
+    ["Python", "OpenCV", "Image Processing"],
     "\nProject Requirements:"
         "\n\nThe application must run on a Jupyter notebook written in Python and use the OpenCV library. Technically, the algorithm of the "
         "application must be based on the frame differencing and background subtraction techniques."
@@ -35,21 +154,23 @@ List<Project> projectList = [
         "\n\n3) Background subtractor fails to detect the first 2 vehicles once they have stopped at the junction due to the learning rate of the "
         "background subtractor. Parameters should be optimised for them to be detected.",
     [
-      "assets/images/traffic_monitoring_system_img_1.png",
-      "assets/images/traffic_monitoring_system_img_2.png",
+      "assets/images/projects/traffic_monitoring_system_img_1.png",
+      "assets/images/projects/traffic_monitoring_system_img_2.png",
     ],
   ),
   Project(
     "Social Networking Web Application",
     "SocialNetApp",
     [
-      "Frontend",
-      "Backend",
-      "Data",
+      "Django",
+      "Web",
+      "REST API",
+      "HTML",
+      "CSS",
+      "JS",
+      "BootStrap",
       "Python",
-      "HTML/CSS",
-      "JavaScript",
-      "Web/Mobile"
+      "PostgreSQL",
     ],
     "Frontend: HTML/CSS/JS (Bootstrap)"
         "\nBackend: Python (Django)"
@@ -85,22 +206,49 @@ List<Project> projectList = [
         "\n\n3) Resizing and recropping of images in application can be implemented to better standardize image size and ratio. Currently, images are forcibly resized to the size defined by the style of the element in HTML file."
         "\n\n4) Infinite scrolling with pagination to improve home page loading performance as the number of data can grow to be very large in an actual social media app.",
     [
-      "assets/images/registration-page.png",
-      "assets/images/home-page.png",
-      "assets/images/home-page-2.png",
-      "assets/images/search-user-kwargs-b.png",
-      "assets/images/self-profile-page.png",
-      "assets/images/friend-list-page.png",
-      "assets/images/friend-profile-page.png",
-      "assets/images/chat-list-page.png",
-      "assets/images/chat-page.png",
-      "assets/images/friend-detail-api.png",
+      "assets/images/projects/registration-page.png",
+      "assets/images/projects/home-page.png",
+      "assets/images/projects/home-page-2.png",
+      "assets/images/projects/search-user-kwargs-b.png",
+      "assets/images/projects/self-profile-page.png",
+      "assets/images/projects/friend-list-page.png",
+      "assets/images/projects/friend-profile-page.png",
+      "assets/images/projects/chat-list-page.png",
+      "assets/images/projects/chat-page.png",
+      "assets/images/projects/friend-detail-api.png",
+    ],
+  ),
+  Project(
+    "Video Format Converter with ffmpeg",
+    "Video Format Converter",
+    ["Python", "ffmpeg", "ffprobe", "Audio Processing"],
+    "\nProject Description:"
+        "\n\nThe Narbonne Online Film Festival receives every year more than one hundred films in digital format. The problem is that some of these films are not submitted in the format specified by the festival organisation, and they must be converted. The organisation wants to automate this process by developing an application (exercise 3) for examining the format of the films and, if necessary, convert them."
+        "\n\nRequirements:"
+        "\n\n1) The application must run on a Jupyter notebook written in Python, use ffprobe to examine the files, and ffmpeg to convert the films."
+        "\n\n2) From a series of video files, the application should generate a brief report in TXT indicating which films do not respect the digital format specified by the festival and what are the 'problematic' fields."
+        "\n\n3) The application should automatically convert the submitted films with an incorrect format. The program will create a new copy of the films by adding '_formatOK' at the end of the name. Specified format shown in first screenshot.",
+    "Features Completed:"
+        "\n\n1) ffprobe used to examine video formats and txt file report generated correctly, indicating all problematic fields for each specific files."
+        "\n\n2) ffmpeg used to convert format of file into the specified format.",
+    DateTime(2022, 3),
+    "https://github.com/Kwang-Kian-Hui/ffprobe--ffmpeg-Video-Format-Converter",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    [
+      "assets/images/projects/converter_format.png",
+      "assets/images/projects/converter_img_1.png",
+      "assets/images/projects/converter_img_2.png",
     ],
   ),
   Project(
     "Portfolio Website 1 (HTML/CSS/JS)",
     "Portfolio Website 1",
-    ["Frontend", "HTML/CSS", "JavaScript", "Web/Mobile"],
+    ["HTML", "CSS", "JS", "Web"],
     "\nProject Description:"
         "\n\nA personal portfolio website completed with the help of some online tutorial guides. Includes SVG + CSS animation. Javascript for state management and navigation.",
     "",
@@ -113,329 +261,13 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/home-section.png",
-    ],
-  ),
-  Project(
-    "Portfolio Website 2 (Flutter)",
-    "Portfolio Website 2",
-    ["Frontend", "Dart", "Web/Mobile", "CI/CD"],
-    "\nProject Description:"
-        "\n\nDeveloped using Flutter (Dart)"
-        "\n\nImplementing CI/CD pipeline using Github Actions to automate deployment process for Flutter web."
-        "\n\nWorkflow is triggered on changes to main branch",
-    "As Flutter web becomes more mature and stable over the years, I thought this could be a good opportunity to test it out for myself.",
-    DateTime(2022, 10),
-    "https://github.com/Kwang-Kian-Hui/portfolio-website-v2-flutter",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Future Work:"
-        "\n\nAdding end-to-end tests and include it into the Github Actions workflow.",
-    [
-      "assets/images/welcome-page.png",
-    ],
-  ),
-  Project(
-    "Speech Recognition System (Mozilla DeepSpeech)",
-    "Speech Recognition System",
-    ["Others", "Python"],
-    "\nProject Description:"
-        "\n\nA software development company has contacted you to create a speech recognition system to integrate in a Python project they are developing. In particular, the project consists of an airport virtual assistant."
-        "\n\nRequirements:"
-        "\n\n1) Base the speech recognition system on the Mozilla DeepSpeech software package."
-        "\n\n2) Capable of language-selection, at the very least compatible with the following languages: English, Italian and Spanish."
-        "\n\n3) The airport virtual assistant will be installed in an environment that can be extremely noisy. So, the speech recognition system should be configured to be able to handle this situation. Your client gives you freedom for implementing any solution (for example, to configure in python a gain/amplification, low pass filter, or some other audio filter to improve the error rate)."
-        "\n\n4) The company has prepared a set of audio files with which you can evaluate the system. For this evaluation, you will test how well it recognises several phrases in each language. You also have to record and evaluate two short sentences (your_sentence1.wav and your_sentence2.wav). Feel free to prepare your own sentences",
-    "Features Completed:"
-        "\n\n1) Console based application. Allows language selection by entering the language name. e.g. 'English', 'english' or 'en'."
-        "\n\n2) Mozilla DeepSpeech model and scorer is loaded in the application based on the language selected by user."
-        "\n\n3) Spectral subtraction and low pass filter applied to audio files to attempt to reduce background noise. Crowd noise used for spectral subtraction downloaded from: https://mixkit.co/free-sound-effects/crowd/. \n\nLibrosa library load() and stft() function is used, along with numpy to load and transform the sample values into a subtractable form for spectral subtraction. Scipy library is used to perform low pass filter."
-        "\n\n4) Performance is evaluated by processing the predicted texts with the transcript texts. Overall performance result:"
-        "\n\nEnglish word error rate(WER) of 18.84%, Spanish WER of 35.71% and Italian WER of 36.67",
-    DateTime(2021, 12),
-    "https://github.com/Kwang-Kian-Hui/Speech-Recognition-System--Mozilla-DeepSpeech-",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/deepspeech-1.png",
-      "assets/images/deepspeech-2.png",
-      "assets/images/deepspeech-3.png",
-      "assets/images/deepspeech-4.png",
-    ],
-  ),
-  Project(
-    "Audio Visualization with MeydaAnalyzer and Speech Recognition (p5.js)",
-    "Meyda Speech Command",
-    ["Others", "JavaScript"],
-    "\nProject Description:"
-        "\n\nDevelop an interactive web-based application for audio visualization. The application must be based on p5.js, p5.speech and the JavaScript audio feature extraction library Meyda."
-        "\n\nRequirements:"
-        "\n\n1) Use audio features and map them to visual variables (shapes, size, etc.)."
-        "\n\n2) Voice control system, background color and shape changes.",
-    "Features Completed:"
-        "\n\n1) Background color can be changed with voice command ('red', 'green', 'blue', 'black', 'white'). Color of shapes changes based on background color."
-        "\n\n2) Shape can be changed with voice command ('Square', 'Triangle', 'circle')."
-        "\n\n3) Audio features used: zcr, energy, Spectral Centroid, Spectral Flatness, SpectralSpread and Spectral Kurtosis, Spectral Rolloff."
-        "They were chosen as the pitch and loudness of the audio file changes drastically throughout the duration of the audio, providing a better visual experience.",
-    DateTime(2021, 12),
-    "https://github.com/Kwang-Kian-Hui/Audio-Visualization-with-MeydaAnalyzer-and-Speech-Recognition-p5.js-",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/default-square.png",
-      "assets/images/red-circle.png",
-      "assets/images/white-circle.png",
-    ],
-  ),
-  Project(
-    "Video Format Converter with ffmpeg",
-    "Video Format Converter",
-    ["Others", "Python"],
-    "\nProject Description:"
-        "\n\nThe Narbonne Online Film Festival receives every year more than one hundred films in digital format. The problem is that some of these films are not submitted in the format specified by the festival organisation, and they must be converted. The organisation wants to automate this process by developing an application (exercise 3) for examining the format of the films and, if necessary, convert them."
-        "\n\nRequirements:"
-        "\n\n1) The application must run on a Jupyter notebook written in Python, use ffprobe to examine the files, and ffmpeg to convert the films."
-        "\n\n2) From a series of video files, the application should generate a brief report in TXT indicating which films do not respect the digital format specified by the festival and what are the 'problematic' fields."
-        "\n\n3) The application should automatically convert the submitted films with an incorrect format. The program will create a new copy of the films by adding '_formatOK' at the end of the name. Specified format shown in first screenshot.",
-    "Features Completed:"
-        "\n\n1) ffprobe used to examine video formats and txt file report generated correctly, indicating all problematic fields for each specific files."
-        "\n\nffmpeg used to convert format of file into the specified format.",
-    DateTime(2022, 3),
-    "https://github.com/Kwang-Kian-Hui/ffprobe--ffmpeg-Video-Format-Converter",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/converter_format.png",
-      "assets/images/converter_img_1.png",
-      "assets/images/converter_img_2.png",
-    ],
-  ),
-  Project(
-    "Location Alarm (Android, Flutter)",
-    "Location Alarm",
-    ["Frontend", "Data", "Dart", "Web/Mobile"],
-    "\nProject Description:"
-        "\n\nLocation Alarm is an app that allow users to create an alarm with a set destination and radius, and when their devices are within the radius of their destination, the alarm will ring. This app uses the Map and Places API of Google Cloud Platform for the map features and address suggestions when users are searching for their destination. Some android devices are unable to receive background location updates due to the device's battery saving processes."
-        "\n\nKey Takeaways:"
-        "\n\n1) Usage of Google Map and Places APIs."
-        "\n\n2) Publishing app to Google Play Store for internal testing, and releasing for public use."
-        "\nBackground location packages' limitations as the feature only works for certain android devices and a better solution is required.",
-    "Features Completed:"
-        "\n\n1) Google Maps API (map features, markers, and positional radius)"
-        "\n\n2) Google Places API (search bar, address/postal/building name suggestions)"
-        "\n\n3) SQLite local device database"
-        "\n\n4) Alarm rings when device is within set radius of destination."
-        "\n\n5) Ringtone or vibrate",
-    DateTime(2021, 3),
-    "https://github.com/Kwang-Kian-Hui/location-alarm_v2",
-    "",
-    "",
-    "https://play.google.com/store/apps/details?id=com.location_alarm",
-    "",
-    "https://www.youtube.com/watch?v=9kuAkN7wnuQ",
-    "Future Improvements:"
-        "\n\n1) Background location is not yet released. An additional change to the app where a prominent disclosure before the app's runtime is required to adhere to Google permissions policy in order for the update to be released. Without this, the location does not update when the screen is locked.",
-    [
-      "assets/images/initial-page-permission-request.png",
-      "assets/images/add-edit-alarm-page.png",
-      "assets/images/home-page-with-alarms.png",
-    ],
-  ),
-  Project(
-    "DEALL (Android, Flutter)",
-    "DEALL",
-    ["Frontend", "Data", "Dart", "Web/Mobile"],
-    "\nProject Description:"
-        "\n\nDEALL is a mobile platform that allow food retailers to list their surplus food on discount, while consumers can view them, with the goal of reducing food waste in the process."
-        "\n\nDatabase: Google Firestore (NoSQL)",
-    "Work done by me in this group assignment:"
-        "\n\n1) Low fidelity and High fidelity prototyping using Figma"
-        "\n\n2) Application logic for consumer's home page which displays the list of retailers available by calling Google Firestore conditional queries."
-        "\n\n3) Add product feature for retailers where they will fill up a form with input validations before adding the product data to Google Firestore."
-        "\n\n4) Application logic for consumer's retailer product list and detail page which displays the list of products offered by the specific retailer that the user has selected and the retailer's detail when the 'show detail' button is pressed."
-        "\n\n5) Other minor changes in the nature of bug fixes and feedback.",
-    DateTime(2021, 12),
-    "https://github.com/sinhaugoh/DEALL",
-    "https://www.figma.com/file/QGGYjGRb81bGE0eCbXgqLo/Lo-fi?node-id=274%3A817",
-    "https://www.figma.com/file/ydrr0N3qhP3d9sjWAwJbxU/Hi-fi?node-id=315%3A2",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/consumer-home-page-retailer-list.png",
-      "assets/images/consumer-retailer-product-list-page.png",
-      "assets/images/consumer-retailer-details-page.png",
-    ],
-  ),
-  Project(
-    "p5.js Projects",
-    "p5.js Projects",
-    ["Frontend", "JavaScript", "Web/Mobile", "Others"],
-    "\nProject Description:"
-        "\n\nA series of assignments using p5.js to create games, animations or graphical effects."
-        "\n\nProjects:"
-        "\n\n1) Solar System - graphical animations simulating a solar system"
-        "\n\n2) Asteroid Game Clone - gravity effect when near Earth, and collision for destroying asteroids"
-        "\n\n3) Angry Birds Game Clone - p5 physics"
-        "\n\n4) Noisy Grid - graphical animations based on mouse position"
-        "\n\n5) 3D Sin Animation - graphical animations"
-        "\n\n6) Average Face - generate new 'average' face based on multiple faces"
-        "\n\n7) Instagram Filters - various filters on image"
-        "\n\n8) Webcam Piano - movement detection through webcam and plays piano keynotes based on position of movement",
-    "Various p5.js libraries used.",
-    DateTime(2021, 12),
-    "https://github.com/Kwang-Kian-Hui/graphics-programming",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/solarSystem.png",
-      "assets/images/asteroidGameClone.png",
-      "assets/images/angryBirdsGameClone.png",
-      "assets/images/noisyGrid.png",
-      "assets/images/3DSinAnimation.png",
-      "assets/images/averageFace1.png",
-      "assets/images/averageFace2.png",
-      "assets/images/instagramFilter1.png",
-      "assets/images/instagramFilter2.png",
-    ],
-  ),
-  Project(
-    "MerkelRexBot(C++) - Crypto Trading Bot",
-    "C++ Crypto Trading Bot",
-    ["Others", "C++", "Predictive Analytics"],
-    "\nProject Description:"
-        "\n\nMerkelRexBot is a command-line UI exchange simulation which allows a human to carry out market analysis and trading activities "
-        "such as bidding for and offering trades. However, it also has the capability to make trades in the place of human users. "
-        "Linear regression model is used on a group of sample data to generate the price predictions. Trades will then be made based on the predictions."
-        "\n\nCode and csv data is available in Github",
-    "Before linear regression model is used to predict future price, we will analyse different digital currencies' exchange rates, ask volume, and bid volume."
-        "The ask and bid volume is used to produce an ask/bid volume ratio. When the ask volume is higher than bid volume, the prices of the products are likely to increase"
-        "as it indicates strong buying pressure (higher ask/bid ratio). If the ask/bid ratio of an exchange is high, we will check if the spread is low enough."
-        " Low spread means that the cost of trading a certain product is lower and it usually indicates a high trading volume. If these conditions are met, "
-        "the price prediction is made and if the potential return exceeds the spread, we will make a trade order",
-    DateTime(2021, 10),
-    "https://github.com/Kwang-Kian-Hui/MerkelRex",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Future Improvements:"
-        "\n\nConditions for making trades can be improved as bot stops making trades after the first time iteration due to the trading conditions not being met.",
-    [
-      "assets/images/merkelrex-cover.png",
-      "assets/images/merkelrex-img-1.png",
-      "assets/images/merkelrex-img-2.png",
-      "assets/images/merkelrex-img-3.png",
-    ],
-  ),
-  Project(
-    "Otodecks(C++) - Music Library Mixer",
-    "Music Library Mixer",
-    ["Others", "C++"],
-    "\nProject Description:"
-        "\n\nA Music Library Mixer with custom GUI. Mp3 files may be loaded onto the track and we can search for tracks using the search bar. "
-        "Allows 2 audio files to be played at the same time with controls such as play, stop, fast forward, back track, volume, speed, audio position, replay and looping.",
-    "",
-    DateTime(2021, 10),
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/otodecks-img-1.png",
-      "assets/images/otodecks-img-2.png",
-    ],
-  ),
-  Project(
-    "Data Programming Research",
-    "Data Research",
-    ["Data", "Others", "Python", "Data Analytics/Engineering"],
-    "\nProject Description:"
-        "\n\nThe project's research is on \"Correlation between key variables of the countries' happiness index and COVID-19 vaccinations\".",
-    "Steps:"
-        "\n\n1) Data Extraction: Two relevant csv data files were downloaded, and web scraping was performed with BeautifulSoup to extract key data. "
-        "\n\n2) Data Preparation: The pandas dataframes were merged along with the web scraped data to form a single large dataframe. "
-        "Data cleaning and transformation is then performed."
-        "\n\n3) Data Analysis: Bar chart, Sunburst chart and Heatmap charts were produced and analysed to construct findings.",
-    DateTime(2021, 10),
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/web-scraping.png",
-      "assets/images/bar-chart.png",
-      "assets/images/sun-burst-chart.png",
-      "assets/images/heatmap-chart.png",
-    ],
-  ),
-  Project(
-    "Multiclass Classification with KNN Cross Validation",
-    "KNN Cross Validation",
-    ["Others", "Python", "Predictive Analytics"],
-    "\nProject Description:"
-        "\n\nIn this coursework, the Wine dataset (178 sample dataset that categorises three different types of Italian wine using 13 different features) is used."
-        "We will need to present our own code that performs nested cross-validation and the k-nearest neighbour algorithm, build confusion matrices, and estimate distances between data samples.",
-    "Steps:"
-        "\n\n1) Exploratory Data Analysis - columns, min/max/mean/sd per column, class distribution"
-        "\n\n1.1) Data Visualisation - identify correlations between alcohol level, flavanoids, color_intensity and ash using sns pair grid correlation plot"
-        "\n\n1.2) Exploratory Data Analysis under noise - (Gaussian noise)"
-        "\n\nTwo classifiers with least overlaps selected to build classifier"
-        "\n\n2) Implementing KNN"
-        "\n\nEuclidean/manhattan/chebyshev distance are calculated to identify K nearest neighbours using the two classifiers as data points."
-        "\n\nDistances are sorted from smallest to largest. Odd number k number of neighbours used to make prediction."
-        "\n\n3) Classifier Evaluation:"
-        "\n\nAccuracy, precision, recall and f1 score calculated to evaluate classifier"
-        "\n\nConfusion matrix built to visualise true/false positives and true/false negatives"
-        "\n\n4) Nested Cross-validation using your implementation of KNN"
-        "\n\nSplit data into five equal folds and cross validation conducted using different distance metrics.",
-    DateTime(2022, 1),
-    "https://github.com/Kwang-Kian-Hui/Machine-Learning-and-Neural-Networks",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    [
-      "assets/images/correlation_plot.png",
-      "assets/images/confusion_matrix.png",
-      "assets/images/confusion_matrix_grouping.png",
-      "assets/images/classifier_evaluation.png",
-      "assets/images/summary_results.png",
+      "assets/images/projects/home-section.png",
     ],
   ),
   Project(
     "Multiclass Classification (Sign Language MNIST)",
     "Classification with ML Models",
-    ["Others", "Python", "Predictive Analytics"],
+    ["Python", "Predictive Analytics", "AI / ML", "Multiclass Classification"],
     "\nProject Description:"
         "\n\nIn this coursework, the Sign Language MNIST dataset (27455 training, 7172 testing dataset, 28x28 pixel image, 24 labels representing each alphabet where J and Z is not included as it requires motion (unable to represent in 1 image)) is used.",
     "Steps: "
@@ -461,68 +293,211 @@ List<Project> projectList = [
     "",
     "",
     [
-      "assets/images/dataset.png",
-      "assets/images/baseline.png",
-      "assets/images/overfit.png",
-      "assets/images/best.png",
+      "assets/images/projects/dataset.png",
+      "assets/images/projects/baseline.png",
+      "assets/images/projects/overfit.png",
+      "assets/images/projects/best.png",
     ],
   ),
   Project(
-    "Automatic Time Scheduler - Mobile App (Flutter)",
-    "Automatic Time Scheduler",
-    ["Frontend", "Data", "Dart", "Data Analytics/Engineering", "Web/Mobile"],
+    "Multiclass Classification with KNN Cross Validation",
+    "KNN Cross Validation",
+    ["Python", "Predictive Analytics", "AI / ML", "Multiclass Classification"],
     "\nProject Description:"
-        "\n\nThis app helps to schedule tasks for users based on deadline priorities. Users are able to set several personalization settings such as working hours, break hours, and days that they are working on."
-        " Tasks will not be scheduled on non working hours including breaks."
-        "\n\nKey Features:"
-        "\n\n1) Add/Edit/Delete events or tasks on calendar. Events - events that does not require any action from user. Tasks - events that require a set duration of time from user (must not overlap with other tasks)."
-        "\n\n2) For events, user must specify start and end date. For tasks, if no start and end date is specified, a duration must be provided and the app will schedule the task for the user."
-        "\n\n3) Users can mark existing tasks as completed or uncompleted."
-        "\n\n4) Different calendar views (day/week/month) and filter tasks by completion status."
-        "\n\n5) Import events from Google Calendar."
-        "\n\n6) Other personalization settings (Event/Task categories, Color Themes)"
-        "\n\nGoogle Firestore NoSQL database used. Firebase Authentication, Google Calendar API",
-    "Algorithm/Technique used: binary time list"
-        "\n\nOne challenge I encountered was determining the available time for scheduling, considering varying break hours and non-working hours for each day. Using conditional statements (if conditions) to handle this "
-        "scenario proved highly inefficient and made the feature difficult to debug. To address this, I devised an alternative approach."
-        "\n\nI devised a solution by utilizing a list structure to represent time availability. Each element in the list corresponds to a one-minute interval, where '1' represents availability and '0' represents "
-        "unavailability. To represent a full day of 24 hours, the initial list length was set to 1440 elements (one for each minute). However, to optimize efficiency, I condensed the list to a length of 288, with each "
-        "element representing a five-minute interval."
-        "\n\nTo determine the available working hours for a given day, the process followed these steps:"
-        "\n1) Initialize the list with 288 elements, all set to '0' to indicate unavailability."
-        "\n2)Based on customized working hours, set the corresponding range of indexes to '1' to indicate availability."
-        "\n3)Similarly, considering customized break hours, set the corresponding range of indexes to '0' to indicate unavailability."
-        "\n\nBy following these steps, the resulting list provides a clear representation of the available working hours for the specific day, incorporating variations in working and break hours."
-        "\n\nUnsigned 8 bit integer was used instead of boolean as boolean in Dart language uses 2 bytes while unsigned 8 bit integer uses 1 byte, reducing the memory usage by half.",
-    DateTime(2022, 8),
+        "\n\nIn this coursework, the Wine dataset (178 sample dataset that categorises three different types of Italian wine using 13 different features) is used."
+        "We will need to present our own code that performs nested cross-validation and the k-nearest neighbour algorithm, build confusion matrices, and estimate distances between data samples.",
+    "Steps:"
+        "\n\n1) Exploratory Data Analysis - columns, min/max/mean/sd per column, class distribution"
+        "\n\n1.1) Data Visualisation - identify correlations between alcohol level, flavanoids, color_intensity and ash using sns pair grid correlation plot"
+        "\n\n1.2) Exploratory Data Analysis under noise - (Gaussian noise)"
+        "\n\nTwo classifiers with least overlaps selected to build classifier"
+        "\n\n2) Implementing KNN"
+        "\n\nEuclidean/manhattan/chebyshev distance are calculated to identify K nearest neighbours using the two classifiers as data points."
+        "\n\nDistances are sorted from smallest to largest. Odd number k number of neighbours used to make prediction."
+        "\n\n3) Classifier Evaluation:"
+        "\n\nAccuracy, precision, recall and f1 score calculated to evaluate classifier"
+        "\n\nConfusion matrix built to visualise true/false positives and true/false negatives"
+        "\n\n4) Nested Cross-validation using your implementation of KNN"
+        "\n\nSplit data into five equal folds and cross validation conducted using different distance metrics.",
+    DateTime(2022, 1),
+    "https://github.com/Kwang-Kian-Hui/Machine-Learning-and-Neural-Networks",
     "",
-    "https://www.figma.com/file/mV24w6TCa6yWRehhHPhW2D/Low-Fidelity-Prototype?node-id=0%3A1",
-    "https://www.figma.com/file/JSJnW7sG8kSCEoNAxpATCO/High-Fidelity-Prototype?node-id=0%3A1",
+    "",
     "",
     "",
     "",
     "",
     [
-      "assets/images/login-page.png",
-      "assets/images/signup-validation.png",
-      "assets/images/add-task.png",
-      "assets/images/calendar-page.png",
-      "assets/images/settings-page.png",
-      "assets/images/working-hours.png",
+      "assets/images/projects/correlation_plot.png",
+      "assets/images/projects/confusion_matrix.png",
+      "assets/images/projects/confusion_matrix_grouping.png",
+      "assets/images/projects/classifier_evaluation.png",
+      "assets/images/projects/summary_results.png",
     ],
   ),
   Project(
-    "Quantexa Data Engineer Certification Project",
-    "Quantexa Project",
-    ["Data", "HTML/CSS", "Scala", "Data Analytics/Engineering"],
+    "Speech Recognition System (Mozilla DeepSpeech)",
+    "Speech Recognition System",
+    ["Python", "Mozilla DeepSpeech", "Speech Recognition", "Audio Processing"],
     "\nProject Description:"
-        "\n\nThis project equips us with the following skill sets:"
-        "\n\n1) Writing correctly defined Document Models and convert CSV to parquet files."
-        "\n\n2) Writing Spark scripts in Scala to join datasets using Spark Dataset API."
-        "\n\n3) Compound resolution, compound exclusions, entity network graph and document scoring for Quantexa tool UI."
-        "\n\n4) HTML/CSS to customise Quantexa UI",
+        "\n\nA software development company has contacted you to create a speech recognition system to integrate in a Python project they are developing. In particular, the project consists of an airport virtual assistant."
+        "\n\nRequirements:"
+        "\n\n1) Base the speech recognition system on the Mozilla DeepSpeech software package."
+        "\n\n2) Capable of language-selection, at the very least compatible with the following languages: English, Italian and Spanish."
+        "\n\n3) The airport virtual assistant will be installed in an environment that can be extremely noisy. So, the speech recognition system should be configured to be able to handle this situation. Your client gives you freedom for implementing any solution (for example, to configure in python a gain/amplification, low pass filter, or some other audio filter to improve the error rate)."
+        "\n\n4) The company has prepared a set of audio files with which you can evaluate the system. For this evaluation, you will test how well it recognises several phrases in each language. You also have to record and evaluate two short sentences (your_sentence1.wav and your_sentence2.wav). Feel free to prepare your own sentences",
+    "Features Completed:"
+        "\n\n1) Console based application. Allows language selection by entering the language name. e.g. 'English', 'english' or 'en'."
+        "\n\n2) Mozilla DeepSpeech model and scorer is loaded in the application based on the language selected by user."
+        "\n\n3) Spectral subtraction and low pass filter applied to audio files to attempt to reduce background noise. Crowd noise used for spectral subtraction downloaded from: https://mixkit.co/free-sound-effects/crowd/. "
+        "\n\nLibrosa library load() and stft() function is used, along with numpy to load and transform the sample values into a subtractable form for spectral subtraction. Scipy library is used to perform low pass filter."
+        "\n\n4) Performance is evaluated by processing the predicted texts with the transcript texts. Overall performance result:"
+        "\n\nEnglish word error rate(WER) of 18.84%, Spanish WER of 35.71% and Italian WER of 36.67",
+    DateTime(2021, 12),
+    "https://github.com/Kwang-Kian-Hui/Speech-Recognition-System--Mozilla-DeepSpeech-",
     "",
-    DateTime(2023, 5),
+    "",
+    "",
+    "",
+    "",
+    "",
+    [
+      "assets/images/projects/deepspeech-1.png",
+      "assets/images/projects/deepspeech-2.png",
+      "assets/images/projects/deepspeech-3.png",
+      "assets/images/projects/deepspeech-4.png",
+    ],
+  ),
+  Project(
+    "Audio Visualization with MeydaAnalyzer and Speech Recognition (p5.js)",
+    "Meyda Speech Command",
+    ["p5.js", "JS", "Animations", "Speech Recognition"],
+    "\nProject Description:"
+        "\n\nDevelop an interactive web-based application for audio visualization. The application must be based on p5.js, p5.speech and the JavaScript audio feature extraction library Meyda."
+        "\n\nRequirements:"
+        "\n\n1) Use audio features and map them to visual variables (shapes, size, etc.)."
+        "\n\n2) Voice control system, background color and shape changes.",
+    "Features Completed:"
+        "\n\n1) Background color can be changed with voice command ('red', 'green', 'blue', 'black', 'white'). Color of shapes changes based on background color."
+        "\n\n2) Shape can be changed with voice command ('Square', 'Triangle', 'circle')."
+        "\n\n3) Audio features used: zcr, energy, Spectral Centroid, Spectral Flatness, SpectralSpread and Spectral Kurtosis, Spectral Rolloff."
+        "They were chosen as the pitch and loudness of the audio file changes drastically throughout the duration of the audio, providing a better visual experience.",
+    DateTime(2021, 12),
+    "https://github.com/Kwang-Kian-Hui/Audio-Visualization-with-MeydaAnalyzer-and-Speech-Recognition-p5.js-",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    [
+      "assets/images/projects/default-square.png",
+      "assets/images/projects/red-circle.png",
+      "assets/images/projects/white-circle.png",
+    ],
+  ),
+  Project(
+    "DEALL (Android, Flutter)",
+    "DEALL",
+    ["Flutter", "Dart", "Mobile", "Google Firebase", "Firebase Authentication", "Google Firestore"],
+    "\nProject Description:"
+        "\n\nDEALL is a mobile platform that allow food retailers to list their surplus food on discount, while consumers can view them, with the goal of reducing food waste in the process."
+        "\n\nDatabase: Google Firestore (NoSQL)",
+    "Work done by me in this group assignment:"
+        "\n\n1) Low fidelity and High fidelity prototyping using Figma"
+        "\n\n2) Application logic for consumer's home page which displays the list of retailers available by calling Google Firestore conditional queries."
+        "\n\n3) Add product feature for retailers where they will fill up a form with input validations before adding the product data to Google Firestore."
+        "\n\n4) Application logic for consumer's retailer product list and detail page which displays the list of products offered by the specific retailer that the user has selected and the retailer's detail when the 'show detail' button is pressed."
+        "\n\n5) Other minor changes in the nature of bug fixes and feedback.",
+    DateTime(2021, 12),
+    "https://github.com/sinhaugoh/DEALL",
+    "https://www.figma.com/file/QGGYjGRb81bGE0eCbXgqLo/Lo-fi?node-id=274%3A817",
+    "https://www.figma.com/file/ydrr0N3qhP3d9sjWAwJbxU/Hi-fi?node-id=315%3A2",
+    "",
+    "",
+    "",
+    "",
+    [
+      "assets/images/projects/consumer-home-page-retailer-list.png",
+      "assets/images/projects/consumer-retailer-product-list-page.png",
+      "assets/images/projects/consumer-retailer-details-page.png",
+    ],
+  ),
+  Project(
+    "p5.js Projects",
+    "p5.js Projects",
+    ["p5.js", "JS", "Animations"],
+    "\nProject Description:"
+        "\n\nA series of assignments using p5.js to create games, animations or graphical effects."
+        "\n\nProjects:"
+        "\n\n1) Solar System - graphical animations simulating a solar system"
+        "\n\n2) Asteroid Game Clone - gravity effect when near Earth, and collision for destroying asteroids"
+        "\n\n3) Angry Birds Game Clone - p5 physics"
+        "\n\n4) Noisy Grid - graphical animations based on mouse position"
+        "\n\n5) 3D Sin Animation - graphical animations"
+        "\n\n6) Average Face - generate new 'average' face based on multiple faces"
+        "\n\n7) Instagram Filters - various filters on image"
+        "\n\n8) Webcam Piano - movement detection through webcam and plays piano keynotes based on position of movement",
+    "Various p5.js libraries used.",
+    DateTime(2021, 12),
+    "https://github.com/Kwang-Kian-Hui/graphics-programming",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    [
+      "assets/images/projects/solarSystem.png",
+      "assets/images/projects/asteroidGameClone.png",
+      "assets/images/projects/angryBirdsGameClone.png",
+      "assets/images/projects/noisyGrid.png",
+      "assets/images/projects/3DSinAnimation.png",
+      "assets/images/projects/averageFace1.png",
+      "assets/images/projects/averageFace2.png",
+      "assets/images/projects/instagramFilter1.png",
+      "assets/images/projects/instagramFilter2.png",
+    ],
+  ),
+  Project(
+    "MerkelRexBot(C++) - Crypto Trading Bot",
+    "C++ Crypto Trading Bot",
+    ["C++", "Console-based"],
+    "\nProject Description:"
+        "\n\nMerkelRexBot is a command-line UI exchange simulation which allows a human to carry out market analysis and trading activities "
+        "such as bidding for and offering trades. However, it also has the capability to make trades in the place of human users. "
+        "Linear regression model is used on a group of sample data to generate the price predictions. Trades will then be made based on the predictions."
+        "\n\nCode and csv data is available in Github",
+    "Before linear regression model is used to predict future price, we will analyse different digital currencies' exchange rates, ask volume, and bid volume."
+        "The ask and bid volume is used to produce an ask/bid volume ratio. When the ask volume is higher than bid volume, the prices of the products are likely to increase"
+        "as it indicates strong buying pressure (higher ask/bid ratio). If the ask/bid ratio of an exchange is high, we will check if the spread is low enough."
+        " Low spread means that the cost of trading a certain product is lower and it usually indicates a high trading volume. If these conditions are met, "
+        "the price prediction is made and if the potential return exceeds the spread, we will make a trade order",
+    DateTime(2021, 10),
+    "https://github.com/Kwang-Kian-Hui/MerkelRex",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Future Improvements:"
+        "\n\nConditions for making trades can be improved as bot stops making trades after the first time iteration due to the trading conditions not being met.",
+    [
+      "assets/images/projects/merkelrex-cover.png",
+      "assets/images/projects/merkelrex-img-1.png",
+      "assets/images/projects/merkelrex-img-2.png",
+      "assets/images/projects/merkelrex-img-3.png",
+    ],
+  ),
+  Project(
+    "Otodecks(C++) - Music Library Mixer",
+    "Music Library Mixer",
+    ["C++"],
+    "\nProject Description:"
+        "\n\nA Music Library Mixer with custom GUI. Mp3 files may be loaded onto the track and we can search for tracks using the search bar. "
+        "Allows 2 audio files to be played at the same time with controls such as play, stop, fast forward, back track, volume, speed, audio position, replay and looping.",
+    "",
+    DateTime(2021, 10),
     "",
     "",
     "",
@@ -530,6 +505,66 @@ List<Project> projectList = [
     "",
     "",
     "",
-    [],
+    [
+      "assets/images/projects/otodecks-img-1.png",
+      "assets/images/projects/otodecks-img-2.png",
+    ],
+  ),
+  Project(
+    "Data Programming Research",
+    "Data Research",
+    ["Python", "Data Analytics"],
+    "\nProject Description:"
+        "\n\nThe project's research is on \"Correlation between key variables of the countries' happiness index and COVID-19 vaccinations\".",
+    "Steps:"
+        "\n\n1) Data Extraction: Two relevant csv data files were downloaded, and web scraping was performed with BeautifulSoup to extract key data. "
+        "\n\n2) Data Preparation: The pandas dataframes were merged along with the web scraped data to form a single large dataframe. "
+        "Data cleaning and transformation is then performed."
+        "\n\n3) Data Analysis: Bar chart, Sunburst chart and Heatmap charts were produced and analysed to construct findings.",
+    DateTime(2021, 10),
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    [
+      "assets/images/projects/web-scraping.png",
+      "assets/images/projects/bar-chart.png",
+      "assets/images/projects/sun-burst-chart.png",
+      "assets/images/projects/heatmap-chart.png",
+    ],
+  ),
+  Project(
+    "Location Alarm (Android, Flutter)",
+    "Location Alarm",
+    ["Flutter", "Dart", "Mobile", "SQLite", "Google Cloud Platform", "Google Places API", "Place Autocomplete"],
+    "\nProject Description:"
+        "\n\nLocation Alarm is an app that allow users to create an alarm with a set destination and radius, and when their devices are within the radius of their destination, the alarm will ring. This app uses the Map and Places API of Google Cloud Platform for the map features and address suggestions when users are searching for their destination. Some android devices are unable to receive background location updates due to the device's battery saving processes."
+        "\n\nKey Takeaways:"
+        "\n\n1) Usage of Google Map and Places APIs."
+        "\n\n2) Publishing app to Google Play Store for internal testing, and releasing for public use."
+        "\nBackground location packages' limitations as the feature only works for certain android devices and a better solution is required.",
+    "Features Completed:"
+        "\n\n1) Google Maps API (map features, markers, and positional radius)"
+        "\n\n2) Google Places API (search bar, address/postal/building name suggestions)"
+        "\n\n3) SQLite local device database"
+        "\n\n4) Alarm rings when device is within set radius of destination."
+        "\n\n5) Ringtone or vibrate",
+    DateTime(2021, 3),
+    "https://github.com/Kwang-Kian-Hui/location-alarm_v2",
+    "",
+    "",
+    "https://play.google.com/store/apps/details?id=com.location_alarm",
+    "",
+    "https://www.youtube.com/watch?v=9kuAkN7wnuQ",
+    "Future Improvements:"
+        "\n\n1) Background location is not yet released. An additional change to the app where a prominent disclosure before the app's runtime is required to adhere to Google permissions policy in order for the update to be released. Without this, the location does not update when the screen is locked.",
+    [
+      "assets/images/projects/initial-page-permission-request.png",
+      "assets/images/projects/add-edit-alarm-page.png",
+      "assets/images/projects/home-page-with-alarms.png",
+    ],
   ),
 ];

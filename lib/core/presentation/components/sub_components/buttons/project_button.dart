@@ -83,8 +83,8 @@ class ProjectButtonState extends ConsumerState<ProjectButton> {
             widget.buttonTitle,
             style: ref.watch(selectedProjectDetailIndexProvider) - 1 ==
                     widget.index
-                ? AppStyles.roboto12ColoredBold
-                : AppStyles.roboto12,
+                ? AppStyles.montserrat12ColoredBold
+                : AppStyles.montserrat12,
           ),
         ),
       ),
