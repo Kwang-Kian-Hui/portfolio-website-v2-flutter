@@ -53,13 +53,21 @@ class ProjectItemCardWidgetState extends ConsumerState<ProjectItemCardWidget> {
               children: [
                 const SizedBox(height: 10),
                 isSmallerThanMiniDesktop
-                    ? Padding(
+                    ? Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: AppStyles.mobileBorderPadding,
                         ),
-                        child: Text(
-                          widget.projectItem.shortTitle,
-                          style: AppStyles.montserrat18,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                widget.projectItem.shortTitle,
+                                maxLines: 2,
+                                style: AppStyles.montserrat18,
+                              ),
+                            ),
+                            const Icon(Icons.arrow_forward, size: 25),
+                          ],
                         ),
                       )
                     : Wrap(

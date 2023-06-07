@@ -22,11 +22,11 @@ class _MainAppWidgetState extends State<MainAppWidget> {
       ),
       builder: (context, child) => ResponsiveWrapper.builder(
         child,
-        minWidth: 480,
+        minWidth: 450,
         defaultScale: true,
         defaultName: "16-INCH",
         breakpoints: [
-          // const ResponsiveBreakpoint.resize(480, name: "BP-FOR-SMALL-MOBILE"),
+          const ResponsiveBreakpoint.resize(450, name: "BP-FOR-SMALL-MOBILE"),
           const ResponsiveBreakpoint.resize(480, name: MOBILE),
           const ResponsiveBreakpoint.resize(660, name: "BP-FOR-MOBILE"),
           const ResponsiveBreakpoint.resize(800, name: TABLET),

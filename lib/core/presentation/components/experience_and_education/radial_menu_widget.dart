@@ -8,6 +8,7 @@ import 'package:flutter_portfolio_website/core/application/experience_class.dart
 import 'package:flutter_portfolio_website/core/infrastructure/edu_and_exp_data.dart';
 import 'package:flutter_portfolio_website/core/presentation/components/sub_components/draggable_logo_widget.dart';
 import 'package:flutter_portfolio_website/core/presentation/const/styles.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:vector_math/vector_math.dart' as vector;
 import 'package:vector_math/vector_math_64.dart' as vector64;
 
@@ -59,6 +60,11 @@ class RadialMenuWidgetState extends ConsumerState<RadialMenuWidget>
     }
   }
 
+  Offset myPointerDragAnchorStrategy(
+      Draggable<Object> draggable, BuildContext context, Offset position) {
+    return const Offset(0, 0);
+  }
+
   _buildButton(WidgetRef ref, double angle, int index) {
     final double rad = vector.radians(angle);
     return Transform(
@@ -67,6 +73,12 @@ class RadialMenuWidgetState extends ConsumerState<RadialMenuWidget>
             (translation.value) * cos(rad), (translation.value) * sin(rad)),
       child: widget.isExp
           ? Draggable<ExperienceClass>(
+              dragAnchorStrategy: (ResponsiveWrapper.of(context).isMobile ||
+                          ResponsiveWrapper.of(context)
+                              .isSmallerThan(MOBILE)) &&
+                      MediaQuery.of(context).size.width <= 450
+                  ? myPointerDragAnchorStrategy
+                  : null,
               data: expClassList[index],
               feedback: LogoWidget(
                 logoImagePath: expClassList[index].imagePath,
@@ -92,6 +104,12 @@ class RadialMenuWidgetState extends ConsumerState<RadialMenuWidget>
               ),
             )
           : Draggable<EducationClass>(
+              dragAnchorStrategy: (ResponsiveWrapper.of(context).isMobile ||
+                          ResponsiveWrapper.of(context)
+                              .isSmallerThan(MOBILE)) &&
+                      MediaQuery.of(context).size.width <= 450
+                  ? myPointerDragAnchorStrategy
+                  : null,
               data: eduClassList[index],
               feedback: LogoWidget(
                 logoImagePath: eduClassList[index].imagePath,
