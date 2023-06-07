@@ -14,12 +14,15 @@ final viewingProjectIndex =
 final selectedProjectIndexProvider =
     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 
-final selectedTechStackIndexProvider =
-    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
-final selectedLanguagesIndexProvider =
-    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
-final selectedProjectTypeIndexProvider =
-    StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
+final selectedProjectFilterProvider =
+    StateNotifierProvider<StringProvider, String>((ref) => StringProvider("All"));
+
+// final selectedTechStackIndexProvider =
+//     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
+// final selectedLanguagesIndexProvider =
+//     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
+// final selectedProjectTypeIndexProvider =
+//     StateNotifierProvider<IntegerProvider, int>((ref) => IntegerProvider(-1));
 
 final expRadialMenuAnimationController =
     StateNotifierProvider<AnimationControllerProvider, AnimationController?>(
@@ -49,10 +52,23 @@ class IntegerProvider extends StateNotifier<int> {
   void change(int index) => state = index;
 }
 
+class StringProvider extends StateNotifier<String> {
+  StringProvider(String initial) : super(initial);
+  void change(String newString) => state = newString;
+}
+
 class AnimationControllerProvider extends StateNotifier<AnimationController?> {
   AnimationControllerProvider() : super(null);
-  void forward() => state?.forward();
-  void reverse() => state?.reverse();
+  void forward() {
+    if(state != null){
+      state!.forward();
+    }
+  }
+  void reverse() {
+    if(state != null){
+      state!.reverse();
+    }
+  }
   void change(AnimationController controller) => state = controller;
 }
 

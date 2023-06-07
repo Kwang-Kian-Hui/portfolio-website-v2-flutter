@@ -14,11 +14,25 @@ class AppBarWidget extends ConsumerStatefulWidget {
   AppBarWidgetState createState() => AppBarWidgetState();
 }
 
-class AppBarWidgetState extends ConsumerState<AppBarWidget> {
+class AppBarWidgetState extends ConsumerState<AppBarWidget>
+    with TickerProviderStateMixin {
   bool hoverOnIcon = false;
   bool hoverOnAbout = false;
   bool hoverOnExperience = false;
   bool hoverOnProject = false;
+
+  @override
+  void initState() {
+    // initialise animation controllers for radial menu in "experiences" section to avoid reinitialising controller on resizing
+    ref.read(expRadialMenuAnimationController.notifier).change(
+        AnimationController(
+            duration: const Duration(milliseconds: 900), vsync: this));
+    ref.read(eduRadialMenuAnimationController.notifier).change(
+        AnimationController(
+            duration: const Duration(milliseconds: 900), vsync: this));
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,31 +67,32 @@ class AppBarWidgetState extends ConsumerState<AppBarWidget> {
                 child: MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                  onTap: () {
-                    ref
-                        .read(scrollControllerProvider.notifier)
-                        .scrollToIndex(0);
-                  },
-                  child: Container(
-                    height: 60,
-                    width: 60,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: AppStyles.containerGradient,
-                      boxShadow: AppStyles.roundedButtonShadow,
-                    ),
-                    child: Center(
-                      child: Text(
-                        "KH",
-                        style: hoverOnIcon
-                            ? AppStyles.courgette20Colored
-                            : AppStyles.courgette20,
+                    onTap: () {
+                      ref
+                          .read(scrollControllerProvider.notifier)
+                          .scrollToIndex(0);
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: AppStyles.containerGradient,
+                        boxShadow: AppStyles.roundedButtonShadow,
                       ),
+                      child: Center(
+                        child: Text(
+                          "KH",
+                          style: hoverOnIcon
+                              ? AppStyles.courgette20Colored
+                              : AppStyles.courgette20,
+                        ),
+                      ),
+                      // ),
                     ),
-                    // ),
                   ),
                 ),
-              ),),
+              ),
             ),
             ResponsiveWrapper.of(context).isLargerThan(MOBILE)
                 ? Row(

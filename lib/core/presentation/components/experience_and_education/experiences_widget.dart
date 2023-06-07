@@ -53,6 +53,9 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
       height: isSmallerThanCustomBp
           ? (MediaQuery.of(context).size.height - 120) * 2
           : MediaQuery.of(context).size.height - 120,
+      constraints: const BoxConstraints(
+        minHeight: 1440,
+      ),
       margin: const EdgeInsets.only(top: 120),
       child: ResponsiveRowColumn(
         layout: isSmallerThanCustomBp
@@ -88,8 +91,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                                 top: 50,
                               ),
                               child: RadialMenuWidget(
-                                controller:
-                                    ref.watch(expRadialMenuAnimationController),
+                                controller: ref
+                                    .watch(expRadialMenuAnimationController)!,
                                 isExp: true,
                               ),
                             ),
@@ -230,21 +233,23 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         boxShadow: selectedEducationIndex == 0
-                                              ? AppStyles.invertedRoundedButtonShadow
-                                              : [],
+                                            ? AppStyles
+                                                .invertedRoundedButtonShadow
+                                            : [],
                                       ),
                                       child: Container(
                                         height: 60,
                                         width: 60,
                                         decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
-                                          gradient: AppStyles.invertedContainerGradient,
-                                          
+                                          gradient: AppStyles
+                                              .invertedContainerGradient,
                                         ),
                                         child: selectedEducationIndex == 0
                                             ? const SizedBox()
                                             : MouseRegion(
-                                                cursor: SystemMouseCursors.click,
+                                                cursor:
+                                                    SystemMouseCursors.click,
                                                 child: GestureDetector(
                                                   onTap: () {
                                                     setState(() {
@@ -281,8 +286,8 @@ class ExperiencesWidgetState extends ConsumerState<ExperiencesWidget> {
                                 top: 50,
                               ),
                               child: RadialMenuWidget(
-                                controller:
-                                    ref.watch(eduRadialMenuAnimationController),
+                                controller: ref
+                                    .watch(eduRadialMenuAnimationController)!,
                                 isExp: false,
                               ),
                             ),

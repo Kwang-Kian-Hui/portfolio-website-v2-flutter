@@ -18,7 +18,7 @@ class RadialMenuWidget extends ConsumerStatefulWidget {
     required this.isExp,
   }) : super(key: key);
 
-  final AnimationController? controller;
+  final AnimationController controller;
   final bool isExp;
 
   @override
@@ -36,26 +36,26 @@ class RadialMenuWidgetState extends ConsumerState<RadialMenuWidget>
       begin: 1.5,
       end: 0.0,
     ).animate(
-      CurvedAnimation(parent: widget.controller!, curve: Curves.fastOutSlowIn),
+      CurvedAnimation(parent: widget.controller, curve: Curves.fastOutSlowIn),
     );
     translation = Tween<double>(
       begin: 0.0,
       end: 100.0,
     ).animate(
-      CurvedAnimation(parent: widget.controller!, curve: Curves.easeInOutCubic),
+      CurvedAnimation(parent: widget.controller, curve: Curves.easeInOutCubic),
     );
     super.initState();
   }
 
   _open() {
     if (widget.controller != null) {
-      widget.controller!.forward();
+      widget.controller.forward();
     }
   }
 
   _close() {
     if (widget.controller != null) {
-      widget.controller!.reverse();
+      widget.controller.reverse();
     }
   }
 
@@ -204,7 +204,7 @@ class RadialMenuWidgetState extends ConsumerState<RadialMenuWidget>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: widget.controller!,
+        animation: widget.controller,
         builder: (context, builder) {
           return Stack(
             alignment: widget.isExp ? Alignment.topLeft : Alignment.topRight,

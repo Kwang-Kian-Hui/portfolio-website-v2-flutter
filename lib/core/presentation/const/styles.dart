@@ -7,9 +7,36 @@ class AppStyles {
   static const buttonGradientColour = Color(0xff222222);
   static const greyColour = Color(0xffDCDCDC);
   static const appSubColour = greyColour;
+  static const wordSpacingPadding = EdgeInsets.symmetric(vertical: 8.0);
 
   static const lightShadowColour = Color(0xff515151);
   static const darkShadowColour = Color(0xff151515);
+
+  static const Map<String, List<Color>> categoriesColorMapping = {
+    "Spark": [Color(0xff000000), Color(0xffffffff)],
+    "Scala": [Color(0xff000000), Color(0xffffffff)],
+    "HTML":  [Color(0xff000000), Color(0xffffffff)],
+    "CSS":  [Color(0xff000000), Color(0xffffffff)],
+    "JS": [Color(0xff000000), Color(0xffffffff)],
+    "C++": [Color(0xff000000), Color(0xffffffff)],
+    "Dart": [Color(0xff000000), Color(0xffffffff)],
+    "Python": [Color(0xff000000), Color(0xffffffff)],
+    "Data Engineering":  [Color(0xff000000), Color(0xffffffff)],
+    "Flutter": [Color(0xff000000), Color(0xffffffff)],
+    "Django": [Color(0xff000000), Color(0xffffffff)],
+    "p5.js": [Color(0xff000000), Color(0xffffffff)],
+    "Web": [Color(0xff000000), Color(0xffffffff)],
+    "Mobile": [Color(0xff000000), Color(0xffffffff)],
+    "Github Actions": [Color(0xff000000), Color(0xffffffff)],
+    "CI/CD": [Color(0xff000000), Color(0xffffffff)],
+    "Google Firebase": [Color(0xff000000), Color(0xffffffff)],
+    "Google Firestore": [Color(0xff000000), Color(0xffffffff)],
+    "NoSQL": [Color(0xff000000), Color(0xffffffff)],
+    "PostgreSQL": [Color(0xff000000), Color(0xffffffff)],
+    "SQLite": [Color(0xff000000), Color(0xffffffff)],
+    "AI/ML": [Color(0xff000000), Color(0xffffffff)],
+    "Google Cloud Platform": [Color(0xff000000), Color(0xffffffff)],
+  };
 
   static const containerShadow = [
     BoxShadow(
@@ -78,23 +105,6 @@ class AppStyles {
       AppStyles.mainAppColour,
     ],
   );
-
-  // static const largeRoundedButtonShadow = [
-  //   BoxShadow(
-  //     offset: Offset(-10, -10),
-  //     blurRadius: 20,
-  //     spreadRadius: 0,
-  //     color: AppStyles.lightShadowColour,
-  //     inset: false,
-  //   ),
-  //   BoxShadow(
-  //     offset: Offset(5, 5),
-  //     blurRadius: 20,
-  //     spreadRadius: 0,
-  //     color: AppStyles.darkShadowColour,
-  //     inset: false,
-  //   ),
-  // ];
 
   static const containerBorderRadius = 15.0;
   static const webBorderPadding = 60.0;

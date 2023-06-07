@@ -48,7 +48,7 @@ class _IconAnimationWidgetState extends State<IconAnimationWidget>
       parent: _controller,
       curve: Curves.linear,
     ));
-    Future.delayed(Duration(milliseconds: 5000 + widget.delayDuration), () {
+    Future.delayed(Duration(milliseconds: 4500 + widget.delayDuration), () {
       visibleIcon = true;
 
       _offsetAnimation.addListener(() {
