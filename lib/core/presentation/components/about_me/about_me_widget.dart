@@ -71,11 +71,12 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
     ];
 
     return Container(
-      height: smallerThanMinHeight && smallerThanMiniDesktop
-          ? 1440
-          : smallerThanMinHeight
+      height: smallerThanMinHeight
               ? 720
               : MediaQuery.of(context).size.height - 120,
+      constraints: const BoxConstraints(
+        minHeight: 840,
+      ),
       margin: const EdgeInsets.only(top: 120),
       child: Stack(
         children: [
