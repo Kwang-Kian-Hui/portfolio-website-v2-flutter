@@ -56,12 +56,12 @@ class _InitWidgetState extends State<InitWidget> {
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: [
-          Image(
-              image: const AssetImage(ConstObjects.backgroundImage),
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.fill,
-              errorBuilder: (context, index, _) => const SizedBox()),
+          // Image(
+          //     image: const AssetImage(ConstObjects.backgroundImage),
+          //     height: MediaQuery.of(context).size.height,
+          //     width: MediaQuery.of(context).size.width,
+          //     fit: BoxFit.fill,
+          //     errorBuilder: (context, index, _) => const SizedBox()),
           IconAnimationWidget(
             iconPath: 'assets/images/icons/icons8-flutter-96.png',
             beginOffset: getBeginOffSet(),

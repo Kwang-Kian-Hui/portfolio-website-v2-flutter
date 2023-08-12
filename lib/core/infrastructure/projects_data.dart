@@ -73,7 +73,7 @@ List<Project> projectList = [
     "Future Work:"
         "\n\nAdding end-to-end tests and include it into the Github Actions workflow.",
     [
-      "assets/images/projects/portfolio-website-2.png",
+      "assets/images/projects/portfolio-website-2-image.png",
     ],
   ),
   Project(

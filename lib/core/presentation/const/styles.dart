@@ -2,9 +2,12 @@ import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
 class AppStyles {
-  static const mainAppColour = Color(0xff1A191A);
-  static const containerColour = Color(0xff202020);
-  static const buttonGradientColour = Color(0xff222222);
+  // static const mainAppColour = Color(0xff1A191A);
+  // static const containerColour = Color(0xff202020);
+  // static const buttonGradientColour = Color(0xff222222);
+  static const mainAppColour = Color(0xff111111);
+  static const containerColour = Color(0xff222222);
+  static const buttonGradientColour = Color(0xff232323);
   static const greyColour = Color(0xffDCDCDC);
   static const appSubColour = greyColour;
   static const wordSpacingPadding = EdgeInsets.symmetric(vertical: 8.0);
